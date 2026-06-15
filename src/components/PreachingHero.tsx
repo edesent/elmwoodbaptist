@@ -1,6 +1,8 @@
+import PrayerModal from "./PrayerModal";
+
 export default function PreachingHero() {
   return (
-    <header id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <header id="home" className="relative min-h-screen flex items-center justify-start overflow-hidden">
       {/* Background — looping clip of the pastor preaching (muted) */}
       <div className="absolute inset-0 z-0 bg-brown-deep">
         <video
@@ -16,26 +18,28 @@ export default function PreachingHero() {
         </video>
       </div>
 
-      {/* Navy overlays — keep the white headline legible over bright footage */}
-      <div className="absolute inset-0 bg-brown-deep/65 z-[1]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-brown-deep/70 via-brown-deep/45 to-brown-deep/90 z-[1]" />
+      {/* Navy overlays — darker on the left for legible text, lighter on the
+          right so the pastor stays visible in the footage */}
+      <div className="absolute inset-0 bg-gradient-to-r from-brown-deep/85 via-brown-deep/50 to-brown-deep/20 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-brown-deep/70 via-transparent to-transparent z-[1]" />
 
       {/* Content */}
-      <div className="relative z-[2] text-center text-white max-w-3xl px-5 py-10">
+      <div className="relative z-[2] w-full max-w-7xl mx-auto px-6">
+       <div className="text-left text-white max-w-2xl py-10">
         <p className="text-sm font-semibold tracking-[0.25em] uppercase text-gold-light mb-3 animate-fade-up animation-delay-200">
           Welcome to
         </p>
         <h1 className="font-serif text-5xl md:text-7xl font-bold leading-tight mb-5 animate-fade-up animation-delay-400">
           Elmwood<br />Baptist Church
         </h1>
-        <div className="w-20 h-[3px] bg-gold mx-auto mb-6 rounded animate-fade-up animation-delay-600" />
-        <p className="font-serif text-2xl md:text-3xl italic text-white leading-relaxed max-w-xl mx-auto mb-3 animate-fade-up animation-delay-800">
+        <div className="w-20 h-[3px] bg-gold mb-6 rounded animate-fade-up animation-delay-600" />
+        <p className="font-serif text-2xl md:text-3xl italic text-white leading-relaxed max-w-xl mb-3 animate-fade-up animation-delay-800">
           More Than A Church&hellip; We&rsquo;re A Family!
         </p>
         <p className="text-sm tracking-[0.18em] uppercase text-gold-light/90 mb-9 animate-fade-up animation-delay-900">
           God created us for community
         </p>
-        <div className="flex gap-4 justify-center flex-wrap animate-fade-up animation-delay-1000">
+        <div className="flex gap-4 justify-start flex-wrap animate-fade-up animation-delay-1000">
           <a
             href="#services"
             className="inline-block bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-gold hover:bg-gold-light hover:border-gold-light hover:-translate-y-0.5 hover:shadow-lg transition-all"
@@ -48,12 +52,14 @@ export default function PreachingHero() {
           >
             Watch Sermons
           </a>
+          <PrayerModal />
         </div>
+       </div>
       </div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-[2] animate-fade-up animation-delay-1300">
-        <a href="#welcome" className="flex flex-col items-center gap-2 text-white/50 text-xs tracking-[0.15em] uppercase">
+        <a href="#study-groups" className="flex flex-col items-center gap-2 text-white/50 text-xs tracking-[0.15em] uppercase">
           <span>Scroll</span>
           <div className="w-5 h-5 border-r-2 border-b-2 border-white/40 rotate-45 animate-scroll-bounce" />
         </a>

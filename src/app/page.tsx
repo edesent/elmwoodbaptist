@@ -1,12 +1,11 @@
 import Navbar from "@/components/Navbar";
 import PreachingHero from "@/components/PreachingHero";
 import StudyGroups from "@/components/StudyGroups";
-import WelcomePastor from "@/components/WelcomePastor";
+import Leaders from "@/components/Leaders";
 import ServiceTimes from "@/components/ServiceTimes";
 import FirstTimeVisitor from "@/components/FirstTimeVisitor";
 import ScriptureBanner from "@/components/ScriptureBanner";
 import AboutMission from "@/components/AboutMission";
-import StaffStrip from "@/components/StaffStrip";
 import MinistriesPreview from "@/components/MinistriesPreview";
 import WhatWeBelieve from "@/components/WhatWeBelieve";
 import LatestSermon from "@/components/LatestSermon";
@@ -15,7 +14,6 @@ import PlanOfSalvation from "@/components/PlanOfSalvation";
 import Give from "@/components/Give";
 import PhotoGallery from "@/components/PhotoGallery";
 import MapAddress from "@/components/MapAddress";
-import PrayerRequest from "@/components/PrayerRequest";
 import Footer from "@/components/Footer";
 
 const churchSchema = {
@@ -70,12 +68,11 @@ export default function Home() {
       <main>
         <PreachingHero />
         <StudyGroups />
-        <WelcomePastor />
+        <Leaders />
         <ServiceTimes />
         <FirstTimeVisitor />
         <ScriptureBanner />
         <AboutMission />
-        <StaffStrip />
         <MinistriesPreview />
         <WhatWeBelieve />
         <LatestSermon />
@@ -84,7 +81,6 @@ export default function Home() {
         <Give />
         <PhotoGallery />
         <MapAddress />
-        <PrayerRequest />
       </main>
       <Footer />
     </>
