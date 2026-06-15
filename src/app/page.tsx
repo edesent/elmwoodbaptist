@@ -8,8 +8,6 @@ import AboutMission from "@/components/AboutMission";
 import MinistriesPreview from "@/components/MinistriesPreview";
 import WhatWeBelieve from "@/components/WhatWeBelieve";
 import LatestSermon from "@/components/LatestSermon";
-import UpcomingEvents from "@/components/UpcomingEvents";
-import PlanOfSalvation from "@/components/PlanOfSalvation";
 import Give from "@/components/Give";
 import PhotoGallery from "@/components/PhotoGallery";
 import MapAddress from "@/components/MapAddress";
@@ -74,8 +72,6 @@ export default function Home() {
         <MinistriesPreview />
         <WhatWeBelieve />
         <LatestSermon />
-        <UpcomingEvents />
-        <PlanOfSalvation />
         <Give />
         <PhotoGallery />
         <MapAddress />
