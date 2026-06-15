@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import PreachingHero from "@/components/PreachingHero";
-import StudyGroups from "@/components/StudyGroups";
+import Connect from "@/components/Connect";
 import Leaders from "@/components/Leaders";
 import ServiceTimes from "@/components/ServiceTimes";
 import FirstTimeVisitor from "@/components/FirstTimeVisitor";
@@ -67,7 +67,7 @@ export default function Home() {
       <Navbar />
       <main>
         <PreachingHero />
-        <StudyGroups />
+        <Connect />
         <Leaders />
         <ServiceTimes />
         <FirstTimeVisitor />

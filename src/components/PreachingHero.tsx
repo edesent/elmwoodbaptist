@@ -56,14 +56,6 @@ export default function PreachingHero() {
         </div>
        </div>
       </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-[2] animate-fade-up animation-delay-1300">
-        <a href="#study-groups" className="flex flex-col items-center gap-2 text-white/50 text-xs tracking-[0.15em] uppercase">
-          <span>Scroll</span>
-          <div className="w-5 h-5 border-r-2 border-b-2 border-white/40 rotate-45 animate-scroll-bounce" />
-        </a>
-      </div>
     </header>
   );
 }
