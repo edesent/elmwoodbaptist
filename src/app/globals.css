@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-lato);
+  --font-serif: var(--font-playfair);
+
+  /* Elmwood Baptist Church — deep navy + bright teal + cool cream.
+     Token names are kept from the boilerplate; only the values change so
+     the whole site re-skins to the brand without touching component classes. */
+
+  /* Teal accent family (replaces "gold") */
+  --color-gold: #2bb3d6;        /* bright brand teal — primary accent / buttons */
+  --color-gold-light: #6fd0e6;  /* lighter teal — accent text on dark navy */
+  --color-gold-dark: #0d6b89;   /* deep teal — small eyebrow labels on light */
+
+  /* Cool light neutrals (replaces "cream") */
+  --color-cream: #eef3f6;
+  --color-cream-dark: #dde7ec;
+  --color-warm-white: #f9fcfd;
+
+  /* Navy family (replaces "brown") */
+  --color-brown-deep: #0b2740;  /* deep navy — dark sections / hero */
+  --color-brown: #123a5c;       /* navy */
+  --color-brown-light: #1c5180; /* medium navy — accent text / secondary buttons */
+  --color-burgundy: #0e4d63;    /* deep teal-navy */
+  --color-burgundy-dark: #08394c;
+
+  --color-text-dark: #122c43;
+  --color-text-body: #3c4a57;
+  --color-text-light: #66747f;
+  --color-text-muted: #95a1ab;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text-body);
+  background-color: var(--color-warm-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scroll animation utility classes */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(45deg) translateY(6px); }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+}
+
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-600 { animation-delay: 0.6s; }
+.animation-delay-800 { animation-delay: 0.8s; }
+.animation-delay-900 { animation-delay: 0.9s; }
+.animation-delay-1000 { animation-delay: 1s; }
+.animation-delay-1300 { animation-delay: 1.3s; }
+
+.animate-scroll-bounce {
+  animation: scrollBounce 2s ease infinite;
+}
+
+/* Iframe lazy-load placeholder */
+.iframe-shimmer {
+  background: linear-gradient(90deg, #dde7ec 0%, #eef3f6 50%, #dde7ec 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
