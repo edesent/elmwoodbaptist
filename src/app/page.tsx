@@ -5,8 +5,6 @@ import Leaders from "@/components/Leaders";
 import ServiceTimes from "@/components/ServiceTimes";
 import ScriptureBanner from "@/components/ScriptureBanner";
 import AboutMission from "@/components/AboutMission";
-import MinistriesPreview from "@/components/MinistriesPreview";
-import WhatWeBelieve from "@/components/WhatWeBelieve";
 import LatestSermon from "@/components/LatestSermon";
 import Give from "@/components/Give";
 import PhotoGallery from "@/components/PhotoGallery";
@@ -69,8 +67,6 @@ export default function Home() {
         <ServiceTimes />
         <ScriptureBanner />
         <AboutMission />
-        <MinistriesPreview />
-        <WhatWeBelieve />
         <LatestSermon />
         <Give />
         <PhotoGallery />

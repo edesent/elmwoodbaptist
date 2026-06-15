@@ -2,7 +2,7 @@ const quickLinks = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About Us" },
   { href: "#services", label: "Service Times" },
-  { href: "#ministries", label: "Ministries" },
+  { href: "#groups", label: "Ministries" },
   { href: "/messages", label: "Sermons" },
   { href: "/give", label: "Give Online" },
   { href: "/statement-of-faith", label: "Statement of Faith" },

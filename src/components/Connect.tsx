@@ -34,10 +34,7 @@ export default function Connect() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
           {groups.map((g, i) => (
             <AnimateOnScroll key={g.label} delay={i * 80}>
-              <a
-                href="#ministries"
-                className="group relative block aspect-[4/5] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all"
-              >
+              <div className="group relative block aspect-[4/5] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={g.photo}
@@ -51,24 +48,10 @@ export default function Connect() {
                   </h3>
                   <span className="block w-10 h-[3px] bg-gold rounded mt-2 group-hover:w-16 transition-all" />
                 </div>
-              </a>
+              </div>
             </AnimateOnScroll>
           ))}
         </div>
-
-        <AnimateOnScroll delay={200}>
-          <div className="text-center mt-12">
-            <a
-              href="#ministries"
-              className="inline-flex items-center gap-2 bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-gold hover:bg-gold-light hover:border-gold-light hover:-translate-y-0.5 hover:shadow-lg transition-all"
-            >
-              More Ministries
-              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5l8 7-8 7" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-          </div>
-        </AnimateOnScroll>
       </div>
     </section>
   );
