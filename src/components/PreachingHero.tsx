@@ -1,13 +1,24 @@
 export default function PreachingHero() {
   return (
     <header id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background — deep navy with a soft teal glow */}
+      {/* Background — looping clip of the pastor preaching (muted) */}
       <div className="absolute inset-0 z-0 bg-brown-deep">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(43,179,214,0.22),transparent_60%)]" />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/hero-poster.jpg"
+          className="w-full h-full object-cover"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
       </div>
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-brown-deep/60 via-brown-deep/40 to-brown-deep/85 z-[1]" />
+      {/* Navy overlays — keep the white headline legible over bright footage */}
+      <div className="absolute inset-0 bg-brown-deep/65 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-brown-deep/70 via-brown-deep/45 to-brown-deep/90 z-[1]" />
 
       {/* Content */}
       <div className="relative z-[2] text-center text-white max-w-3xl px-5 py-10">
