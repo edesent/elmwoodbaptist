@@ -1,6 +1,6 @@
 const quickLinks = [
   { href: "#home", label: "Home" },
-  { href: "#about", label: "About Us" },
+  { href: "#leaders", label: "About Us" },
   { href: "#services", label: "Service Times" },
   { href: "#groups", label: "Ministries" },
   { href: "/messages", label: "Sermons" },
