@@ -30,15 +30,15 @@ const services = [
 const expectations = [
   {
     title: "A Warm Welcome",
-    body: "From the moment you arrive, you'll be greeted like family. We won't single you out or put you on the spot — just come and enjoy the service.",
+    body: "You'll be greeted like family — no being singled out or put on the spot.",
   },
   {
     title: "Bible Preaching",
-    body: "Congregational singing, prayer, and clear preaching straight from the King James Bible. Expect to be encouraged and challenged from God's Word.",
+    body: "Congregational singing, prayer, and clear preaching from the King James Bible.",
   },
   {
     title: "Come As You Are",
-    body: "Some dress up, some come casual — what matters is that you're here. Nursery is available for infants through age 4, and there's a place for every child.",
+    body: "Dress up or come casual. Nursery is available for infants through age 4.",
   },
 ];
 
@@ -46,18 +46,22 @@ export default function ServiceTimes() {
   return (
     <section id="services" className="py-28 bg-cream">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Service times */}
         <AnimateOnScroll>
           <div className="text-center mb-14">
+            <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
+              Plan Your Visit
+            </span>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark leading-snug">
               Join Us This <em className="text-brown-light italic">Week</em>
             </h2>
             <p className="text-text-body mt-3 max-w-2xl mx-auto">
-              At Elmwood Baptist you&rsquo;ll find a family that loves the Lord and loves people. Come as you are.
+              At Elmwood Baptist you&rsquo;ll find a family that loves the Lord and loves people. Here&rsquo;s
+              when we gather — and what to expect when you visit. Come as you are.
             </p>
           </div>
         </AnimateOnScroll>
 
+        {/* Service times */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((s, i) => (
             <AnimateOnScroll key={s.title} delay={i * 100}>
@@ -77,35 +81,26 @@ export default function ServiceTimes() {
           ))}
         </div>
 
-        {/* What to expect */}
-        <AnimateOnScroll>
-          <div className="text-center mt-24 mb-14">
-            <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
-              Visiting Us?
-            </span>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark leading-snug">
-              Here&rsquo;s What to <em className="text-brown-light italic">Expect</em>
-            </h2>
+        {/* What to expect — compact supporting row */}
+        <AnimateOnScroll delay={200}>
+          <div className="mt-10 grid sm:grid-cols-3 gap-x-8 gap-y-6 rounded-2xl border border-cream-dark bg-warm-white px-8 py-9">
+            {expectations.map((item, i) => (
+              <div key={item.title} className="flex gap-4">
+                <span className="flex-shrink-0 w-9 h-9 rounded-full bg-gold/20 flex items-center justify-center text-gold-dark font-serif font-bold">
+                  {i + 1}
+                </span>
+                <div>
+                  <h3 className="font-serif text-lg font-semibold text-text-dark leading-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-text-body leading-relaxed mt-1">{item.body}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </AnimateOnScroll>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {expectations.map((item, i) => (
-            <AnimateOnScroll key={item.title} delay={i * 150}>
-              <div className="h-full p-8 bg-warm-white rounded-2xl border border-cream-dark hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center text-gold-dark font-serif font-bold text-lg mb-5">
-                  {i + 1}
-                </div>
-                <h3 className="font-serif text-xl font-semibold text-text-dark mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-text-body leading-relaxed">{item.body}</p>
-              </div>
-            </AnimateOnScroll>
-          ))}
-        </div>
-
-        <AnimateOnScroll delay={400}>
+        <AnimateOnScroll delay={300}>
           <div className="text-center mt-12">
             <a
               href="#contact"
