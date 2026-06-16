@@ -25,6 +25,7 @@ export default function GivePage() {
           eyebrow="Giving"
           title="Support the Lord's Work"
           subtitle="&ldquo;Every man according as he purposeth in his heart, so let him give.&rdquo; — 2 Cor 9:7"
+          bgImage="/give-hero.jpg"
         />
         <section className="py-24 bg-warm-white">
           <div className="max-w-3xl mx-auto px-6 mb-12 text-center">
@@ -36,7 +37,7 @@ export default function GivePage() {
             </p>
           </div>
           {/* Tithely online giving form */}
-          <div className="max-w-3xl mx-auto px-6 mb-14">
+          <div className="max-w-lg mx-auto px-6 mb-14">
             <h2 className="font-serif text-2xl font-bold text-text-dark mb-5 text-center">
               Give Online
             </h2>
@@ -44,7 +45,7 @@ export default function GivePage() {
               <iframe
                 title="Give to Elmwood Baptist Church"
                 src="https://tithe.ly/give_new/www/#/tithely/give-one-time/4263938"
-                className="w-full h-[880px] border-0"
+                className="w-full h-[760px] border-0"
                 loading="lazy"
               />
             </div>
