@@ -36,6 +36,34 @@ export default function Footer() {
                 (303) 659-3818
               </a>
             </p>
+
+            <div className="mt-6">
+              <p className="text-xs font-bold tracking-[0.18em] uppercase text-white/40 mb-2">
+                Home of
+              </p>
+              <ul className="space-y-1.5 text-sm">
+                <li>
+                  <a
+                    href="https://www.ebabrighton.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/70 hover:text-gold-light transition-colors"
+                  >
+                    Elmwood Christian Academy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.ncbbc.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/70 hover:text-gold-light transition-colors"
+                  >
+                    Northern Colorado Baptist Bible College
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Quick Links */}
