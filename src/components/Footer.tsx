@@ -66,8 +66,13 @@ export default function Footer() {
 
           {/* Connect */}
           <div className="text-center sm:text-left">
-            <h4 className="font-serif text-base font-semibold text-white mb-5">Connect With Us</h4>
-            <div className="flex gap-3 mb-6 justify-center sm:justify-start">
+            <h4 className="font-serif text-xl font-semibold text-white leading-snug mb-3">
+              Find Us on<br />Social Media.
+            </h4>
+            <p className="text-sm text-white/60 leading-relaxed mb-5">
+              Stay up to date on upcoming events, news, and other announcements about what&rsquo;s happening at EBC!
+            </p>
+            <div className="flex gap-3 justify-center sm:justify-start">
               <a
                 href="https://facebook.com/elmwoodbaptistbrighton"
                 target="_blank"
@@ -91,9 +96,6 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            <p className="font-serif text-sm italic text-white/50 leading-relaxed">
-              &ldquo;More Than A Church… We&rsquo;re A Family!&rdquo;
-            </p>
           </div>
         </div>
 
