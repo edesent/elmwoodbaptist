@@ -3,6 +3,7 @@ import PreachingHero from "@/components/PreachingHero";
 import Connect from "@/components/Connect";
 import Leaders from "@/components/Leaders";
 import ServiceTimes from "@/components/ServiceTimes";
+import ChurchEvents from "@/components/ChurchEvents";
 import ScriptureBanner from "@/components/ScriptureBanner";
 import LatestSermon from "@/components/LatestSermon";
 import Give from "@/components/Give";
@@ -64,6 +65,7 @@ export default function Home() {
         <Connect />
         <Leaders />
         <ServiceTimes />
+        <ChurchEvents />
         <ScriptureBanner />
         <LatestSermon />
         <Give />

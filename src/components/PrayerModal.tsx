@@ -5,7 +5,9 @@ import { createPortal } from "react-dom";
 
 export default function PrayerModal() {
   const [open, setOpen] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
+    "idle"
+  );
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -23,7 +25,34 @@ export default function PrayerModal() {
     };
   }, [open]);
 
-  const close = () => setOpen(false);
+  const close = () => {
+    setOpen(false);
+    setTimeout(() => setStatus("idle"), 300);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/prayer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json();
+      if (res.ok && json.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
     <>
@@ -66,7 +95,7 @@ export default function PrayerModal() {
                 </svg>
               </button>
 
-              {submitted ? (
+              {status === "success" ? (
                 <div className="text-center py-6">
                   <svg className="w-14 h-14 mx-auto mb-4 text-gold-dark" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
@@ -97,19 +126,26 @@ export default function PrayerModal() {
                     </p>
                   </div>
 
-                  <form
-                    onSubmit={(e) => {
-                      e.preventDefault();
-                      setSubmitted(true);
-                    }}
-                    className="space-y-4"
-                  >
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    {/* Honeypot — hidden from people, tempting to bots. The server
+                        silently drops the submission if this gets filled/checked. */}
+                    <input
+                      type="checkbox"
+                      name="botcheck"
+                      className="hidden"
+                      style={{ display: "none" }}
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                    />
+
                     <div>
                       <label className="block text-xs font-bold tracking-[0.15em] uppercase text-text-light mb-2">
                         Your Name
                       </label>
                       <input
                         type="text"
+                        name="name"
                         required
                         placeholder="Jane Doe"
                         className="w-full px-4 py-3 rounded-lg bg-cream border border-cream-dark text-text-dark placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all"
@@ -122,6 +158,7 @@ export default function PrayerModal() {
                       </label>
                       <input
                         type="email"
+                        name="email"
                         required
                         placeholder="you@example.com"
                         className="w-full px-4 py-3 rounded-lg bg-cream border border-cream-dark text-text-dark placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all"
@@ -133,6 +170,7 @@ export default function PrayerModal() {
                         Prayer Request
                       </label>
                       <textarea
+                        name="request"
                         required
                         rows={4}
                         placeholder="Share whatever is on your heart..."
@@ -141,15 +179,27 @@ export default function PrayerModal() {
                     </div>
 
                     <label className="flex items-start gap-3 text-sm text-text-body">
-                      <input type="checkbox" className="mt-1 w-4 h-4 accent-brown-light" />
+                      <input
+                        type="checkbox"
+                        name="private"
+                        className="mt-1 w-4 h-4 accent-brown-light"
+                      />
                       <span>Keep my request private — only the pastor will see it.</span>
                     </label>
 
+                    {status === "error" && (
+                      <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+                        Oops — there was an error sending your request. Please try
+                        again, or email us at office@elmwoodbaptist.org.
+                      </p>
+                    )}
+
                     <button
                       type="submit"
-                      className="w-full bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-brown-light hover:bg-brown hover:border-brown hover:-translate-y-0.5 hover:shadow-lg transition-all"
+                      disabled={status === "sending"}
+                      className="w-full bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-brown-light hover:bg-brown hover:border-brown hover:-translate-y-0.5 hover:shadow-lg transition-all disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                     >
-                      Send Prayer Request
+                      {status === "sending" ? "Sending…" : "Send Prayer Request"}
                     </button>
                   </form>
                 </>

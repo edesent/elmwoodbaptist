@@ -13,35 +13,38 @@ export async function POST(request: Request) {
     return Response.json({ success: true });
   }
 
-  const firstName = String(body.first_name ?? "").trim();
-  const lastName = String(body.last_name ?? "").trim();
+  const name = String(body.name ?? "").trim();
   const email = String(body.email ?? "").trim();
-  const phone = String(body.phone ?? "").trim();
-  const message = String(body.message ?? "").trim();
+  const request_text = String(body.request ?? "").trim();
+  const isPrivate = Boolean(body.private);
 
-  if (!firstName || !email || !message) {
+  if (!name || !email || !request_text) {
     return Response.json(
-      { error: "Please fill in your name, email, and message." },
+      { error: "Please fill in your name, email, and prayer request." },
       { status: 400 }
     );
   }
 
-  const fullName = `${firstName} ${lastName}`.trim();
+  const privacyNote = isPrivate
+    ? "Marked PRIVATE — for the pastor only."
+    : "";
 
   const result = await sendChurchEmail({
-    subject: `New website message from ${fullName}`,
+    subject: `New prayer request from ${name}`,
     replyTo: email,
     text:
-      `Name: ${fullName}\n` +
+      `Name: ${name}\n` +
       `Email: ${email}\n` +
-      `Phone: ${phone || "—"}\n\n` +
-      `${message}\n`,
+      (privacyNote ? `${privacyNote}\n` : "") +
+      `\n${request_text}\n`,
     html:
-      `<p><strong>Name:</strong> ${escapeHtml(fullName)}</p>` +
+      `<p><strong>Name:</strong> ${escapeHtml(name)}</p>` +
       `<p><strong>Email:</strong> ${escapeHtml(email)}</p>` +
-      `<p><strong>Phone:</strong> ${escapeHtml(phone || "—")}</p>` +
-      `<p><strong>Message:</strong></p>` +
-      `<p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`,
+      (privacyNote
+        ? `<p><strong>🔒 ${escapeHtml(privacyNote)}</strong></p>`
+        : "") +
+      `<p><strong>Prayer Request:</strong></p>` +
+      `<p>${escapeHtml(request_text).replace(/\n/g, "<br>")}</p>`,
   });
 
   if (!result.ok) {
