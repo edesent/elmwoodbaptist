@@ -8,7 +8,7 @@ import "./globals.css";
 // (https://slackwebsitechat.vercel.app/admin) and paste it below. Until a real
 // key is set, the widget stays off so the live site never shows a broken popup.
 const CHAT_API = "https://slackwebsitechat.vercel.app";
-const CHAT_KEY = "REPLACE_WITH_ELMWOOD_CHAT_KEY";
+const CHAT_KEY = "wbc_93cf6d847031ded84bdb9bbe47d51fa1a7c89c160114ce41";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
