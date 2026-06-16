@@ -1,6 +1,14 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
+
+// WBC Chat (website chat popup).
+// Mint an Elmwood-specific key in the admin panel
+// (https://slackwebsitechat.vercel.app/admin) and paste it below. Until a real
+// key is set, the widget stays off so the live site never shows a broken popup.
+const CHAT_API = "https://slackwebsitechat.vercel.app";
+const CHAT_KEY = "REPLACE_WITH_ELMWOOD_CHAT_KEY";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -124,7 +132,17 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${lato.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col">{children}</body>
+      <body className="min-h-screen flex flex-col">
+        {children}
+        {CHAT_KEY !== "REPLACE_WITH_ELMWOOD_CHAT_KEY" && (
+          <Script
+            src={`${CHAT_API}/widget/wbc-chat.js`}
+            data-api={CHAT_API}
+            data-key={CHAT_KEY}
+            strategy="afterInteractive"
+          />
+        )}
+      </body>
     </html>
   );
 }
