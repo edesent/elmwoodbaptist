@@ -1,5 +1,6 @@
 import AnimateOnScroll from "./AnimateOnScroll";
 import SectionBadge from "./SectionBadge";
+import ContactModal from "./ContactModal";
 
 export default function MapAddress() {
   return (
@@ -63,14 +64,17 @@ export default function MapAddress() {
                 </div>
               </div>
 
-              <a
-                href="https://maps.google.com/?q=13100+E+144th+Ave+Brighton+CO+80601"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block self-start bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-brown-light hover:bg-brown hover:border-brown hover:-translate-y-0.5 hover:shadow-lg transition-all"
-              >
-                Get Directions
-              </a>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://maps.google.com/?q=13100+E+144th+Ave+Brighton+CO+80601"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-brown-light hover:bg-brown hover:border-brown hover:-translate-y-0.5 hover:shadow-lg transition-all"
+                >
+                  Get Directions
+                </a>
+                <ContactModal />
+              </div>
             </div>
           </AnimateOnScroll>
 
