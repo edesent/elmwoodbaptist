@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { staff } from "@/lib/staff";
 
 const SITE_URL = "https://www.elmwoodbaptist.org";
 
@@ -13,11 +14,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${SITE_URL}/pastor`,
+      url: `${SITE_URL}/staff`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    ...staff.map((m) => ({
+      url: `${SITE_URL}/staff/${m.slug}`,
+      lastModified,
+      changeFrequency: "yearly" as const,
+      priority: 0.5,
+    })),
     {
       url: `${SITE_URL}/statement-of-faith`,
       lastModified,
