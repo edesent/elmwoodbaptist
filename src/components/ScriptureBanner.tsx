@@ -8,20 +8,6 @@ export default function ScriptureBanner() {
       <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-6">
-        {/* Inline badge variant for the dark section */}
-        <div className="flex justify-center mb-10">
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-gold/40 bg-white/5 text-[11px] font-semibold tracking-[0.18em] uppercase text-gold-light">
-            <span className="flex items-center justify-center w-6 h-6 rounded-full bg-gold text-brown-deep text-[10px] font-bold">
-              05
-            </span>
-            <span className="whitespace-nowrap">Scripture Banner</span>
-            <span className="hidden sm:inline-block w-1 h-1 rounded-full bg-gold/50" />
-            <span className="hidden sm:inline-block normal-case tracking-normal text-[12px] font-normal text-white/70">
-              A single verse that breaks up the page with reverence
-            </span>
-          </div>
-        </div>
-
         <AnimateOnScroll>
           <div className="max-w-4xl mx-auto text-center">
             <svg className="w-10 h-10 text-gold/60 mx-auto mb-6" viewBox="0 0 24 24" fill="currentColor">
