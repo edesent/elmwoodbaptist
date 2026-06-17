@@ -21,7 +21,8 @@ export const metadata: Metadata = {
 // calendar's embed src here, e.g.
 //   "https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&ctz=America%2FDenver"
 // Leave it "" to show the schedule lists below.
-const GCAL_EMBED_SRC = "";
+const GCAL_EMBED_SRC =
+  "https://calendar.google.com/calendar/embed?src=elmwoodbaptist.org_iue19g4ehl6nrbg4563b1j6q7k%40group.calendar.google.com&ctz=America%2FDenver&mode=MONTH&showTitle=0&showPrint=0&showCalendars=0&showTz=0";
 
 function EventList({ items }: { items: ChurchEvent[] }) {
   return (
