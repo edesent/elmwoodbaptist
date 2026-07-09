@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     "Bible-believing church near me",
     "church family Brighton",
     "Sunday worship Brighton",
-    "Elmwood Baptist Academy",
+    "Elmwood Christian Academy",
     "Baptist church family",
   ],
   authors: [{ name: SITE_NAME }],
