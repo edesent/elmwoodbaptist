@@ -19,7 +19,7 @@ export const staff: StaffMember[] = [
     bio: [
       "Pastor Gary Randall and his wife Betty came to Elmwood Baptist Church in September of 2000, accepting the unanimous call of the church. In the years since, the Lord has used his faithful, Bible-centered ministry to grow Elmwood into a thriving church family where hundreds of people now call EBC their church home and decisions for Christ are made every week.",
       "His ministry rests on three simple convictions: preaching the Word, praying in faith, and witnessing to the lost. That heart shapes everything at Elmwood — clear preaching from the King James Bible, a praying people, and a church that takes the Gospel to its community.",
-      "Pastor and Mrs. Randall have been married for 52 years, with 43 of those years spent serving together in ministry. They would love to meet you and welcome you into the Elmwood family.",
+      "Pastor and Mrs. Randall have been married for over 50 years, with over 40 of those years spent serving together in ministry. They would love to meet you and welcome you into the Elmwood family.",
     ],
   },
   {
