@@ -78,7 +78,7 @@ export default function Leaders() {
                 praying in faith, and witnessing to the lost.</em>
               </p>
               <p className="text-lg text-text-body leading-relaxed mb-7">
-                He and Betty have been married 52 years, with 43 years in ministry together.
+                He and Betty have been married over 50 years, with over 40 years in ministry together.
               </p>
               <Link
                 href="/staff"
