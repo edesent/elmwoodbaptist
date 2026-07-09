@@ -14,7 +14,7 @@ const staff = [
     photo: "/staff/lopez.jpg",
     names: "Pastor Rick & Shannon Lopez",
     role: "Associate Pastor · Academy Administrator",
-    bio: "The Lopezes have served at Elmwood for 13 years. Rick administrates Elmwood Baptist Academy and leads the Jesus First youth ministry; Shannon serves as Financial Director.",
+    bio: "The Lopezes have served at Elmwood for over a decade. Rick administrates Elmwood Baptist Academy and leads the Jesus First youth ministry; Shannon serves as Financial Director.",
   },
   {
     slug: "chris-clay",
