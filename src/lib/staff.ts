@@ -64,16 +64,16 @@ export const staff: StaffMember[] = [
     role: "Associate Pastor",
     titles: [
       "Associate Pastor",
-      "Elmwood Baptist Academy Administrator",
+      "Elmwood Christian Academy Administrator",
       "EBC Security Director",
-      "Jesus First Youth Ministry Leader",
       "Men's Retreat Director",
+      "Little Blessings Daycare Director",
       "Financial Director",
     ],
     photo: "/staff/lopez.jpg",
     bio: [
-      "The Lopez family has faithfully served at Elmwood Baptist Church for over a decade. Pastor Rick administrates Elmwood Baptist Academy and has led the youth ministry for several years, pointing students to put Jesus first in everything.",
-      "Rick also serves as the church's security director and men's retreat director, while Shannon serves as Financial Director. The Lopezes have six children and remain wholeheartedly committed to serving Christ and the Elmwood family.",
+      "The Lopez family has faithfully served at Elmwood Baptist Church for over a decade. Pastor Rick administrates Elmwood Christian Academy, pointing students to put Jesus first in everything.",
+      "Rick also serves as the church's security director and men's retreat director, while Shannon directs the Little Blessings Daycare for 2s and 3s and serves as Financial Director. The Lopezes have six children and remain wholeheartedly committed to serving Christ and the Elmwood family.",
     ],
   },
 ];
