@@ -72,7 +72,7 @@ export const staff: StaffMember[] = [
     ],
     photo: "/staff/lopez.jpg",
     bio: [
-      "The Lopez family has faithfully served at Elmwood Baptist Church for over a decade. Pastor Rick administrates Elmwood Christian Academy, pointing students to put Jesus first in everything.",
+      "The Lopez family has faithfully served at Elmwood Baptist Church for over a decade. Pastor Rick administrates Elmwood Christian Academy with a heart for pointing students to Christ.",
       "Rick also serves as the church's security director and men's retreat director, while Shannon directs the Little Blessings Daycare for 2s and 3s and serves as Financial Director. The Lopezes have six children and remain wholeheartedly committed to serving Christ and the Elmwood family.",
     ],
   },
