@@ -41,8 +41,8 @@ export const staff: StaffMember[] = [
   {
     slug: "chris-clay",
     names: "Pastor Chris & Brenda Clay",
-    role: "H.O.P.E. Ministry",
-    titles: ["H.O.P.E. Ministry"],
+    role: "Associate Pastor",
+    titles: ["Associate Pastor", "H.O.P.E. Ministry"],
     photo: "/staff/placeholder.svg",
     bio: [
       "Pastor Chris and Brenda Clay serve the Elmwood family through the H.O.P.E. Ministry. A full biography is coming soon — please check back for more about the Clays and the ministry the Lord has entrusted to them.",
@@ -51,8 +51,8 @@ export const staff: StaffMember[] = [
   {
     slug: "terry-mcclain",
     names: "Pastor Terry & Peggy McClain",
-    role: "Way of the Cross Jail Ministry",
-    titles: ["Way of the Cross Jail Ministry"],
+    role: "Associate Pastor",
+    titles: ["Associate Pastor", "Way of the Cross Jail Ministry"],
     photo: "/staff/placeholder.svg",
     bio: [
       "Pastor Terry and Peggy McClain serve the Elmwood family through the Way of the Cross Jail Ministry. A full biography is coming soon — please check back for more about the McClains and the ministry the Lord has entrusted to them.",
@@ -61,8 +61,9 @@ export const staff: StaffMember[] = [
   {
     slug: "rick-lopez",
     names: "Pastor Rick & Shannon Lopez",
-    role: "Academy Administrator",
+    role: "Associate Pastor",
     titles: [
+      "Associate Pastor",
       "Elmwood Baptist Academy Administrator",
       "EBC Security Director",
       "Jesus First Youth Ministry Leader",
