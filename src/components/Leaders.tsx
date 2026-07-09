@@ -10,6 +10,13 @@ const staff = [
     bio: "Ben and Amber came to faith through Elmwood's ministry and joined the staff in February 2022, leading outreach evangelism, the Life & Home Builders class, and the Brookdale service.",
   },
   {
+    slug: "rick-lopez",
+    photo: "/staff/lopez.jpg",
+    names: "Pastor Rick & Shannon Lopez",
+    role: "Academy Administrator · Youth Ministry",
+    bio: "The Lopezes have served at Elmwood for 13 years. Rick administrates Elmwood Baptist Academy and leads the Jesus First youth ministry; Shannon serves as Financial Director.",
+  },
+  {
     slug: "chris-clay",
     photo: "/staff/placeholder.svg",
     names: "Pastor Chris & Brenda Clay",
@@ -22,13 +29,6 @@ const staff = [
     names: "Pastor Terry & Peggy McClain",
     role: "Way of the Cross Jail Ministry",
     bio: "More about Pastor Terry and Peggy McClain and the Way of the Cross Jail Ministry is coming soon.",
-  },
-  {
-    slug: "rick-lopez",
-    photo: "/staff/lopez.jpg",
-    names: "Pastor Rick & Shannon Lopez",
-    role: "Academy Administrator · Youth Ministry",
-    bio: "The Lopezes have served at Elmwood for 13 years. Rick administrates Elmwood Baptist Academy and leads the Jesus First youth ministry; Shannon serves as Financial Director.",
   },
 ];
 
