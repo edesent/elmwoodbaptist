@@ -28,11 +28,29 @@ export default function PlanOfSalvationPage() {
         />
         <section className="py-24 bg-warm-white">
           <div className="max-w-3xl mx-auto px-6 space-y-10 text-text-body text-lg leading-relaxed">
-            <p>
-              If I were to die today, would I spend eternity in Heaven with God? It is the most
-              important question any of us will ever answer — and your relationship to the Lord
-              Jesus Christ is central to that answer. The Bible makes the way plain.
-            </p>
+            <div>
+              <div className="aspect-video w-full rounded-2xl overflow-hidden bg-black shadow-xl mb-6">
+                <iframe
+                  src="https://www.youtube.com/embed/mIeRU12STNw"
+                  title="The Bible Way to Heaven"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              </div>
+              <p className="mb-3">
+                What happens when I die? Where will I spend eternity? The single most important
+                question that you will ever answer is this — &ldquo;If I were to die today, would
+                I spend eternity in Heaven with God?&rdquo; Your relationship to Jesus Christ is
+                central to the answer to that question.
+              </p>
+              <p>
+                The Bible tells us in I John 5:13, &ldquo;These things have I written unto you
+                that believe on the name of the Son of God; that ye may know that ye have eternal
+                life...&rdquo; The simple truth is God wants you to know where you&rsquo;re going!
+                So, here it is in a nutshell:
+              </p>
+            </div>
 
             <div>
               <h2 className="font-serif text-3xl font-bold text-text-dark mb-3">
