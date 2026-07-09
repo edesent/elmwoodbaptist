@@ -23,22 +23,11 @@ export const staff: StaffMember[] = [
     ],
   },
   {
-    slug: "brandon-bowser",
-    names: "Pastor Brandon & Meghan Bowser",
-    role: "Associate Pastor",
-    titles: ["Associate Pastor", "Bus Ministry Director", "Junior Church Director"],
-    photo: "/staff/bowser.jpg",
-    bio: [
-      "Pastor Brandon and Meghan Bowser joined the staff at Elmwood Baptist Church in December of 2019. They oversee the bus and junior church ministries and pour into the next generation through Elmwood Baptist Academy and the Brighton High School Bible Club.",
-      "Brandon teaches grades 7–12 and leads the Thursday Foundations classes. Together the Bowsers have served in ministry for over 17 years across several states, and they bring that experience and energy to the families and young people of Elmwood.",
-    ],
-  },
-  {
     slug: "pastor-ben",
     names: "Pastor Ben & Amber",
-    role: "Assistant Pastor",
+    role: "Associate Pastor",
     titles: [
-      "Assistant Pastor",
+      "Associate Pastor",
       "Out-Reach Evangelism Leader",
       "Life & Home Builders Bible Class Instructor",
       "Brookdale Assisted Living Service Leader",
@@ -47,6 +36,26 @@ export const staff: StaffMember[] = [
     bio: [
       "Pastor Ben and Amber joined the staff at Elmwood Baptist Church in February of 2022. Both came to faith in Christ through the ministry of Elmwood, which gives them a deep love for reaching others with the same Gospel that changed their lives.",
       "Ben leads outreach evangelism, teaches the Life & Home Builders Bible class, and leads the service at Brookdale Assisted Living. Before returning to Elmwood for formal ministry training, he and Amber helped establish Horizon Baptist Church. They have one son.",
+    ],
+  },
+  {
+    slug: "chris-clay",
+    names: "Pastor Chris & Brenda Clay",
+    role: "H.O.P.E. Ministry",
+    titles: ["H.O.P.E. Ministry"],
+    photo: "/staff/placeholder.svg",
+    bio: [
+      "Pastor Chris and Brenda Clay serve the Elmwood family through the H.O.P.E. Ministry. A full biography is coming soon — please check back for more about the Clays and the ministry the Lord has entrusted to them.",
+    ],
+  },
+  {
+    slug: "terry-mcclain",
+    names: "Pastor Terry & Peggy McClain",
+    role: "Way of the Cross Jail Ministry",
+    titles: ["Way of the Cross Jail Ministry"],
+    photo: "/staff/placeholder.svg",
+    bio: [
+      "Pastor Terry and Peggy McClain serve the Elmwood family through the Way of the Cross Jail Ministry. A full biography is coming soon — please check back for more about the McClains and the ministry the Lord has entrusted to them.",
     ],
   },
   {
