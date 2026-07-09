@@ -31,7 +31,7 @@ export default function PlanOfSalvationPage() {
             <div>
               <div className="aspect-video w-full rounded-2xl overflow-hidden bg-black shadow-xl mb-6">
                 <iframe
-                  src="https://www.youtube.com/embed/mIeRU12STNw"
+                  src="https://www.youtube.com/embed/mIeRU12STNw?rel=0&modestbranding=1"
                   title="The Bible Way to Heaven"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
@@ -47,8 +47,7 @@ export default function PlanOfSalvationPage() {
               <p>
                 The Bible tells us in I John 5:13, &ldquo;These things have I written unto you
                 that believe on the name of the Son of God; that ye may know that ye have eternal
-                life...&rdquo; The simple truth is God wants you to know where you&rsquo;re going!
-                So, here it is in a nutshell:
+                life...&rdquo; The simple truth is God wants you to know where you&rsquo;re going.
               </p>
             </div>
 
