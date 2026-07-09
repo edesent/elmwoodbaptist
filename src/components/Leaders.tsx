@@ -3,18 +3,25 @@ import AnimateOnScroll from "./AnimateOnScroll";
 
 const staff = [
   {
-    slug: "brandon-bowser",
-    photo: "/staff/bowser.jpg",
-    names: "Pastor Brandon & Meghan Bowser",
-    role: "Associate Pastor · Bus & Junior Church",
-    bio: "The Bowsers joined the staff in December 2019, overseeing the bus and junior church ministries and teaching at Elmwood Baptist Academy. They have served in ministry for over 17 years.",
-  },
-  {
     slug: "pastor-ben",
     photo: "/staff/ben.jpg",
     names: "Pastor Ben & Amber",
-    role: "Assistant Pastor · Outreach & Evangelism",
+    role: "Associate Pastor · Outreach & Evangelism",
     bio: "Ben and Amber came to faith through Elmwood's ministry and joined the staff in February 2022, leading outreach evangelism, the Life & Home Builders class, and the Brookdale service.",
+  },
+  {
+    slug: "chris-clay",
+    photo: "/staff/placeholder.svg",
+    names: "Pastor Chris & Brenda Clay",
+    role: "H.O.P.E. Ministry",
+    bio: "More about Pastor Chris and Brenda Clay and the H.O.P.E. Ministry is coming soon.",
+  },
+  {
+    slug: "terry-mcclain",
+    photo: "/staff/placeholder.svg",
+    names: "Pastor Terry & Peggy McClain",
+    role: "Way of the Cross Jail Ministry",
+    bio: "More about Pastor Terry and Peggy McClain and the Way of the Cross Jail Ministry is coming soon.",
   },
   {
     slug: "rick-lopez",
