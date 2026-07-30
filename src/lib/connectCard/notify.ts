@@ -178,6 +178,7 @@ export function buildStaffEmail(
 export function buildVisitorAutoreply(data: ValidatedConnectCard) {
   const firstName = escapeHtml(data.firstName);
   const subject = "Thanks for connecting with Elmwood Baptist Church!";
+  const siteUrl = process.env.SITE_URL || "https://elmwoodbaptist.elijahdesent.com";
 
   const text = `Hi ${data.firstName},
 
