@@ -18,8 +18,13 @@ export function escapeHtml(value: string) {
 
 type SendResult = { ok: true } | { ok: false; status: number; error: string };
 
-/** Send a form submission to the church inbox via Resend. */
-export async function sendChurchEmail(opts: {
+/** Send an email via Resend to an arbitrary recipient (staff notification or
+ *  visitor auto-reply). Used directly by forms that need a configurable
+ *  to/from — e.g. the Connect Card, whose recipient comes from
+ *  CONNECT_CARD_EMAIL_TO rather than the fixed CHURCH_INBOX. */
+export async function sendEmail(opts: {
+  to: string;
+  from?: string;
   subject: string;
   replyTo?: string;
   text: string;
@@ -33,8 +38,8 @@ export async function sendChurchEmail(opts: {
 
   const resend = new Resend(apiKey);
   const { error } = await resend.emails.send({
-    from: SENDER,
-    to: CHURCH_INBOX,
+    from: opts.from ?? SENDER,
+    to: opts.to,
     replyTo: opts.replyTo,
     subject: opts.subject,
     text: opts.text,
@@ -51,4 +56,14 @@ export async function sendChurchEmail(opts: {
   }
 
   return { ok: true };
+}
+
+/** Send a form submission to the church inbox via Resend. */
+export async function sendChurchEmail(opts: {
+  subject: string;
+  replyTo?: string;
+  text: string;
+  html: string;
+}): Promise<SendResult> {
+  return sendEmail({ to: CHURCH_INBOX, from: SENDER, ...opts });
 }
