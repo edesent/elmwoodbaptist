@@ -324,7 +324,12 @@ export async function syncToBreeze(
   // conflicting existing family. We never call families/destroy or
   // families/remove as part of this flow.
   let family: BreezeFamilyResult = { status: "skipped" };
-  if (adult.personId && (adult.status === "created" || adult.status === "updated")) {
+  if (
+    adult.personId &&
+    (adult.status === "created" ||
+      adult.status === "updated" ||
+      adult.status === "possible_duplicate_created")
+  ) {
     const newChildIds = children.filter((c) => c.personId && c.status === "created").map((c) => c.personId!);
     const matchedChildIds = children.filter((c) => c.personId && c.status === "updated").map((c) => c.personId!);
 
