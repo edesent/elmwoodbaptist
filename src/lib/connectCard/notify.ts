@@ -186,7 +186,7 @@ Thank you for visiting Elmwood Baptist Church and for taking a moment to fill ou
 
 If you have any questions, just reply to this email, or reach us at (303) 659-3818. One of our pastors would be glad to meet with you in person any time.
 
-We'd love to have you back! You can find our service times, ministries, and recent messages at https://elmwoodbaptist.elijahdesent.com.
+We'd love to have you back! You can find our service times, ministries, and recent messages at ${siteUrl}.
 
 More than a church — we're a family.
 
