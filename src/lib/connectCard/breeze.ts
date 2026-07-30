@@ -324,11 +324,12 @@ export async function syncToBreeze(
   // conflicting existing family. We never call families/destroy or
   // families/remove as part of this flow.
   let family: BreezeFamilyResult = { status: "skipped" };
+  const adultStatus = adult.status;
   if (
     adult.personId &&
-    (adult.status === "created" ||
-      adult.status === "updated" ||
-      adult.status === "possible_duplicate_created")
+    (adultStatus === "created" ||
+      adultStatus === "updated" ||
+      adultStatus === "possible_duplicate_created")
   ) {
     const newChildIds = children.filter((c) => c.personId && c.status === "created").map((c) => c.personId!);
     const matchedChildIds = children.filter((c) => c.personId && c.status === "updated").map((c) => c.personId!);
@@ -348,7 +349,7 @@ export async function syncToBreeze(
         family = res.ok
           ? { status: "added" }
           : { status: "failed", note: res.message };
-      } else if (adult.status === "possible_duplicate_created") {
+      } else if (adultStatus === "possible_duplicate_created") {
         family = { status: "flagged_for_review", note: "Adult may be a duplicate — family linking skipped pending review." };
       } else {
         const res = await client.createFamily([adult.personId, ...newChildIds]);
