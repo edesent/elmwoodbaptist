@@ -5,6 +5,7 @@ const quickLinks = [
   { href: "#groups", label: "Ministries" },
   { href: "/messages", label: "Sermons" },
   { href: "/give", label: "Give Online" },
+  { href: "/connect", label: "Connect Card" },
   { href: "/statement-of-faith", label: "Statement of Faith" },
   { href: "/plan-of-salvation", label: "Plan of Salvation" },
 ];
