@@ -24,6 +24,7 @@ This README is the one place that explains how to edit the site. **If you are Ch
 | `/plan-of-salvation` | The Gospel |
 | `/messages` | Sermons — watch & listen (YouTube) |
 | `/give` | Giving |
+| `/connect` | Connect Card — visitor & attendee contact form (see CONNECT-CARD.md) |
 
 The homepage is assembled in `src/app/page.tsx` from section components in `src/components/`:
 `PreachingHero` (hero) · `WelcomePastor` · `ServiceTimes` · `FirstTimeVisitor` · `ScriptureBanner` · `AboutMission` · `StaffStrip` · `MinistriesPreview` · `WhatWeBelieve` · `LatestSermon` (Watch & Listen) · `UpcomingEvents` · `PlanOfSalvation` · `Give` · `PhotoGallery` · `MapAddress` (contact) · `PrayerRequest`.
