@@ -103,7 +103,7 @@ export default function ServiceTimes() {
         <AnimateOnScroll delay={300}>
           <div className="text-center mt-12">
             <a
-              href="mailto:office@elmwoodbaptist.org?subject=We're%20Coming%20This%20Sunday!&body=Hi%20Elmwood%20Baptist%2C%0A%0AWe'd%20like%20to%20let%20you%20know%20we're%20planning%20to%20join%20you%20this%20Sunday!%0A%0AName(s)%3A%20%0ANumber%20in%20our%20group%20(incl.%20kids)%3A%20%0A"
+              href="/visit-us"
               className="inline-block bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-brown-light hover:bg-brown hover:border-brown hover:-translate-y-0.5 hover:shadow-lg transition-all"
             >
               Let Us Know You&rsquo;re Coming

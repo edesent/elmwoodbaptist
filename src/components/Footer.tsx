@@ -3,6 +3,7 @@ const quickLinks = [
   { href: "#leaders", label: "About Us" },
   { href: "#services", label: "Service Times" },
   { href: "#groups", label: "Ministries" },
+  { href: "/visit-us", label: "Plan a Visit" },
   { href: "/messages", label: "Sermons" },
   { href: "/give", label: "Give Online" },
   { href: "/connect", label: "Connect Card" },

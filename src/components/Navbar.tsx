@@ -82,8 +82,8 @@ export default function Navbar() {
           ))}
           <li className="ml-2">
             <a
-              href="#contact"
-              onClick={(e) => handleLinkClick(e, "#contact")}
+              href="/visit-us"
+              onClick={() => setMenuOpen(false)}
               className="bg-gold text-brown-deep text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-gold-light hover:-translate-y-0.5 transition-all"
             >
               Plan a Visit
@@ -134,8 +134,8 @@ export default function Navbar() {
             ))}
             <li className="mt-4">
               <a
-                href="#contact"
-                onClick={(e) => handleLinkClick(e, "#contact")}
+                href="/visit-us"
+                onClick={() => setMenuOpen(false)}
                 className="block text-center bg-gold text-brown-deep font-semibold px-6 py-3 rounded-full hover:bg-gold-light transition-all"
               >
                 Plan a Visit

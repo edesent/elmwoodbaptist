@@ -26,6 +26,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     })),
     {
+      url: `${SITE_URL}/visit-us`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${SITE_URL}/statement-of-faith`,
       lastModified,
       changeFrequency: "yearly",
