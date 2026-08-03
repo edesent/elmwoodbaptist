@@ -78,6 +78,32 @@ export default function EventsPage() {
             </h2>
             <EventList items={ministryEvents} />
 
+            {/* Featured — Old West Sunday */}
+            {/* TODO: Replace the placeholder image below with the real Old West Sunday
+                photo (upload to public/events/old-west-sunday.jpg) and swap in the
+                real wording once provided. */}
+            <div className="mt-16 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
+              <div className="grid md:grid-cols-2 items-center">
+                <div className="aspect-video md:aspect-square bg-cream-dark flex items-center justify-center">
+                  <p className="text-sm text-text-light px-6 text-center">
+                    Photo coming soon
+                  </p>
+                </div>
+                <div className="p-8 md:p-10">
+                  <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
+                    Special Event
+                  </span>
+                  <h3 className="font-serif text-3xl font-bold text-text-dark leading-tight mb-3">
+                    Old West Sunday
+                  </h3>
+                  <p className="text-text-body leading-relaxed mb-2">
+                    Details coming soon — check back for the date and everything planned for this
+                    special Sunday.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="mt-16 p-8 bg-cream rounded-2xl border border-cream-dark text-center">
               <h3 className="font-serif text-2xl font-bold text-text-dark mb-3">
                 Special Events &amp; Announcements
