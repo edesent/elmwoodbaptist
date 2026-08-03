@@ -17,8 +17,7 @@ const staff = [
     bio: "The Lopezes have served at Elmwood for over a decade. Rick administrates Elmwood Christian Academy and directs the Little Blessings Daycare; Shannon serves as Financial Director.",
   },
   {
-    slug: "chris-clay",
-    photo: "/staff/placeholder.svg",
+    photo: "/staff/clays.jpg",
     names: "Pastor Chris & Brenda Clay",
     role: "Assistant Pastor · H.O.P.E. Ministry",
     bio: "Chris and Brenda lead the H.O.P.E. Ministry and the Brookdale service. More about the Clays is coming soon.",
