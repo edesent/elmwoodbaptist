@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: "Three days where men trade comfort for conviction. September 24–26, 2026.",
     url: "/man-camp",
     type: "website",
-    images: ["/mancamp/banner.jpg"],
+    images: ["/mancamp/man-camp-webiste.jpg"],
   },
 };
 
