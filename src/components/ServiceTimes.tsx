@@ -44,7 +44,7 @@ const expectations = [
 
 export default function ServiceTimes() {
   return (
-    <section id="services" className="py-28 bg-cream">
+    <section id="services" className="pt-10 pb-16 md:pt-14 md:pb-28 bg-cream">
       <div className="max-w-7xl mx-auto px-6">
         <AnimateOnScroll>
           <div className="text-center mb-14">
