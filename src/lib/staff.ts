@@ -41,10 +41,10 @@ export const staff: StaffMember[] = [
     slug: "chris-clay",
     names: "Pastor Chris & Brenda Clay",
     role: "Assistant Pastor",
-    titles: ["Assistant Pastor", "H.O.P.E. Ministry"],
+    titles: ["Assistant Pastor", "H.O.P.E. Ministry", "Brookdale Assisted Living Service Leader"],
     photo: "/staff/placeholder.svg",
     bio: [
-      "Pastor Chris and Brenda Clay serve the Elmwood family through the H.O.P.E. Ministry. A full biography is coming soon — please check back for more about the Clays and the ministry the Lord has entrusted to them.",
+      "Pastor Chris and Brenda Clay serve the Elmwood family through the H.O.P.E. Ministry and lead the service at Brookdale Assisted Living. A full biography is coming soon — please check back for more about the Clays and the ministry the Lord has entrusted to them.",
     ],
   },
   {
