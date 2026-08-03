@@ -4,7 +4,7 @@ import ContactModal from "./ContactModal";
 
 export default function MapAddress() {
   return (
-    <section id="contact" className="py-28 bg-cream">
+    <section id="contact" className="py-28 bg-cream scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6">
         <SectionBadge
           number={18}
