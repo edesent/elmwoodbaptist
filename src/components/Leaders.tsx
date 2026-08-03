@@ -7,7 +7,7 @@ const staff = [
     photo: "/staff/ben.jpg",
     names: "Pastor Ben & Amber",
     role: "Associate Pastor · Outreach & Evangelism",
-    bio: "Ben and Amber came to faith through Elmwood's ministry and joined the staff in February 2022, leading outreach evangelism, the Life & Home Builders class, and the Brookdale service.",
+    bio: "Ben and Amber came to faith through Elmwood's ministry and joined the staff in February 2022, leading outreach evangelism and the Life & Home Builders class.",
   },
   {
     slug: "rick-lopez",
