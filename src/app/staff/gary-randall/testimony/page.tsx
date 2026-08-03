@@ -50,7 +50,7 @@ export default function GaryRandallTestimonyPage() {
             <figure className="mb-14 rounded-2xl overflow-hidden shadow-xl bg-white p-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/staff/pastor-gary-randall-pulpit.jpg"
+                src="/staff/pastor-gary-randall-pulpit-upscale.jpg"
                 alt="Pastor Gary Randall preaching from the pulpit at Elmwood Baptist Church"
                 className="w-full h-auto rounded-lg"
               />
