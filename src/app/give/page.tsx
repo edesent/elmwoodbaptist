@@ -31,10 +31,11 @@ export default function GivePage() {
         <section className="py-24 bg-warm-white">
           <div className="max-w-3xl mx-auto px-6 mb-12 text-center">
             <p className="text-lg text-text-body leading-relaxed">
-              Your tithes and offerings make the ministry of Elmwood Baptist Church possible —
-              supporting the preaching of the Gospel, our missionaries around the world, our bus
-              ministry, and Elmwood Christian Academy. Thank you for giving cheerfully and faithfully
-              to the work of the Lord.
+              When you give, you become part of everything your tithes and offerings make
+              possible — the preaching of the Gospel, our missionaries around the world, our bus
+              ministry, and Elmwood Christian Academy all continue because of your faithfulness.
+              Thank you for giving cheerfully, and for being part of the work the Lord is doing
+              through Elmwood.
             </p>
           </div>
           {/* Tithely online giving form — collapsed by default */}
