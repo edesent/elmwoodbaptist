@@ -62,8 +62,9 @@ export default function GivePage() {
             <div className="p-8 bg-cream rounded-2xl border border-cream-dark">
               <h2 className="font-serif text-2xl font-bold text-text-dark mb-3">Give in Person or Over the Phone</h2>
               <p className="text-text-body leading-relaxed mb-6">
-                You are always welcome to give during any of our services. We&rsquo;d love to have
-                you worship with us this Sunday at 10:00 AM and join the family at Elmwood.
+                You&rsquo;re always welcome to give during any of our services, or over the phone if
+                that&rsquo;s easier. And if you&rsquo;re looking for a church home, we&rsquo;d love to have
+                you worship with us this Sunday at 10:00 AM — everyone is welcome at Elmwood.
               </p>
               <a
                 href="tel:+13036593818"
