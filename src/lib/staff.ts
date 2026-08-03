@@ -34,7 +34,7 @@ export const staff: StaffMember[] = [
     photo: "/staff/ben.jpg",
     bio: [
       "Pastor Ben and Amber joined the staff at Elmwood Baptist Church in February of 2022. Both came to faith in Christ through the ministry of Elmwood, which gives them a deep love for reaching others with the same Gospel that changed their lives.",
-      "Ben leads outreach evangelism, teaches the Life & Home Builders Bible class, and leads the service at Brookdale Assisted Living. Before returning to Elmwood for formal ministry training, he and Amber helped establish Horizon Baptist Church. They have one son.",
+      "Ben leads outreach evangelism and teaches the Life & Home Builders Bible class. Before returning to Elmwood for formal ministry training, he and Amber helped establish Horizon Baptist Church. They have one son.",
     ],
   },
   {
