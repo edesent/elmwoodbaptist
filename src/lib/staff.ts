@@ -61,9 +61,9 @@ export const staff: StaffMember[] = [
   {
     slug: "rick-lopez",
     names: "Pastor Rick & Shannon Lopez",
-    role: "Associate Pastor",
+    role: "Assistant Pastor",
     titles: [
-      "Associate Pastor",
+      "Assistant Pastor",
       "Elmwood Christian Academy Administrator",
       "EBC Security Director",
       "Men's Retreat Director",
