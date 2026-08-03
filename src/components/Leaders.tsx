@@ -21,7 +21,7 @@ const staff = [
     photo: "/staff/placeholder.svg",
     names: "Pastor Chris & Brenda Clay",
     role: "Assistant Pastor · H.O.P.E. Ministry",
-    bio: "More about Pastor Chris and Brenda Clay and the H.O.P.E. Ministry is coming soon.",
+    bio: "Chris and Brenda lead the H.O.P.E. Ministry and the Brookdale service. More about the Clays is coming soon.",
   },
   {
     slug: "terry-mcclain",
