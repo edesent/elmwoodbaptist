@@ -60,7 +60,7 @@ export default function GivePage() {
               </a>
             </div>
             <div className="p-8 bg-cream rounded-2xl border border-cream-dark">
-              <h2 className="font-serif text-2xl font-bold text-text-dark mb-3">Give in Person</h2>
+              <h2 className="font-serif text-2xl font-bold text-text-dark mb-3">Give in Person or Over the Phone</h2>
               <p className="text-text-body leading-relaxed mb-6">
                 You are always welcome to give during any of our services. We&rsquo;d love to have
                 you worship with us this Sunday at 10:00 AM and join the family at Elmwood.
