@@ -38,7 +38,7 @@ const expectations = [
   },
   {
     title: "Come As You Are",
-    body: "Dress up or come casual. Nursery is available for infants through age 4.",
+    body: "Dress up or come casual. Nursery is available for infants through age 3.",
   },
   {
     title: "Easy to Find",
