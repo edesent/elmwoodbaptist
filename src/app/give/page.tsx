@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SubpageHero from "@/components/SubpageHero";
+import GiveOnlineEmbed from "@/components/GiveOnlineEmbed";
 
 export const metadata: Metadata = {
   title: "Give Online",
