@@ -378,11 +378,6 @@ export default function GaryRandallTestimonyPage() {
                 Sunday, with souls saved and baptized regularly!
               </p>
 
-              <PullQuote>
-                Elmwood Baptist&rsquo;s future is as sure as the vision and faith of it&rsquo;s
-                people in our miraculous working God.
-              </PullQuote>
-
               <p>
                 Elmwood Baptist&rsquo;s future is as sure as the vision and faith of it&rsquo;s
                 people in our miraculous working God, and Betty and I are blessed to be able to
