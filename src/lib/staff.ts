@@ -51,8 +51,8 @@ export const staff: StaffMember[] = [
   {
     slug: "terry-mcclain",
     names: "Pastor Terry & Peggy McClain",
-    role: "Associate Pastor",
-    titles: ["Associate Pastor", "Way of the Cross Jail Ministry"],
+    role: "Assistant Pastor",
+    titles: ["Assistant Pastor", "Way of the Cross Jail Ministry"],
     photo: "/staff/placeholder.svg",
     bio: [
       "Pastor Terry and Peggy McClain serve the Elmwood family through the Way of the Cross Jail Ministry. A full biography is coming soon — please check back for more about the McClains and the ministry the Lord has entrusted to them.",
