@@ -40,8 +40,8 @@ export default function GaryRandallTestimonyPage() {
       <main>
         <SubpageHero
           eyebrow="Senior Pastor"
-          title="Pastor Randall's Testimony"
-          subtitle="Dr. Gary Randall"
+          title="The Personal Testimony"
+          subtitle="of Pastor Gary Randall"
         />
 
         <section className="py-20 md:py-24 bg-warm-white">
