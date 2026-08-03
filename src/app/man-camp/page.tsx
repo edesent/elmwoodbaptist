@@ -63,7 +63,7 @@ export default function ManCampPage() {
             </p>
             <div className="rounded-2xl overflow-hidden shadow-2xl mb-8">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/mancamp/banner.jpg" alt="Man Camp 9 — 2026" className="w-full h-auto" />
+              <img src="/mancamp/man-camp-webiste.jpg" alt="Man Camp 9 — 2026" className="w-full h-auto" />
             </div>
             <p className="font-serif text-2xl md:text-3xl italic text-white">
               &ldquo;Faithful to the Last Amen&rdquo;
