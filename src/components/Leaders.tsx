@@ -27,7 +27,7 @@ const staff = [
     slug: "terry-mcclain",
     photo: "/staff/placeholder.svg",
     names: "Pastor Terry & Peggy McClain",
-    role: "Associate Pastor · Way of the Cross Jail Ministry",
+    role: "Assistant Pastor · Way of the Cross Jail Ministry",
     bio: "More about Pastor Terry and Peggy McClain and the Way of the Cross Jail Ministry is coming soon.",
   },
 ];
