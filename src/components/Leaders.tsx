@@ -86,6 +86,12 @@ export default function Leaders() {
               >
                 Read More About Our Leaders
               </Link>
+              <Link
+                href="/staff/gary-randall/testimony"
+                className="inline-block ml-0 mt-4 sm:mt-0 sm:ml-4 text-brown-light font-semibold text-sm tracking-wide uppercase border-b-2 border-brown-light/40 hover:border-brown-light pb-1 transition-colors"
+              >
+                Read His Testimony
+              </Link>
             </div>
           </div>
         </AnimateOnScroll>
