@@ -8,7 +8,7 @@ import { getLiveStatus, getRecentVideos, youtube } from "@/lib/youtube";
 export const metadata: Metadata = {
   title: "Sermons & Messages",
   description:
-    "Watch and listen to sermons preached at Elmwood Baptist Church in Brighton, Colorado. Verse-by-verse preaching from the King James Bible.",
+    "Watch and listen to sermons preached at Elmwood Baptist Church in Brighton, Colorado. Preaching from the King James Bible.",
   alternates: { canonical: "/messages" },
   openGraph: {
     title: "Sermons & Messages | Elmwood Baptist Church",
