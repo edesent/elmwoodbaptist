@@ -14,8 +14,8 @@ export default function ChurchEvents() {
               What&rsquo;s Happening at <em className="text-brown-light italic">Elmwood</em>
             </h2>
             <p className="text-text-body mt-3 max-w-2xl mx-auto">
-              There&rsquo;s always something going on in our church family. Here&rsquo;s the weekly rhythm —
-              see the full calendar for everything else.
+              There&rsquo;s always something going on in our church family. Here&rsquo;s what happens
+              each week — see the full calendar for everything else.
             </p>
           </div>
         </AnimateOnScroll>
