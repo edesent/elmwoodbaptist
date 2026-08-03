@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/messages" },
   openGraph: {
     title: "Sermons & Messages | Elmwood Baptist Church",
-    description: "Verse-by-verse preaching from the King James Bible.",
+    description: "Preaching from the King James Bible.",
     url: "/messages",
     type: "website",
   },
