@@ -34,7 +34,7 @@ const staff = [
 
 export default function Leaders() {
   return (
-    <section id="leaders" className="py-28 bg-cream">
+    <section id="leaders" className="pt-16 pb-10 md:pt-28 md:pb-14 bg-cream">
       <div className="max-w-7xl mx-auto px-6">
         <AnimateOnScroll>
           <div className="text-center mb-16">
