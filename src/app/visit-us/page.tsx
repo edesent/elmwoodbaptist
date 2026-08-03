@@ -34,7 +34,7 @@ const expectations = [
   },
   {
     title: "Bible Preaching",
-    body: "Congregational singing, prayer, and clear preaching from the King James Bible.",
+    body: "Congregational singing, prayer, and clear preaching from the Bible.",
   },
   {
     title: "Come As You Are",
