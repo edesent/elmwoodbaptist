@@ -6,6 +6,7 @@ export interface StaffMember {
   photo: string;
   bio: string[]; // paragraphs
   lead?: boolean;
+  testimonyUrl?: string; // link to a dedicated personal testimony page, if one exists
 }
 
 export const staff: StaffMember[] = [
