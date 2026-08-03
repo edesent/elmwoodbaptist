@@ -61,7 +61,7 @@ export default function ManCampPage() {
             <p className="text-xs font-bold tracking-[0.25em] uppercase text-gold-light mb-6">
               Men&rsquo;s Ministry · 9th Annual
             </p>
-            <div className="rounded-2xl overflow-hidden shadow-2xl mb-8 bg-brown-deep p-3">
+            <div className="rounded-2xl overflow-hidden shadow-2xl mb-8 bg-white p-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/mancamp/man-camp-webiste.jpg" alt="Man Camp 9 — 2026" className="w-full h-auto rounded-lg" />
             </div>
