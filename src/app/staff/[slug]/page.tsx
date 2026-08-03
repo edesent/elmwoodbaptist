@@ -92,6 +92,17 @@ export default async function StaffMemberPage({
                 <p key={i}>{p}</p>
               ))}
 
+              {member.testimonyUrl && (
+                <div className="pt-2">
+                  <Link
+                    href={member.testimonyUrl}
+                    className="inline-block bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-brown-light hover:bg-brown hover:border-brown hover:-translate-y-0.5 hover:shadow-lg transition-all"
+                  >
+                    Read His Testimony
+                  </Link>
+                </div>
+              )}
+
               <div className="pt-4">
                 <Link
                   href="/staff"
