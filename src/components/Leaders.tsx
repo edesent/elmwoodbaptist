@@ -20,7 +20,7 @@ const staff = [
     slug: "chris-clay",
     photo: "/staff/placeholder.svg",
     names: "Pastor Chris & Brenda Clay",
-    role: "Associate Pastor · H.O.P.E. Ministry",
+    role: "Assistant Pastor · H.O.P.E. Ministry",
     bio: "More about Pastor Chris and Brenda Clay and the H.O.P.E. Ministry is coming soon.",
   },
   {
