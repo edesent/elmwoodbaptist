@@ -37,19 +37,12 @@ export default function GivePage() {
               to the work of the Lord.
             </p>
           </div>
-          {/* Tithely online giving form */}
+          {/* Tithely online giving form — collapsed by default */}
           <div id="online" className="max-w-lg mx-auto px-6 mb-14 scroll-mt-28">
             <h2 className="font-serif text-2xl font-bold text-text-dark mb-5 text-center">
               Give Online
             </h2>
-            <div className="rounded-2xl border border-cream-dark shadow-sm overflow-hidden bg-white">
-              <iframe
-                title="Give to Elmwood Baptist Church"
-                src="https://tithe.ly/give_new/www/#/tithely/give-one-time/4263938"
-                className="w-full h-[760px] border-0"
-                loading="lazy"
-              />
-            </div>
+            <GiveOnlineEmbed />
           </div>
 
           <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6">
