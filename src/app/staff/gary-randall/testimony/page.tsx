@@ -56,11 +56,6 @@ export default function GaryRandallTestimonyPage() {
               />
             </figure>
 
-            <p className="text-lg text-text-body leading-relaxed italic mb-4">
-              In his own words, this is the story of what God has done in the life of Pastor Gary
-              Randall.
-            </p>
-
             <div className="text-lg text-text-body leading-relaxed space-y-6">
               <SectionHeading>Growing Up Fast</SectionHeading>
 
