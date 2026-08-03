@@ -225,10 +225,13 @@ export default function GaryRandallTestimonyPage() {
                 God wanted me in Bible College!
               </p>
               <p>
-                During that semester God showed me in Romans 10:14-15 that He wanted me to be a
-                Gospel Preacher. I surrendered to that call and God confirmed it by opening doors
-                for me to preach His Word immediately! By the time I graduated from Bible College,
-                I had preached His Word in over 250 services!
+                During that semester God showed me in{" "}
+                <span className="italic" style={{ fontFamily: "'Times New Roman', Times, serif" }}>
+                  Romans 10:14-15
+                </span>{" "}
+                that He wanted me to be a Gospel Preacher. I surrendered to that call and God
+                confirmed it by opening doors for me to preach His Word immediately! By the time I
+                graduated from Bible College, I had preached His Word in over 250 services!
               </p>
 
               <SectionHeading>Years of Preparation and Trial</SectionHeading>
