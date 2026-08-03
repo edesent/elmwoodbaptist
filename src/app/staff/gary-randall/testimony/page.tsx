@@ -166,8 +166,11 @@ export default function GaryRandallTestimonyPage() {
 
               <p>
                 Two weeks following my release from the hospital my wife Betty prayed and asked
-                the Lord to save her, however she later said, &ldquo;I prayed because I was scarred
-                of Gary&hellip; not because I really wanted to be saved&rdquo;
+                the Lord to save her, however she later said,{" "}
+                <span className="italic font-bold">
+                  &ldquo;I prayed because I was scarred of Gary&hellip; not because I really wanted
+                  to be saved&rdquo;
+                </span>
               </p>
               <p>
                 Pastor Marc discipled me every week, and it was during this time that my life
