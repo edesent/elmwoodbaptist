@@ -22,7 +22,7 @@ export default function GiveOnlineEmbed() {
           onClick={() => setOpen(true)}
           className="inline-block bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full hover:bg-brown hover:-translate-y-0.5 hover:shadow-lg transition-all"
         >
-          Open Giving Form
+          Give Here
         </button>
       </div>
     );
