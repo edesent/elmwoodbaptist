@@ -14,12 +14,12 @@ export default function ManCamp() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <AnimateOnScroll>
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <div className="rounded-2xl overflow-hidden shadow-2xl bg-white p-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/mancamp/man-camp-webiste.jpg"
                 alt="Man Camp 9 — 2026"
-                className="w-full h-auto"
+                className="w-full h-auto rounded-lg"
               />
             </div>
           </AnimateOnScroll>
