@@ -30,7 +30,6 @@ export const staff: StaffMember[] = [
       "Associate Pastor",
       "Out-Reach Evangelism Leader",
       "Life & Home Builders Bible Class Instructor",
-      "Brookdale Assisted Living Service Leader",
     ],
     photo: "/staff/ben.jpg",
     bio: [
