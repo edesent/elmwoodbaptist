@@ -41,8 +41,8 @@ export const staff: StaffMember[] = [
   {
     slug: "chris-clay",
     names: "Pastor Chris & Brenda Clay",
-    role: "Associate Pastor",
-    titles: ["Associate Pastor", "H.O.P.E. Ministry"],
+    role: "Assistant Pastor",
+    titles: ["Assistant Pastor", "H.O.P.E. Ministry"],
     photo: "/staff/placeholder.svg",
     bio: [
       "Pastor Chris and Brenda Clay serve the Elmwood family through the H.O.P.E. Ministry. A full biography is coming soon — please check back for more about the Clays and the ministry the Lord has entrusted to them.",
