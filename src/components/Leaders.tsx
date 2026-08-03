@@ -23,8 +23,7 @@ const staff = [
     bio: "Chris and Brenda lead the H.O.P.E. Ministry and the Brookdale service. More about the Clays is coming soon.",
   },
   {
-    slug: "terry-mcclain",
-    photo: "/staff/placeholder.svg",
+    photo: "/staff/mcclain.jpg",
     names: "Pastor Terry & Peggy McClain",
     role: "Assistant Pastor · Way of the Cross Jail Ministry",
     bio: "More about Pastor Terry and Peggy McClain and the Way of the Cross Jail Ministry is coming soon.",
