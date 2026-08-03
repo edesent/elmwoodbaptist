@@ -66,7 +66,7 @@ export default async function MessagesPage() {
           <SubpageHero
             eyebrow="Sermons"
             title="Watch & Listen"
-            subtitle="Verse-by-verse preaching from the King James Bible"
+            subtitle="Preaching from the King James Bible"
           />
         )}
 
