@@ -81,8 +81,10 @@ export default function ManCampPage() {
               Three days where men trade comfort for <em className="text-brown-light italic">conviction.</em>
             </h1>
             <p className="text-lg text-text-body leading-relaxed mb-6">
-              Man Camp is a weekend of preaching, fellowship, and spiritual strengthening — a chance
-              to step away from the noise and be sharpened in your walk with God alongside other men.
+              Man Camp is three days out in God&rsquo;s creation, away from the noise and the
+              day-to-day grind — bold preaching, real fellowship, and iron sharpening iron. It&rsquo;s
+              a weekend built to strengthen you as a man of God: standing firm, leading your home
+              well, and staying faithful to the last amen.
             </p>
             <blockquote className="font-serif italic text-xl text-text-body border-l-4 border-gold pl-6 text-left max-w-2xl mx-auto">
               &ldquo;Therefore, my beloved brethren, be ye stedfast, unmoveable, always abounding in
