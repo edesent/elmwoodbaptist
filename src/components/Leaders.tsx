@@ -13,7 +13,7 @@ const staff = [
     slug: "rick-lopez",
     photo: "/staff/lopez.jpg",
     names: "Pastor Rick & Shannon Lopez",
-    role: "Associate Pastor · Academy Administrator",
+    role: "Assistant Pastor · Academy Administrator",
     bio: "The Lopezes have served at Elmwood for over a decade. Rick administrates Elmwood Christian Academy and directs the Little Blessings Daycare; Shannon serves as Financial Director.",
   },
   {
