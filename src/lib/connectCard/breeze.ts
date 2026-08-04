@@ -205,7 +205,7 @@ async function syncAdult(
     if (!res.ok) {
       return { status: "failed", personId: person.id, name, note: res.message };
     }
-    return { status: "updated", personId: person.id, name };
+    return { status: "updated", personId: person.id, name, raw: res.data };
   }
 
   if (match.type === "possible_name") {
