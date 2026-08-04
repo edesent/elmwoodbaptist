@@ -146,7 +146,9 @@ export function loadBreezeConfig(): BreezeConfig {
   const enabled = process.env.BREEZE_ENABLED === "true";
   const subdomain = process.env.BREEZE_SUBDOMAIN || null;
   const hasApiKey = Boolean(process.env.BREEZE_API_KEY);
-  const fieldMap = parseFieldMap(process.env.BREEZE_PROFILE_FIELD_MAP);
+  const fieldMap = process.env.BREEZE_PROFILE_FIELD_MAP
+    ? parseFieldMap(process.env.BREEZE_PROFILE_FIELD_MAP)
+    : ELMWOOD_DEFAULT_FIELD_MAP;
   const sendAutoreply = process.env.CONNECT_CARD_SEND_AUTOREPLY === "true";
 
   return {
