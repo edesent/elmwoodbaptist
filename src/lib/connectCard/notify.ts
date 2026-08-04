@@ -61,6 +61,9 @@ function breezeSummaryLines(breeze: BreezeSyncResult | null): string[] {
   };
   lines.push(`Primary person: ${adultLabel[breeze.adult.status] ?? breeze.adult.status}${breeze.adult.personId ? ` (Breeze ID ${breeze.adult.personId})` : ""}`);
   if (breeze.adult.note) lines.push(`  Note: ${breeze.adult.note}`);
+  if (breeze.adult.raw !== undefined) {
+    lines.push(`  Raw Breeze response: ${JSON.stringify(breeze.adult.raw)}`);
+  }
   if (breeze.children.length) {
     lines.push("Children:");
     for (const c of breeze.children) {
