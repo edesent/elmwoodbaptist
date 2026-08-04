@@ -60,6 +60,7 @@ const KNOWN_FIELD_TYPES = new Set([
   "phone",
   "address",
   "radio",
+  "multiple_choice",
   "checkbox",
   "date",
   "text",
