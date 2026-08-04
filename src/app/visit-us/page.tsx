@@ -214,12 +214,14 @@ export default function VisitUsPage() {
               >
                 Call (303) 659-3818
               </a>
-              <Link
-                href="/connect"
+              <a
+                href="https://elmwoodbaptistchurchacademy.breezechms.com/form/ba4d32"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-white/40 hover:bg-white/10 hover:border-white transition-all"
               >
                 Fill Out a Connect Card
-              </Link>
+              </a>
             </div>
           </div>
         </section>
