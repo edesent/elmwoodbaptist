@@ -16,6 +16,10 @@ export interface BreezePersonResult {
   personId?: string;
   name: string;
   note?: string;
+  /** The raw response Breeze returned for this person's create/update call —
+   *  kept for troubleshooting so staff can see exactly what Breeze sent back,
+   *  not just our summarized status. */
+  raw?: unknown;
 }
 
 export interface BreezeFamilyResult {
