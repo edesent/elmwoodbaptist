@@ -1,8 +1,12 @@
 // Loads and validates the account-specific Breeze configuration from
-// environment variables. Nothing in this file hard-codes Elmwood's actual
-// field IDs, option IDs, or tag IDs — those must come from BREEZE_*_TAG_ID
-// and BREEZE_PROFILE_FIELD_MAP once a Breeze administrator retrieves them
-// (see CONNECT-CARD.md). Until then, Breeze sync stays fully disabled.
+// environment variables. Tag IDs still must come from BREEZE_*_TAG_ID env
+// vars (see CONNECT-CARD.md) — those aren't known yet. The profile field
+// map, however, IS known (pulled from Elmwood's own /api/profile export)
+// and is baked in below as ELMWOOD_DEFAULT_FIELD_MAP so Breeze sync doesn't
+// require BREEZE_PROFILE_FIELD_MAP to be set at all. None of these are
+// secrets — just Elmwood's own Breeze field/option IDs. Setting
+// BREEZE_PROFILE_FIELD_MAP in the environment still overrides this default,
+// in case the mapping ever needs to change without a code deploy.
 
 export interface BreezeFieldMapEntry {
   fieldId: string;
@@ -22,6 +26,23 @@ export interface BreezeFieldMap {
   permissionToContact?: BreezeFieldMapEntry;
   grade?: BreezeFieldMapEntry;
 }
+
+// Pulled from Elmwood's Breeze account profile-fields export (/api/profile).
+// preferredContact, howHeard, firstVisitDate, and permissionToContact are
+// intentionally omitted — Elmwood's account has no matching custom fields
+// for those yet, so those Connect Card answers stay email/Slack-only until
+// someone creates the fields in Breeze and adds them here.
+export const ELMWOOD_DEFAULT_FIELD_MAP: BreezeFieldMap = {
+  email: { fieldId: "682313441", fieldType: "email" },
+  phone: { fieldId: "639540696", fieldType: "phone" },
+  address: { fieldId: "857201905", fieldType: "address" },
+  maritalStatus: {
+    fieldId: "1481884841",
+    fieldType: "multiple_choice",
+    options: { single: "9", married: "12", widowed: "5" },
+  },
+  grade: { fieldId: "183091182", fieldType: "grade" },
+};
 
 export interface BreezeTagConfig {
   connectCardTagId?: string;
