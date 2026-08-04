@@ -6,7 +6,7 @@
 
 export interface BreezeFieldMapEntry {
   fieldId: string;
-  fieldType: "email" | "phone" | "address" | "radio" | "checkbox" | "date" | "text" | "textarea" | "grade";
+  fieldType: "email" | "phone" | "address" | "radio" | "multiple_choice" | "checkbox" | "date" | "text" | "textarea" | "grade";
   options?: Record<string, string>;
 }
 
