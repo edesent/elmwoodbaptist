@@ -223,6 +223,7 @@ async function syncAdult(
       personId: res.data[0].id,
       name,
       note: `Existing profile with the same name: ${match.person!.id}`,
+      raw: res.data,
     };
   }
 
