@@ -72,13 +72,20 @@ export default function Footer() {
           <div className="text-center sm:text-left">
             <h4 className="font-serif text-base font-semibold text-white mb-5">Quick Links</h4>
             <ul className="space-y-2.5">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href} className="text-sm text-white/60 hover:text-gold-light sm:hover:pl-1 transition-all">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
+              {quickLinks.map((link) => {
+                const isExternal = link.href.startsWith("http");
+                return (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className="text-sm text-white/60 hover:text-gold-light sm:hover:pl-1 transition-all"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
