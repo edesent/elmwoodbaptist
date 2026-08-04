@@ -231,7 +231,7 @@ async function syncAdult(
   if (!res.ok || !res.data?.[0]) {
     return { status: "failed", name, note: res.ok ? "Breeze did not return a new person." : res.message };
   }
-  return { status: "created", personId: res.data[0].id, name };
+  return { status: "created", personId: res.data[0].id, name, raw: res.data };
 }
 
 // ── Children sync ────────────────────────────────────────────────────────
