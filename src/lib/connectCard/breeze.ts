@@ -90,14 +90,14 @@ function buildAdultFieldUpdates(data: ValidatedConnectCard, map: BreezeFieldMap)
   if (map.maritalStatus && data.maritalStatus && map.maritalStatus.options?.[data.maritalStatus]) {
     updates.push({
       field_id: map.maritalStatus.fieldId,
-      field_type: "radio",
+      field_type: map.maritalStatus.fieldType,
       response: map.maritalStatus.options[data.maritalStatus],
     });
   }
   if (map.preferredContact && data.preferredContact && map.preferredContact.options?.[data.preferredContact]) {
     updates.push({
       field_id: map.preferredContact.fieldId,
-      field_type: "radio",
+      field_type: map.preferredContact.fieldType,
       response: map.preferredContact.options[data.preferredContact],
     });
   }
@@ -111,7 +111,7 @@ function buildAdultFieldUpdates(data: ValidatedConnectCard, map: BreezeFieldMap)
   if (map.howHeard && data.howHeard && map.howHeard.options?.[data.howHeard]) {
     updates.push({
       field_id: map.howHeard.fieldId,
-      field_type: "radio",
+      field_type: map.howHeard.fieldType,
       response: map.howHeard.options[data.howHeard],
     });
   }
