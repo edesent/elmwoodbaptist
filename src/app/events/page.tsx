@@ -84,7 +84,7 @@ export default function EventsPage() {
                 <div className="bg-white p-4 flex items-center justify-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/email/old-west-sunday-flyer.png"
+                    src="/email/old-west-sunday-slide.jpg"
                     alt="Old West Sunday at Elmwood Baptist Church"
                     className="w-full h-auto rounded-lg"
                   />
