@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const facts = [
@@ -6,6 +9,8 @@ const facts = [
 ];
 
 export default function OldWestSunday() {
+  const [posterOpen, setPosterOpen] = useState(false);
+
   return (
     <section id="old-west-sunday" className="py-28 bg-brown-deep overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
@@ -45,18 +50,46 @@ export default function OldWestSunday() {
                 ))}
               </dl>
 
-              <a
-                href="/email/old-west-sunday-flyer.png"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => setPosterOpen(true)}
                 className="inline-block bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-gold hover:bg-gold-light hover:border-gold-light hover:-translate-y-0.5 hover:shadow-lg transition-all"
               >
-                More Info
-              </a>
+                Full Details
+              </button>
             </div>
           </AnimateOnScroll>
         </div>
       </div>
+
+      {/* Poster lightbox */}
+      {posterOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Old West Sunday poster"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 px-4 py-6 sm:p-8"
+          onClick={() => setPosterOpen(false)}
+        >
+          <button
+            type="button"
+            onClick={() => setPosterOpen(false)}
+            aria-label="Close"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+          >
+            <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/events/old-west-sunday-poster.jpg"
+            alt="Old West Sunday poster — full details"
+            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   );
 }
