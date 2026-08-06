@@ -11,6 +11,7 @@ export const weeklyEvents: ChurchEvent[] = [
   { when: "Sunday · 1:30 PM", title: "Afternoon Service", detail: "Lord's Supper on the last Sunday of each month" },
   { when: "Thursday · 7:00 PM", title: "Master Club & Teen Time", detail: "Mid-week for kids, teens, and adults" },
   { when: "Saturday · 10:30 AM", title: "GATE Outreach & Bus Visitation", detail: "Reaching our community with the Gospel" },
+  { when: "Last Saturday · 1:00 PM", title: "LACE Ladies Fellowship", detail: "Encouragement, Bible study, and fellowship for the ladies" },
 ];
 
 // Standing outreach and fellowship ministries (shown on the full Events page).
