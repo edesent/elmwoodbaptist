@@ -30,6 +30,7 @@ export default function Navbar() {
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setMenuOpen(false);
+    if (href.startsWith("http")) return; // external link — let the browser handle it normally
     if (!href.startsWith("#")) return;
     if (isSubPage) {
       e.preventDefault();
