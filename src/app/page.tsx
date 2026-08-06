@@ -68,7 +68,6 @@ export default function Home() {
         <ServiceTimes />
         <ChurchEvents />
         <ManCamp />
-        <OldWestSunday />
         <ScriptureBanner />
         <LatestSermon />
         <Give />
