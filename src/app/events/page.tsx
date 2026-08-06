@@ -96,16 +96,14 @@ export default function EventsPage() {
                   <h3 className="font-serif text-3xl font-bold text-text-dark leading-tight mb-3">
                     Old West Sunday
                   </h3>
-                  <p className="text-text-body leading-relaxed mb-6">
+                  {/* TODO: Replace with the real date/time and description once provided. */}
+                  <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-2">
+                    Date &amp; time coming soon
+                  </p>
+                  <p className="text-text-body leading-relaxed">
                     Saddle up and join the Elmwood family for a special themed Sunday — come
                     dressed in your best western wear!
                   </p>
-                  <a
-                    href="/old-west-sunday"
-                    className="inline-block bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full hover:bg-brown hover:-translate-y-0.5 hover:shadow-lg transition-all"
-                  >
-                    Full Details
-                  </a>
                 </div>
               </div>
             </div>
