@@ -38,27 +38,14 @@ export default function GivePage() {
               through Elmwood.
             </p>
           </div>
-          {/* Tithely online giving form — collapsed by default */}
-          <div id="online" className="max-w-lg mx-auto px-6 mb-14 scroll-mt-28">
-            <h2 className="font-serif text-2xl font-bold text-text-dark mb-5 text-center">
-              Give Online
-            </h2>
-            <GiveOnlineEmbed />
-          </div>
-
           <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6">
-            <div className="p-8 bg-cream rounded-2xl border border-cream-dark">
+            <div id="online" className="p-8 bg-cream rounded-2xl border border-cream-dark scroll-mt-28">
               <h2 className="font-serif text-2xl font-bold text-text-dark mb-3">Give Online</h2>
               <p className="text-text-body leading-relaxed mb-6">
                 Give a one-time gift or set up recurring giving securely through our online giving
                 form — anytime, from anywhere.
               </p>
-              <a
-                href="#online"
-                className="inline-block bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full hover:bg-brown hover:-translate-y-0.5 hover:shadow-lg transition-all"
-              >
-                Give Online
-              </a>
+              <GiveOnlineEmbed showIntro={false} />
             </div>
             <div className="p-8 bg-cream rounded-2xl border border-cream-dark">
               <h2 className="font-serif text-2xl font-bold text-text-dark mb-3">Give in Person or Over the Phone</h2>
