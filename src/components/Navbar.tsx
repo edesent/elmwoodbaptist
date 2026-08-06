@@ -10,6 +10,8 @@ const navLinks = [
   { href: "#groups", label: "Ministries" },
   { href: "/messages", label: "Sermons" },
   { href: "/give", label: "Give" },
+  { href: "https://www.ebabrighton.org", label: "Elmwood Academy" },
+  { href: "https://www.ncbbc.org", label: "NCBBC" },
   { href: "#contact", label: "Contact" },
 ];
 
