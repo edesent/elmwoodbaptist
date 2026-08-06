@@ -130,6 +130,7 @@ export default function Navbar() {
                 <a
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
+                  {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="block text-white/85 text-base font-medium px-4 py-3 rounded-md hover:text-white hover:bg-white/10 transition-all"
                 >
                   {link.label}
