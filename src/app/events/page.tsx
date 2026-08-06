@@ -79,15 +79,15 @@ export default function EventsPage() {
             <EventList items={ministryEvents} />
 
             {/* Featured — Old West Sunday */}
-            {/* TODO: Replace the placeholder image below with the real Old West Sunday
-                photo (upload to public/events/old-west-sunday.jpg) and swap in the
-                real wording once provided. */}
             <div className="mt-16 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
               <div className="grid md:grid-cols-2 items-center">
-                <div className="aspect-video md:aspect-square bg-cream-dark flex items-center justify-center">
-                  <p className="text-sm text-text-light px-6 text-center">
-                    Photo coming soon
-                  </p>
+                <div className="bg-white p-4 flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/email/old-west-sunday-flyer.png"
+                    alt="Old West Sunday at Elmwood Baptist Church"
+                    className="w-full h-auto rounded-lg"
+                  />
                 </div>
                 <div className="p-8 md:p-10">
                   <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
@@ -96,10 +96,16 @@ export default function EventsPage() {
                   <h3 className="font-serif text-3xl font-bold text-text-dark leading-tight mb-3">
                     Old West Sunday
                   </h3>
-                  <p className="text-text-body leading-relaxed mb-2">
-                    Details coming soon — check back for the date and everything planned for this
-                    special Sunday.
+                  <p className="text-text-body leading-relaxed mb-6">
+                    Saddle up and join the Elmwood family for a special themed Sunday — come
+                    dressed in your best western wear!
                   </p>
+                  <a
+                    href="/old-west-sunday"
+                    className="inline-block bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full hover:bg-brown hover:-translate-y-0.5 hover:shadow-lg transition-all"
+                  >
+                    Full Details
+                  </a>
                 </div>
               </div>
             </div>
