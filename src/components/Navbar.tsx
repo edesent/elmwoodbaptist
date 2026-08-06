@@ -72,15 +72,23 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <ul className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <li key={link.href}>
+          {navLinks.map((link, i) => (
+            <li key={link.href} className="flex items-center">
+              {link.href.startsWith("http") && !navLinks[i - 1]?.href.startsWith("http") && (
+                <span className="w-px h-5 bg-white/20 mx-1.5" aria-hidden="true" />
+              )}
               <a
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
                 {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="text-white/85 text-sm font-medium px-3 py-2 rounded-md hover:text-white hover:bg-white/10 transition-all"
+                className="inline-flex items-center gap-1 text-white/85 text-sm font-medium px-3 py-2 rounded-md hover:text-white hover:bg-white/10 transition-all"
               >
                 {link.label}
+                {link.href.startsWith("http") && (
+                  <svg className="w-3 h-3 opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M7 17L17 7M7 7h10v10" />
+                  </svg>
+                )}
               </a>
             </li>
           ))}
