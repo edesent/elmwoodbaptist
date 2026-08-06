@@ -45,13 +45,6 @@ export default function OldWestSunday() {
                   </div>
                 ))}
               </dl>
-
-              <a
-                href="/old-west-sunday"
-                className="inline-block bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-gold hover:bg-gold-light hover:border-gold-light hover:-translate-y-0.5 hover:shadow-lg transition-all"
-              >
-                Full Details
-              </a>
             </div>
           </AnimateOnScroll>
         </div>
