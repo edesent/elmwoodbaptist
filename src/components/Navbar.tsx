@@ -75,7 +75,7 @@ export default function Navbar() {
           {navLinks.map((link, i) => (
             <li key={link.href} className="flex items-center">
               {link.href.startsWith("http") && !navLinks[i - 1]?.href.startsWith("http") && (
-                <span className="w-px h-5 bg-white/20 mx-1.5" aria-hidden="true" />
+                <span className="w-0.5 h-5 bg-gold mx-1.5" aria-hidden="true" />
               )}
               <a
                 href={link.href}
