@@ -1,9 +1,8 @@
 import AnimateOnScroll from "./AnimateOnScroll";
 
-// TODO: Replace placeholder date once confirmed.
 const facts = [
-  { label: "Date", value: "Coming soon" },
-  { label: "Location", value: "Elmwood Baptist Church" },
+  { label: "Date", value: "Sunday, August 30" },
+  { label: "Time", value: "10:00 AM" },
 ];
 
 export default function OldWestSunday() {
