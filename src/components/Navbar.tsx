@@ -133,15 +133,25 @@ export default function Navbar() {
           }`}
         >
           <ul className="flex flex-col gap-1">
-            {navLinks.map((link) => (
+            {navLinks.map((link, i) => (
               <li key={link.href}>
+                {link.href.startsWith("http") && !navLinks[i - 1]?.href.startsWith("http") && (
+                  <p className="text-white/40 text-xs font-bold tracking-[0.15em] uppercase mt-4 mb-1 px-4">
+                    Our Ministries
+                  </p>
+                )}
                 <a
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
                   {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="block text-white/85 text-base font-medium px-4 py-3 rounded-md hover:text-white hover:bg-white/10 transition-all"
+                  className="flex items-center gap-1.5 text-white/85 text-base font-medium px-4 py-3 rounded-md hover:text-white hover:bg-white/10 transition-all"
                 >
                   {link.label}
+                  {link.href.startsWith("http") && (
+                    <svg className="w-3.5 h-3.5 opacity-60" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M7 17L17 7M7 7h10v10" />
+                    </svg>
+                  )}
                 </a>
               </li>
             ))}
