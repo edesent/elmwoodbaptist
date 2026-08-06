@@ -96,9 +96,8 @@ export default function EventsPage() {
                   <h3 className="font-serif text-3xl font-bold text-text-dark leading-tight mb-3">
                     Old West Sunday
                   </h3>
-                  {/* TODO: Replace with the real date/time and description once provided. */}
                   <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-2">
-                    Date &amp; time coming soon
+                    Sunday, August 30 · 10:00 AM
                   </p>
                   <p className="text-text-body leading-relaxed">
                     Saddle up and join the Elmwood family for a special themed Sunday — come
