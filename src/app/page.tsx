@@ -5,7 +5,6 @@ import Leaders from "@/components/Leaders";
 import ServiceTimes from "@/components/ServiceTimes";
 import ChurchEvents from "@/components/ChurchEvents";
 import ManCamp from "@/components/ManCamp";
-import OldWestSunday from "@/components/OldWestSunday";
 import ScriptureBanner from "@/components/ScriptureBanner";
 import LatestSermon from "@/components/LatestSermon";
 import Give from "@/components/Give";
