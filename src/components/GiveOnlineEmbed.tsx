@@ -2,21 +2,30 @@
 
 import { useState } from "react";
 
+interface GiveOnlineEmbedProps {
+  /** Set to false when embedding inside a card that already has its own
+   *  description and framing, so the intro text and box styling aren't
+   *  duplicated. */
+  showIntro?: boolean;
+}
+
 /**
  * Give Online — collapsed by default.
- * Shows a compact card with a button; clicking it reveals the Tithe.ly form
- * in place, so the page doesn't lead with a huge embedded iframe.
+ * Shows a "Give Here" button; clicking it reveals the Tithe.ly form in
+ * place, so the page doesn't lead with (or duplicate) a huge embedded iframe.
  */
-export default function GiveOnlineEmbed() {
+export default function GiveOnlineEmbed({ showIntro = true }: GiveOnlineEmbedProps) {
   const [open, setOpen] = useState(false);
 
   if (!open) {
     return (
-      <div className="rounded-2xl border border-cream-dark shadow-sm bg-white p-10 text-center">
-        <p className="text-text-body leading-relaxed mb-6">
-          Give a one-time gift or set up recurring giving securely through our online giving
-          form, powered by Tithe.ly.
-        </p>
+      <div className={showIntro ? "rounded-2xl border border-cream-dark shadow-sm bg-white p-10 text-center" : ""}>
+        {showIntro && (
+          <p className="text-text-body leading-relaxed mb-6">
+            Give a one-time gift or set up recurring giving securely through our online giving
+            form, powered by Tithe.ly.
+          </p>
+        )}
         <button
           type="button"
           onClick={() => setOpen(true)}
