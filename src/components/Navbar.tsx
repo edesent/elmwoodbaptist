@@ -10,9 +10,9 @@ const navLinks = [
   { href: "#groups", label: "Ministries" },
   { href: "/messages", label: "Sermons" },
   { href: "/give", label: "Give" },
+  { href: "#contact", label: "Contact" },
   { href: "https://elmwoodchristian.org", label: "Academy" },
   { href: "https://www.ncbbc.org", label: "NCBBC" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
