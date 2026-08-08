@@ -50,7 +50,7 @@ export const staff: StaffMember[] = [
       "Jail Ministry",
       "Bus Ministry",
     ],
-    photo: "/staff/clay2-cropped.jpg",
+    photo: "/staff/clay3-cropped.jpg",
     bio: [
       "Pastor Chris and Brenda Clay came to faith in Christ and were baptized through the ministry of Elmwood Baptist Church. Having experienced God's grace firsthand, they share a burden to reach the lost and see lives forever changed by Jesus Christ.",
       "Together, Chris and Brenda lead the H.O.P.E. Restoration Ministry and the Brookdale Senior Living Center Ministry. Pastor Chris also actively shares the Gospel through the church's jail ministry and bus ministry, while Brenda serves as the Nursery Director, lovingly overseeing the care of Elmwood's youngest members. Blessed with 5 children and 4 grandchildren, Chris and Brenda are devoted to serving the Lord at Elmwood Baptist Church.",
