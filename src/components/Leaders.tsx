@@ -27,7 +27,7 @@ const staff = [
     photo: "/staff/mcclain.jpg",
     names: "Pastor Terry & Peggy McClain",
     role: "Assistant Pastor · Way of the Cross Jail Ministry",
-    bio: "More about Pastor Terry and Peggy McClain and the Way of the Cross Jail Ministry is coming soon.",
+    bio: "The McClains came to Elmwood in June 2010. Terry directs The Way of the Cross Jail Ministry and leads the Young @ Heart adult and family Bible time class.",
   },
 ];
 
