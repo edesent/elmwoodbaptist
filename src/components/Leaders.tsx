@@ -18,7 +18,7 @@ const staff = [
   },
   {
     slug: "chris-clay",
-    photo: "https://o3hectmev11nr3rl.public.blob.vercel-storage.com/church-uploads/aKBTN7SHf3SvQ1EMGrT0QovM8T981dD8/Clay2-3bEF8GJM5ywRhMHmXdKZLk4oerxdQG.jpg",
+    photo: "/staff/clay2-cropped.jpg",
     names: "Pastor Chris & Brenda Clay",
     role: "Assistant Pastor · H.O.P.E. Restoration Ministry",
     bio: "Chris and Brenda came to faith through Elmwood and now lead the H.O.P.E. Restoration and Brookdale Senior Living ministries, with Chris also serving in jail and bus ministry and Brenda as Nursery Director.",
