@@ -24,6 +24,7 @@ const staff = [
     bio: "Chris and Brenda came to faith through Elmwood and now lead the H.O.P.E. Restoration and Brookdale Senior Living ministries, with Chris also serving in jail and bus ministry and Brenda as Nursery Director.",
   },
   {
+    slug: "terry-mcclain",
     photo: "/staff/mcclain.jpg",
     names: "Pastor Terry & Peggy McClain",
     role: "Assistant Pastor · Way of the Cross Jail Ministry",
