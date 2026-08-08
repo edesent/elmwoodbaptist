@@ -60,10 +60,15 @@ export const staff: StaffMember[] = [
     slug: "terry-mcclain",
     names: "Pastor Terry & Peggy McClain",
     role: "Assistant Pastor",
-    titles: ["Assistant Pastor", "Way of the Cross Jail Ministry"],
+    titles: [
+      "Assistant Pastor",
+      "Way of the Cross Jail Ministry",
+      "Young @ Heart Adult & Family Bible Class",
+    ],
     photo: "/staff/mcclain.jpg",
     bio: [
-      "Pastor Terry and Peggy McClain serve the Elmwood family through the Way of the Cross Jail Ministry. A full biography is coming soon — please check back for more about the McClains and the ministry the Lord has entrusted to them.",
+      "Pastor Terry and Peggy McClain came to Elmwood Baptist Church in June 2010. Terry now serves as the director of The Way of the Cross Jail Ministry, a ministry he has faithfully led for over 15 years.",
+      "Terry also leads the Young @ Heart adult and family Bible time class. Having served the Lord for over 54 years, he and Peggy remain devoted to the ministry the Lord has entrusted to them at Elmwood.",
     ],
   },
   {
