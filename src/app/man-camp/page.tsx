@@ -133,6 +133,26 @@ export default function ManCampPage() {
           </div>
         </section>
 
+        {/* What to bring */}
+        <section className="py-20 bg-cream">
+          <div className="max-w-3xl mx-auto px-6 text-center">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark mb-4">
+              Things to Know Before You Go
+            </h2>
+            <p className="text-text-body leading-relaxed mb-8">
+              A packing list and a few important details about your stay at Silver State Baptist
+              Camp — take a look before you head up the mountain.
+            </p>
+            <a
+              href="/mancamp/things-to-know-before-you-go.pdf"
+              download
+              className="inline-block bg-brown-deep text-white font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-brown-deep hover:bg-brown-light hover:border-brown-light hover:-translate-y-0.5 hover:shadow-lg transition-all"
+            >
+              Download PDF
+            </a>
+          </div>
+        </section>
+
         {/* Pricing */}
         <section className="py-20 bg-warm-white">
           <div className="max-w-5xl mx-auto px-6">
