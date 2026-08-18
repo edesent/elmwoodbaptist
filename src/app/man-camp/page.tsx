@@ -144,13 +144,12 @@ export default function ManCampPage() {
               A packing list and a few important details about your stay at Silver State Baptist
               Camp — take a look before you head up the mountain.
             </p>
-            <a
+            <PdfPopupLink
               href="/mancamp/things-to-know-before-you-go.pdf"
-              download
               className="inline-block bg-brown-deep text-white font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-brown-deep hover:bg-brown-light hover:border-brown-light hover:-translate-y-0.5 hover:shadow-lg transition-all"
             >
-              Download PDF
-            </a>
+              View PDF
+            </PdfPopupLink>
           </div>
         </section>
 
