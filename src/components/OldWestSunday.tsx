@@ -83,7 +83,7 @@ export default function OldWestSunday() {
           </button>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/events/old-west-sunday-flyer.png"
+            src="/events/old-west-sunday-update1.jpg"
             alt="Old West Sunday poster — full details"
             className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
             onClick={(e) => e.stopPropagation()}
