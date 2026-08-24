@@ -68,7 +68,7 @@ export default function ManCamp() {
                 </a>
               </div>
 
-              <p className="text-gold-light text-sm font-semibold mt-4">
+              <p className="text-gold-light text-base sm:text-lg font-bold mt-4">
                 Rooms are going fast — soon only bunkhouse spots will be left.{" "}
                 <a
                   href={REGISTER_URL}
