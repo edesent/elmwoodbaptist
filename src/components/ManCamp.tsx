@@ -67,6 +67,19 @@ export default function ManCamp() {
                   Full Details
                 </a>
               </div>
+
+              <p className="text-gold-light text-sm font-semibold mt-4">
+                Rooms are going fast — soon only bunkhouse spots will be left.{" "}
+                <a
+                  href={REGISTER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-white transition-colors"
+                >
+                  Book your room now
+                </a>
+                .
+              </p>
             </div>
           </AnimateOnScroll>
         </div>
