@@ -47,6 +47,15 @@ export default function Leaders() {
             <p className="text-text-body mt-3 max-w-2xl mx-auto">
               A team of pastors and families who love the Lord and are devoted to caring for our church family.
             </p>
+            <Link
+              href="/statement-of-faith"
+              className="inline-flex items-center gap-1.5 mt-5 text-sm font-semibold text-brown-light border-b-2 border-brown-light/40 hover:border-brown-light pb-1 transition-colors"
+            >
+              What We Believe
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </Link>
           </div>
         </AnimateOnScroll>
 
