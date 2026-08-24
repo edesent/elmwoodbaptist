@@ -161,7 +161,7 @@ export default function ManCampPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/mancamp/devils-head-nice.jpg"
-                  alt="Angels Head Lookout at sunset"
+                  alt="Angel's Head Lookout at sunset"
                   className="w-full h-auto"
                 />
               </div>
