@@ -181,7 +181,7 @@ export default function ManCampPage() {
                   iron, so men grow stronger — physically, spiritually, and personally — when they
                   pursue a common goal together.
                 </p>
-                <dl className="grid grid-cols-3 gap-4 mb-6">
+                <dl className="grid grid-cols-4 gap-4 mb-6">
                   <div className="text-center bg-cream rounded-xl py-3 border border-cream-dark">
                     <dt className="text-xs font-bold tracking-[0.1em] uppercase text-gold-dark">Distance</dt>
                     <dd className="text-text-dark font-semibold mt-1">2.9 mi RT</dd>
@@ -194,6 +194,10 @@ export default function ManCampPage() {
                     <dt className="text-xs font-bold tracking-[0.1em] uppercase text-gold-dark">Difficulty</dt>
                     <dd className="text-text-dark font-semibold mt-1">Moderate+</dd>
                   </div>
+                  <div className="text-center bg-cream rounded-xl py-3 border border-cream-dark">
+                    <dt className="text-xs font-bold tracking-[0.1em] uppercase text-gold-dark">Steps</dt>
+                    <dd className="text-text-dark font-semibold mt-1">143</dd>
+                  </div>
                 </dl>
                 <PdfPopupLink
                   href="/mancamp/man-camp-devils-head-hike.pdf"
@@ -201,34 +205,6 @@ export default function ManCampPage() {
                 >
                   View Hike Details (PDF)
                 </PdfPopupLink>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="order-2 md:order-1">
-                <h3 className="font-serif text-xl font-bold text-text-dark mb-3">What to Expect</h3>
-                <p className="text-text-body leading-relaxed mb-4">
-                  The trail climbs steadily and gets steeper near the top, finishing with 143 metal
-                  steps that spiral through the rock to the lookout tower. It&rsquo;s a short but
-                  physically demanding climb — especially for those uncomfortable with heights or
-                  stairs — that rewards the effort with a strong sense of accomplishment and
-                  breathtaking views.
-                </p>
-                <h4 className="text-xs font-bold tracking-[0.16em] uppercase text-gold-dark mb-2">Helpful Tips</h4>
-                <ul className="text-text-body space-y-1.5 list-disc list-inside">
-                  <li>Bring plenty of water</li>
-                  <li>Wear sturdy hiking shoes with good traction</li>
-                  <li>Bring sun protection and a camera</li>
-                  <li>Expect thinner air due to elevation</li>
-                </ul>
-              </div>
-              <div className="order-1 md:order-2 rounded-2xl overflow-hidden shadow-xl">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://o3hectmev11nr3rl.public.blob.vercel-storage.com/church-uploads/Za1QvTqBgqLPc7HYPW0tT1vu5V8fHKxn/Devils%20Head%20Stairs-SmE7DKd6Mi4wGrj7eKJI4nt4IAHUZS.jpg"
-                  alt="Stairs to the Angels Head Lookout"
-                  className="w-full h-auto"
-                />
               </div>
             </div>
           </div>
