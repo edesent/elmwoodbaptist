@@ -154,7 +154,7 @@ export default function ManCampPage() {
         </section>
 
         {/* Hike Opportunity */}
-        <section className="py-20 bg-warm-white">
+        <section id="hike" className="py-20 bg-warm-white">
           <div className="max-w-6xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
               <div className="rounded-2xl overflow-hidden shadow-xl">
