@@ -170,7 +170,7 @@ export default function ManCampPage() {
                   New Event
                 </span>
                 <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark mb-4">
-                  Hike Opportunity: Angels Head Lookout
+                  Hike Opportunity: <span className="line-through decoration-2 text-text-light">Devil&rsquo;s</span> Angel&rsquo;s Head Lookout
                 </h2>
                 <p className="text-text-body leading-relaxed mb-4">
                   This year, Man Camp is offering a hike to Angels Head Lookout, a historic fire
