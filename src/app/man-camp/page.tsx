@@ -163,7 +163,7 @@ export default function ManCampPage() {
                 may be split before July. This year both bunkhouse floors are open — with expanded
                 space and additional bathrooms and showers.
               </p>
-              <p className="inline-block mt-5 text-sm font-semibold text-brown-deep bg-gold/20 border border-gold rounded-full px-5 py-2">
+              <p className="inline-block mt-5 text-base sm:text-lg font-bold text-brown-deep bg-gold/20 border border-gold rounded-full px-6 py-2.5">
                 Rooms are filling up fast — soon only bunkhouse spots will remain. Reserve yours today!
               </p>
             </div>
