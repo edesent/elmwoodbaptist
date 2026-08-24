@@ -153,6 +153,87 @@ export default function ManCampPage() {
           </div>
         </section>
 
+        {/* Hike Opportunity */}
+        <section className="py-20 bg-warm-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
+              <div className="rounded-2xl overflow-hidden shadow-xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/mancamp/devils-head-nice.jpg"
+                  alt="Angels Head Lookout at sunset"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div>
+                <span className="inline-block bg-gold/20 border border-gold rounded-full px-4 py-1 text-xs font-bold tracking-[0.16em] uppercase text-brown-deep mb-4">
+                  New Event
+                </span>
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark mb-4">
+                  Hike Opportunity: Angels Head Lookout
+                </h2>
+                <p className="text-text-body leading-relaxed mb-4">
+                  This year, Man Camp is offering a hike to Angels Head Lookout, a historic fire
+                  tower in the Rampart Range southwest of Sedalia with sweeping views of the Front
+                  Range. The hike is completely optional and takes the place of the annual
+                  competition for those who choose to participate — a chance to walk side by side,
+                  encourage one another upward, and reach the summit together. As iron sharpeneth
+                  iron, so men grow stronger — physically, spiritually, and personally — when they
+                  pursue a common goal together.
+                </p>
+                <dl className="grid grid-cols-3 gap-4 mb-6">
+                  <div className="text-center bg-cream rounded-xl py-3 border border-cream-dark">
+                    <dt className="text-xs font-bold tracking-[0.1em] uppercase text-gold-dark">Distance</dt>
+                    <dd className="text-text-dark font-semibold mt-1">2.9 mi RT</dd>
+                  </div>
+                  <div className="text-center bg-cream rounded-xl py-3 border border-cream-dark">
+                    <dt className="text-xs font-bold tracking-[0.1em] uppercase text-gold-dark">Elevation Gain</dt>
+                    <dd className="text-text-dark font-semibold mt-1">~869 ft</dd>
+                  </div>
+                  <div className="text-center bg-cream rounded-xl py-3 border border-cream-dark">
+                    <dt className="text-xs font-bold tracking-[0.1em] uppercase text-gold-dark">Difficulty</dt>
+                    <dd className="text-text-dark font-semibold mt-1">Moderate+</dd>
+                  </div>
+                </dl>
+                <PdfPopupLink
+                  href="/mancamp/man-camp-devils-head-hike.pdf"
+                  className="inline-block bg-brown-deep text-white font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-brown-deep hover:bg-brown-light hover:border-brown-light hover:-translate-y-0.5 hover:shadow-lg transition-all"
+                >
+                  View Hike Details (PDF)
+                </PdfPopupLink>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="order-2 md:order-1">
+                <h3 className="font-serif text-xl font-bold text-text-dark mb-3">What to Expect</h3>
+                <p className="text-text-body leading-relaxed mb-4">
+                  The trail climbs steadily and gets steeper near the top, finishing with 143 metal
+                  steps that spiral through the rock to the lookout tower. It&rsquo;s a short but
+                  physically demanding climb — especially for those uncomfortable with heights or
+                  stairs — that rewards the effort with a strong sense of accomplishment and
+                  breathtaking views.
+                </p>
+                <h4 className="text-xs font-bold tracking-[0.16em] uppercase text-gold-dark mb-2">Helpful Tips</h4>
+                <ul className="text-text-body space-y-1.5 list-disc list-inside">
+                  <li>Bring plenty of water</li>
+                  <li>Wear sturdy hiking shoes with good traction</li>
+                  <li>Bring sun protection and a camera</li>
+                  <li>Expect thinner air due to elevation</li>
+                </ul>
+              </div>
+              <div className="order-1 md:order-2 rounded-2xl overflow-hidden shadow-xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://o3hectmev11nr3rl.public.blob.vercel-storage.com/church-uploads/Za1QvTqBgqLPc7HYPW0tT1vu5V8fHKxn/Devils%20Head%20Stairs-SmE7DKd6Mi4wGrj7eKJI4nt4IAHUZS.jpg"
+                  alt="Stairs to the Angels Head Lookout"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Pricing */}
         <section className="py-20 bg-warm-white">
           <div className="max-w-5xl mx-auto px-6">
