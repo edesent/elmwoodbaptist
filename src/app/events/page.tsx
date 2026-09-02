@@ -78,35 +78,6 @@ export default function EventsPage() {
             </h2>
             <EventList items={ministryEvents} />
 
-            {/* Featured — Old West Sunday */}
-            <div className="mt-16 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
-              <div className="grid md:grid-cols-2 items-center">
-                <div className="bg-white p-4 flex items-center justify-center">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/events/old-west-sunday-flyer.png"
-                    alt="Old West Sunday at Elmwood Baptist Church"
-                    className="w-full h-auto rounded-lg"
-                  />
-                </div>
-                <div className="p-8 md:p-10">
-                  <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
-                    Special Event
-                  </span>
-                  <h3 className="font-serif text-3xl font-bold text-text-dark leading-tight mb-3">
-                    Old West Sunday
-                  </h3>
-                  <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-2">
-                    Sunday, August 30 · 10:00 AM
-                  </p>
-                  <p className="text-text-body leading-relaxed">
-                    Saddle up and join the Elmwood family for a special themed Sunday — come
-                    dressed in your best western wear!
-                  </p>
-                </div>
-              </div>
-            </div>
-
             <div className="mt-16 p-8 bg-cream rounded-2xl border border-cream-dark text-center">
               <h3 className="font-serif text-2xl font-bold text-text-dark mb-3">
                 Special Events &amp; Announcements
