@@ -37,7 +37,7 @@ export default function ManCamp() {
               </p>
               <p className="text-white/70 mb-7">
                 Three days where men trade comfort for conviction — preaching, fellowship, and
-                spiritual strengthening from 1 Corinthians 15:58.
+                spiritual strengthening.
               </p>
 
               <dl className="space-y-3 mb-8 border-t border-white/10 pt-6">
