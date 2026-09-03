@@ -84,7 +84,7 @@ export default function FallRevival() {
           </button>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/events/fall-revival-paul-schwanke-2026.png"
+            src="/events/chatgpt-image-sep-3-2026-at-11-26-26-am.png"
             alt="Fall Revival poster — full details"
             className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
             onClick={(e) => e.stopPropagation()}
