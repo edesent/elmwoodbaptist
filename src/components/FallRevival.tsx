@@ -37,7 +37,8 @@ export default function FallRevival() {
               <p className="text-white/70 mb-7">
                 Join us for Fall Revival with evangelist Paul Schwanke —
                 preaching the Word, changing lives. Every service, every
-                night, everyone welcome!
+                night, everyone welcome! And it leads right into Man Camp,
+                beginning Thursday — spend even more time in the Word of God!
               </p>
 
               <dl className="space-y-3 mb-8 border-t border-white/10 pt-6">
