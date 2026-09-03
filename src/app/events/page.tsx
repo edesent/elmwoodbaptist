@@ -78,6 +78,39 @@ export default function EventsPage() {
             </h2>
             <EventList items={ministryEvents} />
 
+            {/* Featured — Fall Revival */}
+            <div className="mt-16 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
+              <div className="grid md:grid-cols-2 items-center">
+                <div className="bg-white p-4 flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/events/fall-revival-paul-schwanke-2026.png"
+                    alt="Fall Revival with Paul Schwanke at Elmwood Baptist Church"
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+                <div className="p-8 md:p-10">
+                  <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
+                    Special Event
+                  </span>
+                  <h3 className="font-serif text-3xl font-bold text-text-dark leading-tight mb-3">
+                    Fall Revival with Paul Schwanke
+                  </h3>
+                  <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-1">
+                    Sunday, September 20 · 10:00 AM &amp; 1:30 PM
+                  </p>
+                  <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-2">
+                    Monday–Wednesday, September 21–23 · 7:00 PM
+                  </p>
+                  <p className="text-text-body leading-relaxed">
+                    Preaching the Word. Changing lives. Join us for Fall Revival
+                    with evangelist Paul Schwanke — every service, every night,
+                    everyone welcome!
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="mt-16 p-8 bg-cream rounded-2xl border border-cream-dark text-center">
               <h3 className="font-serif text-2xl font-bold text-text-dark mb-3">
                 Special Events &amp; Announcements
