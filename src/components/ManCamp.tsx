@@ -17,7 +17,7 @@ export default function ManCamp() {
             <div className="rounded-2xl overflow-hidden shadow-2xl bg-white p-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/mancamp/man-camp-webiste.jpg"
+                src="/mancamp/man-camp-webiste-2026.png"
                 alt="Man Camp 9 — 2026"
                 className="w-full h-auto rounded-lg"
               />
