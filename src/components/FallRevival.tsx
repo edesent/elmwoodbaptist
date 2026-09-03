@@ -19,7 +19,7 @@ export default function FallRevival() {
             <div className="rounded-2xl overflow-hidden shadow-2xl bg-white p-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/events/fall-revival-paul-schwanke-2026.png"
+                src="/events/fall-revival-paul-schwanke-2026-slide2.png"
                 alt="Fall Revival with Paul Schwanke at Elmwood Baptist Church"
                 className="w-full h-auto rounded-lg"
               />
