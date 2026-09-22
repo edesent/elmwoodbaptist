@@ -1,20 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import {
+  MIN_FILL_MS,
+  SERVICE_OPTIONS,
+  type FieldErrors,
+} from "@/lib/planVisit/validation";
 
-// WBC Chat backend — the same site key the chat widget in layout.tsx uses.
-// A submission here lands instantly in the church's private Slack channel,
-// which reaches the pastors' phones like a text message.
-const CHAT_API = "https://slackwebsitechat.vercel.app";
-const CHAT_KEY = "wbc_93cf6d847031ded84bdb9bbe47d51fa1a7c89c160114ce41";
-
-const SERVICE_OPTIONS = [
-  "Sunday Service — 10:00 AM",
-  "Family Bible Time (Sunday School) — 11:30 AM",
-  "Sunday Afternoon Service — 1:30 PM",
-  "Thursday Mid-Week Service — 7:00 PM",
-  "I'm not sure yet",
-];
+// Submissions go to our own /api/plan-visit route, which rate-limits, validates
+// and screens them before handing them to the WBC Chat backend — so they land
+// in the church's private Slack channel, reaching the pastors' phones like a
+// text message. Nothing here talks to the chat backend directly, and the chat
+// key is no longer shipped to the browser with this form.
 
 const inputClass =
   "w-full px-4 py-3 rounded-lg bg-cream border border-cream-dark text-text-dark placeholder:text-text-muted focus:outline-none focus:ring-2 focus:ring-gold/40 focus:border-gold transition-all";
@@ -26,6 +23,17 @@ type Status = "idle" | "sending" | "done" | "error";
 export default function PlanVisitForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+
+  // When this form first appeared on screen, and a stable id for this attempt —
+  // together they let the server tell a person from a script, and shrug off a
+  // double-click without sending the pastors two copies.
+  const openedAt = useRef(Date.now());
+  const idempotencyKey = useRef(
+    typeof crypto !== "undefined" && "randomUUID" in crypto
+      ? crypto.randomUUID()
+      : `${Date.now()}-${Math.random().toString(36).slice(2)}`
+  );
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -44,6 +52,7 @@ export default function PlanVisitForm() {
     const preferredTime = String(data.get("preferredTime") ?? "");
     const notes = String(data.get("notes") ?? "").trim();
 
+    setFieldErrors({});
     if (!name) {
       setError("Please enter your name.");
       return;
@@ -56,21 +65,41 @@ export default function PlanVisitForm() {
     setStatus("sending");
     setError("");
     try {
-      const res = await fetch(`${CHAT_API}/api/chat/coffee-request`, {
+      const elapsedMs = Date.now() - openedAt.current;
+      // A person who somehow beat the speed trap just waits out the remainder,
+      // rather than being told their request looked like spam.
+      if (elapsedMs < MIN_FILL_MS) {
+        await new Promise((resolve) => setTimeout(resolve, MIN_FILL_MS - elapsedMs));
+      }
+
+      const res = await fetch("/api/plan-visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          apiKey: CHAT_KEY,
           name,
           phone,
           email,
           preferredTime,
-          subject: "📍 Plan a Visit Request",
-          message: notes,
-          request: notes,
+          notes,
+          elapsedMs: Date.now() - openedAt.current,
+          __idempotencyKey: idempotencyKey.current,
         }),
       });
-      if (!res.ok) throw new Error("request failed");
+
+      const payload = (await res.json().catch(() => null)) as
+        | { success?: boolean; error?: string; fieldErrors?: FieldErrors }
+        | null;
+
+      if (!res.ok) {
+        setStatus("idle");
+        setFieldErrors(payload?.fieldErrors ?? {});
+        setError(
+          payload?.error ??
+            "Something went wrong sending your request. Please call us at (303) 659-3818 and we'll be glad to help."
+        );
+        return;
+      }
+
       setStatus("done");
       form.reset();
     } catch {
@@ -103,10 +132,19 @@ export default function PlanVisitForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-      {/* Honeypot */}
+      {/* Honeypots */}
       <input
         type="text"
         name="company"
+        className="hidden"
+        style={{ display: "none" }}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
+      <input
+        type="text"
+        name="botcheck"
         className="hidden"
         style={{ display: "none" }}
         tabIndex={-1}
@@ -124,9 +162,13 @@ export default function PlanVisitForm() {
             name="name"
             type="text"
             autoComplete="name"
+            maxLength={80}
             placeholder="First and last name"
             className={inputClass}
           />
+          {fieldErrors.name ? (
+            <p className="mt-1.5 text-sm text-red-700">{fieldErrors.name}</p>
+          ) : null}
         </div>
         <div>
           <label htmlFor="visit-phone" className={labelClass}>
@@ -137,9 +179,13 @@ export default function PlanVisitForm() {
             name="phone"
             type="tel"
             autoComplete="tel"
+            maxLength={30}
             placeholder="(303) 555-0123"
             className={inputClass}
           />
+          {fieldErrors.phone ? (
+            <p className="mt-1.5 text-sm text-red-700">{fieldErrors.phone}</p>
+          ) : null}
         </div>
       </div>
 
@@ -152,9 +198,13 @@ export default function PlanVisitForm() {
           name="email"
           type="email"
           autoComplete="email"
+          maxLength={120}
           placeholder="you@example.com"
           className={inputClass}
         />
+        {fieldErrors.email ? (
+          <p className="mt-1.5 text-sm text-red-700">{fieldErrors.email}</p>
+        ) : null}
       </div>
 
       <div>
@@ -186,9 +236,13 @@ export default function PlanVisitForm() {
           id="visit-notes"
           name="notes"
           rows={3}
+          maxLength={1000}
           placeholder="How many are coming, ages of your children, questions you have…"
           className={`${inputClass} resize-none`}
         />
+        {fieldErrors.notes ? (
+          <p className="mt-1.5 text-sm text-red-700">{fieldErrors.notes}</p>
+        ) : null}
       </div>
 
       {error ? (
