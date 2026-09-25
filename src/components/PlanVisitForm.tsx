@@ -1,8 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
-  MIN_FILL_MS,
   SERVICE_OPTIONS,
   type FieldErrors,
 } from "@/lib/planVisit/validation";
@@ -25,15 +24,26 @@ export default function PlanVisitForm() {
   const [error, setError] = useState("");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
 
-  // When this form first appeared on screen, and a stable id for this attempt —
-  // together they let the server tell a person from a script, and shrug off a
-  // double-click without sending the pastors two copies.
-  const openedAt = useRef(Date.now());
+  // A server-signed stamp of when this form appeared, and a stable id for this
+  // attempt — together they let the server tell a person from a script, and
+  // shrug off a double-click without sending the pastors two copies.
+  const formToken = useRef<Promise<string | null> | null>(null);
   const idempotencyKey = useRef(
     typeof crypto !== "undefined" && "randomUUID" in crypto
       ? crypto.randomUUID()
       : `${Date.now()}-${Math.random().toString(36).slice(2)}`
   );
+
+  function fetchFormToken(): Promise<string | null> {
+    return fetch("/api/plan-visit", { cache: "no-store" })
+      .then((res) => res.json())
+      .then((body: { token?: string | null }) => body.token ?? null)
+      .catch(() => null);
+  }
+
+  useEffect(() => {
+    formToken.current = fetchFormToken();
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -57,6 +67,10 @@ export default function PlanVisitForm() {
       setError("Please enter your name.");
       return;
     }
+    if (name.split(/\s+/).length < 2) {
+      setError("Please enter your first and last name.");
+      return;
+    }
     if (phone.replace(/[^0-9]/g, "").length < 7) {
       setError("Please enter a phone number we can reach you at.");
       return;
@@ -65,12 +79,9 @@ export default function PlanVisitForm() {
     setStatus("sending");
     setError("");
     try {
-      const elapsedMs = Date.now() - openedAt.current;
-      // A person who somehow beat the speed trap just waits out the remainder,
-      // rather than being told their request looked like spam.
-      if (elapsedMs < MIN_FILL_MS) {
-        await new Promise((resolve) => setTimeout(resolve, MIN_FILL_MS - elapsedMs));
-      }
+      // If the first fetch failed (a flaky connection), try once more now.
+      let token = await (formToken.current ?? Promise.resolve(null));
+      if (!token) token = await fetchFormToken();
 
       const res = await fetch("/api/plan-visit", {
         method: "POST",
@@ -81,7 +92,7 @@ export default function PlanVisitForm() {
           email,
           preferredTime,
           notes,
-          elapsedMs: Date.now() - openedAt.current,
+          formToken: token,
           __idempotencyKey: idempotencyKey.current,
         }),
       });

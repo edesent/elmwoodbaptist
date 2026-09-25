@@ -4,6 +4,7 @@ import {
   validatePlanVisit,
   type PlanVisitInput,
 } from "@/lib/planVisit/validation";
+import { issueFormToken, verifyFormToken } from "@/lib/planVisit/formToken";
 import { isRateLimited, getClientKey } from "@/lib/connectCard/rateLimit";
 import { getRememberedResult, rememberResult } from "@/lib/connectCard/idempotency";
 
@@ -22,6 +23,23 @@ const CHAT_KEY =
 
 // A cheerful success that costs the church nothing — what bots get.
 const PRETEND_SUCCESS = { success: true };
+
+// Signs the form's load-time token. Without it the timing check can't run, so
+// say so loudly in the logs rather than quietly letting everything through.
+const FORM_SECRET = process.env.PLAN_VISIT_SECRET;
+
+// The form asks for a token when it loads; submitting sooner than a person
+// could fill it in, or without one at all, is treated as a bot.
+export async function GET() {
+  if (!FORM_SECRET) {
+    console.warn("[plan-visit] PLAN_VISIT_SECRET is not set — timing check disabled");
+    return Response.json({ token: null }, { headers: { "Cache-Control": "no-store" } });
+  }
+  return Response.json(
+    { token: issueFormToken(FORM_SECRET) },
+    { headers: { "Cache-Control": "no-store" } }
+  );
+}
 
 async function notifyChurch(data: PlanVisitInput): Promise<boolean> {
   const res = await fetch(`${CHAT_API}/api/chat/coffee-request`, {
@@ -82,6 +100,18 @@ export async function POST(request: Request) {
   // Pretend success so the bot doesn't learn anything, without doing any work.
   if (looksLikeBot(raw)) {
     return Response.json(PRETEND_SUCCESS);
+  }
+
+  if (FORM_SECRET) {
+    const verdict = verifyFormToken(raw.formToken, FORM_SECRET);
+    if (verdict === "expired") {
+      return Response.json(
+        { error: "This form has been open a while — please refresh the page and try again." },
+        { status: 400 }
+      );
+    }
+    // No token, a forged one, or a fill faster than a person could manage.
+    if (verdict !== "ok") return Response.json(PRETEND_SUCCESS);
   }
 
   // ── Idempotency (double-click / client retry protection) ─────────────
