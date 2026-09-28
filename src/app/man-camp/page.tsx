@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MountainRidge, PineMark } from "@/components/mancamp/Outdoor";
+import CampMap from "@/components/mancamp/CampMap";
 
 export const metadata: Metadata = {
   title: { absolute: "Man Camp | Elmwood Baptist Church" },
