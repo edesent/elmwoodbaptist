@@ -78,34 +78,32 @@ export default function EventsPage() {
             </h2>
             <EventList items={ministryEvents} />
 
-            {/* Featured — Fall Revival */}
+            {/* Featured — Praise and Pie Testimony Time */}
             <div className="mt-16 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
               <div className="grid md:grid-cols-2 items-center">
-                <div className="bg-white p-4 flex items-center justify-center">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/events/fall-revival-paul-schwanke-2026.png"
-                    alt="Fall Revival with Paul Schwanke at Elmwood Baptist Church"
-                    className="w-full h-auto rounded-lg"
-                  />
+                <div className="bg-brown-deep p-10 flex flex-col items-center justify-center text-center h-full">
+                  <p className="text-xs font-bold tracking-[0.2em] uppercase text-gold-light mb-3">
+                    Sunday Before Thanksgiving
+                  </p>
+                  <p className="font-serif text-7xl font-bold text-white leading-none">22</p>
+                  <p className="font-serif text-2xl font-semibold text-gold-light mt-2">November</p>
+                  <p className="text-white/70 font-medium mt-3">12:30 PM</p>
                 </div>
                 <div className="p-8 md:p-10">
                   <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
                     Special Event
                   </span>
                   <h3 className="font-serif text-3xl font-bold text-text-dark leading-tight mb-3">
-                    Fall Revival with Paul Schwanke
+                    Praise and Pie Testimony Time
                   </h3>
-                  <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-1">
-                    Sunday, September 20 · 10:00 AM &amp; 1:30 PM
-                  </p>
                   <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-2">
-                    Monday–Wednesday, September 21–23 · 7:00 PM
+                    Sunday, November 22 · 12:30 PM
                   </p>
                   <p className="text-text-body leading-relaxed">
-                    Preaching the Word. Changing lives. Join us for Fall Revival
-                    with evangelist Paul Schwanke — every service, every night,
-                    everyone welcome!
+                    The church is providing the pie, and you bring the praise! Come
+                    ready to share how God has been good to you throughout this year,
+                    and be encouraged as your church family does the same. Everyone
+                    is welcome!
                   </p>
                 </div>
               </div>
