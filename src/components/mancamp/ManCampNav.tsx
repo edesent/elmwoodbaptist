@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { PineMark } from "@/components/mancamp/Outdoor";
 
 const links = [
   { href: "/man-camp", label: "Home" },
