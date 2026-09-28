@@ -47,15 +47,18 @@ export default function FaqPage() {
     <>
       <ManCampPageHero eyebrow="Man Camp" title="Questions & Answers" />
 
-      <section className="py-20 bg-warm-white">
+      <section className="py-16 bg-parchment mc-topo">
         <div className="max-w-3xl mx-auto px-6 space-y-4">
           {faqs.map((f) => (
-            <details key={f.q} className="group bg-cream rounded-2xl border border-cream-dark p-6 open:shadow-md">
+            <details
+              key={f.q}
+              className="group bg-canvas rounded-sm border-2 border-bark/15 border-l-8 border-l-pine open:border-l-ember p-6 shadow-sm"
+            >
               <summary className="cursor-pointer list-none flex justify-between items-center gap-4">
-                <span className="font-serif text-2xl font-bold text-text-dark">{f.q}</span>
-                <span className="text-gold-dark text-3xl leading-none group-open:rotate-45 transition-transform">+</span>
+                <span className="font-display text-2xl font-semibold uppercase tracking-[0.05em] text-bark">{f.q}</span>
+                <span className="font-display text-ember text-4xl leading-none group-open:rotate-45 transition-transform">+</span>
               </summary>
-              <p className="text-lg text-text-body leading-relaxed mt-4">{f.a}</p>
+              <p className="text-lg leading-relaxed mt-4">{f.a}</p>
             </details>
           ))}
         </div>
