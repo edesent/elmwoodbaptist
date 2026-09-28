@@ -2,15 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MountainRidge, PineMark } from "@/components/mancamp/Outdoor";
 import CampMap from "@/components/mancamp/CampMap";
+import Countdown from "@/components/mancamp/Countdown";
+import { LOGO_LIGHT, CAMP_DATES, CAMP_PLACE } from "@/components/mancamp/brand";
 
 export const metadata: Metadata = {
-  title: { absolute: "Man Camp | Elmwood Baptist Church" },
+  title: { absolute: "Man Camp 10 | Elmwood Baptist Church" },
   description:
-    "Man Camp is the annual men's retreat of Elmwood Baptist Church in Brighton, Colorado: bold preaching, real fellowship, and iron sharpening iron in God's creation.",
+    "Man Camp 10, celebrating ten years of forging faithful men for God's glory. September 23\u201325, 2027 at Silver State Baptist Youth Camp in Sedalia, Colorado. A ministry of Elmwood Baptist Church.",
   alternates: { canonical: "/man-camp" },
   openGraph: {
-    title: "Man Camp | Elmwood Baptist Church",
-    description: "Three days where men trade comfort for conviction.",
+    title: "Man Camp 10 | Elmwood Baptist Church",
+    description: "Celebrating ten years of forging faithful men for God's glory. September 23\u201325, 2027.",
     url: "/man-camp",
     type: "website",
     images: ["/mancamp/man-camp-webiste.jpg"],
@@ -36,73 +38,114 @@ const quickLinks = [
 const btn =
   "inline-block font-display text-lg font-semibold uppercase tracking-[0.15em] px-9 py-4 rounded-sm border-2 transition-colors";
 
+// The red diamond from the Man Camp logo, with a number inside.
+function Diamond({ label, className = "" }: { label: string; className?: string }) {
+  return (
+    <svg viewBox="0 0 380 150" className={className} role="img" aria-label={`Man Camp ${label}`}>
+      <polygon points="190,0 380,75 190,150 0,75" fill="var(--color-ember)" />
+      <text
+        x="190"
+        y="104"
+        textAnchor="middle"
+        fontFamily="Georgia, 'Times New Roman', serif"
+        fontWeight="700"
+        fontSize="84"
+        fill="#ffffff"
+      >
+        {label}
+      </text>
+    </svg>
+  );
+}
+
 export default function ManCampHome() {
   return (
     <>
-      {/* Hero: title over the photo */}
+      {/* Hero */}
       <header className="relative bg-pine overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-60"
-          style={{ backgroundImage: `url("${HERO_PHOTO}")` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-pine/30 via-pine/50 to-pine/95" />
-        <div className="relative max-w-4xl mx-auto px-6 pt-24 md:pt-32 pb-12 text-center">
-          <PineMark className="w-14 h-14 text-ember mx-auto mb-5" />
-          <p className="font-display text-base md:text-lg tracking-[0.35em] uppercase text-ember-light mb-4">
-            The Men&rsquo;s Retreat of Elmwood Baptist Church
+        <div className="absolute inset-0 bg-cover bg-center opacity-45" style={{ backgroundImage: `url("${HERO_PHOTO}")` }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-pine/55 via-pine/65 to-pine" />
+        <div className="relative max-w-5xl mx-auto px-6 pt-16 md:pt-24 pb-12 text-center">
+          <p className="font-display text-base md:text-xl tracking-[0.4em] uppercase text-ember-light mb-6">
+            &#9670; Celebrating 10 Years &#9670;
           </p>
-          <h1 className="font-display text-7xl md:text-9xl font-bold text-parchment uppercase tracking-[0.04em] leading-none">
-            Man Camp
-          </h1>
-          <p className="text-2xl md:text-3xl text-canvas mt-6">
-            Three days where men trade comfort for <span className="text-ember-light font-semibold">conviction.</span>
-          </p>
+
+          {LOGO_LIGHT ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={LOGO_LIGHT}
+              alt="Man Camp 10: Forging Faithful Men for God's Glory, 1 Peter 1:7"
+              className="w-full max-w-2xl mx-auto h-auto drop-shadow-[0_6px_18px_rgba(0,0,0,0.55)]"
+            />
+          ) : (
+            <>
+              <h1 className="font-display text-7xl md:text-9xl font-bold text-parchment uppercase tracking-[0.04em] leading-none">
+                Man Camp
+              </h1>
+              <Diamond label="10" className="w-56 md:w-72 mx-auto mt-4" />
+              <p className="font-display text-lg md:text-2xl tracking-[0.2em] uppercase text-parchment mt-4">
+                Forging Faithful Men for God&rsquo;s Glory
+              </p>
+            </>
+          )}
+
+          <div className="mt-10">
+            <p className="font-display text-3xl md:text-5xl font-bold uppercase tracking-[0.06em] text-parchment">
+              {CAMP_DATES}
+            </p>
+            <p className="font-display text-base md:text-xl uppercase tracking-[0.15em] text-canvas mt-2">{CAMP_PLACE}</p>
+          </div>
+
+          <div className="mt-10">
+            <Countdown />
+          </div>
+
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link href="/man-camp/register" className={`${btn} bg-ember border-ember text-parchment hover:bg-ember-light hover:border-ember-light hover:text-pine`}>
+            <Link href="/man-camp/register" className={`${btn} bg-ember border-ember text-parchment hover:bg-ember-light hover:border-ember-light`}>
               Registration Info
             </Link>
-            <Link href="/man-camp/photos" className={`${btn} border-parchment/70 text-parchment hover:border-ember-light hover:text-ember-light`}>
-              See the Photos
+            <Link href="/man-camp/schedule" className={`${btn} border-parchment/70 text-parchment hover:border-ember-light hover:text-ember-light`}>
+              The Weekend
             </Link>
           </div>
         </div>
         <MountainRidge className="relative text-parchment" />
       </header>
 
-      {/* Save the date + recap */}
+      {/* Ten years */}
       <section className="py-20 bg-parchment mc-topo">
-        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-8">
-          <div className="bg-pine text-canvas rounded-sm p-10 shadow-xl border-t-8 border-ember">
-            <p className="font-display text-base tracking-[0.3em] uppercase text-ember-light mb-3">Save the Date</p>
-            <h2 className="font-display text-5xl font-bold uppercase text-parchment mb-4">Man Camp 10</h2>
-            <p className="font-display text-3xl uppercase tracking-[0.06em] text-ember-light">September 23&ndash;25, 2027</p>
-            <p className="font-display text-lg uppercase tracking-[0.12em] text-parchment mt-2 mb-5">
-              Silver State Baptist Youth Camp &middot; Sedalia, Colorado
-            </p>
-            <p className="text-lg leading-relaxed">
-              Our tenth year is on the calendar. Speaker and registration details will be posted here
-              as soon as they are set. Call the church to be the first to know.
-            </p>
-            <a href="tel:+13036593818" className="inline-block mt-6 font-display text-2xl tracking-[0.08em] text-ember-light">
-              (303) 659-3818
-            </a>
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-5 gap-12 items-center">
+          <div className="md:col-span-2 text-center">
+            <p className="font-display text-[9rem] md:text-[12rem] font-bold leading-none text-ember drop-shadow-sm">10</p>
+            <p className="font-display text-3xl font-bold uppercase tracking-[0.3em] text-bark -mt-2">Years</p>
+            <div className="flex items-center justify-center gap-3 mt-4">
+              <span className="h-0.5 w-12 bg-bark/40" />
+              <PineMark className="w-7 h-7 text-moss" />
+              <span className="h-0.5 w-12 bg-bark/40" />
+            </div>
           </div>
-
-          <div className="bg-canvas rounded-sm p-10 border-2 border-bark/20 shadow-md">
-            <p className="font-display text-base tracking-[0.3em] uppercase text-moss mb-3">Thank You, Men</p>
-            <h2 className="font-display text-5xl font-bold uppercase text-bark mb-4">Man Camp 9</h2>
-            <p className="text-lg leading-relaxed mb-5">
-              Thank you to every man who came to Silver State Baptist Camp this September, and to
-              Evangelist Paul Schwanke for preaching the Word under the theme &ldquo;Faithful to the
-              Last Amen.&rdquo;
+          <div className="md:col-span-3">
+            <p className="font-display text-base tracking-[0.3em] uppercase text-moss mb-3">A Decade on the Mountain</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold uppercase text-bark leading-tight mb-5">
+              Ten Years of Forging Faithful Men
+            </h2>
+            <p className="text-xl leading-relaxed mb-6">
+              For ten years, men of Elmwood Baptist Church have headed up the mountain to sit under
+              the preaching of God&rsquo;s Word, sharpen one another, and come home stronger. Man Camp 10
+              is our celebration of all God has done, and we want every man there.
             </p>
-            <blockquote className="italic text-lg text-bark border-l-4 border-ember pl-5">
-              &ldquo;Therefore, my beloved brethren, be ye stedfast, unmoveable, always abounding in
-              the work of the Lord, forasmuch as ye know that your labour is not in vain in the Lord.&rdquo;
-              <span className="block not-italic font-display text-sm tracking-[0.2em] uppercase text-moss mt-2">
-                1 Corinthians 15:58
-              </span>
+            <blockquote className="bg-canvas border-l-8 border-ember rounded-sm p-6 shadow-sm">
+              <p className="italic text-xl text-bark leading-relaxed">
+                &ldquo;That the trial of your faith, being much more precious than of gold that
+                perisheth, though it be tried with fire, might be found unto praise and honour and
+                glory at the appearing of Jesus Christ&rdquo;
+              </p>
+              <span className="block font-display text-base tracking-[0.25em] uppercase text-ember mt-3">1 Peter 1:7</span>
             </blockquote>
+            <p className="text-lg mt-6">
+              Thank you to every man who came to Man Camp 9 this September, and to Evangelist Paul
+              Schwanke for preaching the Word.
+            </p>
           </div>
         </div>
       </section>
@@ -124,7 +167,7 @@ export default function ManCampHome() {
           <div className="grid md:grid-cols-3 gap-6">
             {pillars.map((p) => (
               <div key={p.title} className="border-2 border-parchment/15 rounded-sm p-8 text-center bg-pine-light/60">
-                <PineMark className="w-10 h-10 text-ember mx-auto mb-4" />
+                <PineMark className="w-10 h-10 text-ember-light mx-auto mb-4" />
                 <h3 className="font-display text-2xl font-semibold uppercase tracking-[0.1em] text-parchment mb-3">
                   {p.title}
                 </h3>
