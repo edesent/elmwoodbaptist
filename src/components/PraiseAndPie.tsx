@@ -12,25 +12,13 @@ export default function PraiseAndPie() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <AnimateOnScroll>
-            <div className="rounded-2xl shadow-2xl bg-cream p-10 md:p-14 text-center">
-              <p className="text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-4">
-                Sunday Before Thanksgiving
-              </p>
-              <p className="font-serif text-7xl md:text-8xl font-bold text-brown-deep leading-none">
-                22
-              </p>
-              <p className="font-serif text-2xl md:text-3xl font-semibold text-brown-light mt-2">
-                November
-              </p>
-              <p className="text-text-body font-medium mt-4">12:30 PM</p>
-              <div className="mt-8 pt-6 border-t border-cream-dark">
-                <p className="font-serif text-xl italic text-text-dark leading-relaxed">
-                  &ldquo;Let the redeemed of the LORD say so&rdquo;
-                </p>
-                <p className="text-xs font-bold tracking-[0.16em] uppercase text-gold-dark mt-2">
-                  Psalm 107:2
-                </p>
-              </div>
+            <div className="rounded-2xl overflow-hidden shadow-2xl bg-white p-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/events/praise-and-pie.png"
+                alt="Praise and Pie Testimony Time, Sunday, November 22 at 12:30 PM, Elmwood Baptist Church"
+                className="w-full h-auto rounded-lg"
+              />
             </div>
           </AnimateOnScroll>
 
