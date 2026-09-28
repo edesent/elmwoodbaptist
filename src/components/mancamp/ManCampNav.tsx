@@ -24,7 +24,10 @@ export default function ManCampNav() {
     <header className="fixed top-0 inset-x-0 z-50 bg-pine border-b-4 border-ember">
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/man-camp" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <PineMark className="w-9 h-9 text-ember" />
+          <svg viewBox="0 0 76 30" className="w-14 h-auto" aria-hidden="true">
+            <polygon points="38,0 76,15 38,30 0,15" fill="var(--color-ember)" />
+            <text x="38" y="21.5" textAnchor="middle" fontFamily="Georgia, serif" fontWeight="700" fontSize="17" fill="#fff">10</text>
+          </svg>
           <span className="flex flex-col leading-none">
             <span className="font-display text-3xl font-bold tracking-[0.1em] text-parchment uppercase">
               Man Camp
