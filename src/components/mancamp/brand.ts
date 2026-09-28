@@ -2,7 +2,7 @@
 
 // The Man Camp 10 logo, light version for dark backgrounds.
 // Left empty until the logo upload finishes; pages show a text title until then.
-export const LOGO_LIGHT = "";
+export const LOGO_LIGHT = "/mancamp/man-camp-logo-light.png";
 
 // Man Camp 10 begins Thursday, September 23, 2027 at 4:00 PM Mountain Time.
 export const CAMP_START = "2027-09-23T16:00:00-06:00";
