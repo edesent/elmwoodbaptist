@@ -74,9 +74,13 @@ export default function ManCampHome() {
           <div className="bg-pine text-canvas rounded-sm p-10 shadow-xl border-t-8 border-ember">
             <p className="font-display text-base tracking-[0.3em] uppercase text-ember-light mb-3">Save the Date</p>
             <h2 className="font-display text-5xl font-bold uppercase text-parchment mb-4">Man Camp 10</h2>
+            <p className="font-display text-3xl uppercase tracking-[0.06em] text-ember-light">September 23&ndash;25, 2027</p>
+            <p className="font-display text-lg uppercase tracking-[0.12em] text-parchment mt-2 mb-5">
+              Silver State Baptist Youth Camp &middot; Sedalia, Colorado
+            </p>
             <p className="text-lg leading-relaxed">
-              Our tenth year is on the way. Dates, speaker, and registration details will be posted
-              here as soon as they are set. Call the church to be the first to know.
+              Our tenth year is on the calendar. Speaker and registration details will be posted here
+              as soon as they are set. Call the church to be the first to know.
             </p>
             <a href="tel:+13036593818" className="inline-block mt-6 font-display text-2xl tracking-[0.08em] text-ember-light">
               (303) 659-3818
