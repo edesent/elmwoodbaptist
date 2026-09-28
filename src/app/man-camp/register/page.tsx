@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ManCampPageHero from "@/components/mancamp/ManCampPageHero";
+import { PineMark } from "@/components/mancamp/Outdoor";
 
 export const metadata: Metadata = {
   title: "Register",
@@ -20,13 +21,15 @@ export default function RegisterPage() {
         eyebrow="Man Camp 10"
         title="Registration"
         subtitle="Registration for Man Camp 10 is not open yet. Here is what to expect when it does."
+        image="/mancamp/men.jpg"
       />
 
-      <section className="py-20 bg-warm-white">
+      <section className="py-16 bg-parchment mc-topo">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark">Room Options</h2>
-            <p className="text-lg text-text-body mt-4 max-w-2xl mx-auto">
+            <p className="font-display text-base tracking-[0.3em] uppercase text-moss mb-3">Pick Your Bunk</p>
+            <h2 className="font-display text-5xl font-bold uppercase text-bark">Room Options</h2>
+            <p className="text-lg mt-4 max-w-2xl mx-auto">
               These were the rates for Man Camp 9 and are shown for reference. Pricing for next year
               will be posted when registration opens.
             </p>
@@ -36,24 +39,25 @@ export default function RegisterPage() {
             {rooms.map((r) => (
               <div
                 key={r.name}
-                className={`p-8 rounded-2xl border text-center ${
-                  r.featured ? "bg-brown-deep border-brown-deep text-white shadow-xl" : "bg-cream border-cream-dark"
+                className={`p-8 rounded-sm text-center border-2 shadow-md ${
+                  r.featured ? "bg-pine border-ember text-canvas" : "bg-canvas border-bark/15"
                 }`}
               >
-                <h3 className={`font-serif text-2xl font-semibold mb-2 ${r.featured ? "text-white" : "text-text-dark"}`}>
+                <PineMark className={`w-8 h-8 mx-auto mb-3 ${r.featured ? "text-ember" : "text-moss"}`} />
+                <h3 className={`font-display text-2xl font-semibold uppercase tracking-[0.08em] mb-2 ${r.featured ? "text-parchment" : "text-bark"}`}>
                   {r.name}
                 </h3>
-                <p className={`font-serif text-4xl font-bold mb-2 ${r.featured ? "text-gold-light" : "text-brown-light"}`}>
+                <p className={`font-display text-5xl font-bold mb-2 ${r.featured ? "text-ember-light" : "text-ember"}`}>
                   {r.price}
                 </p>
-                <p className={`text-base ${r.featured ? "text-white/75" : "text-text-light"}`}>{r.note}</p>
+                <p className="text-base">{r.note}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-cream rounded-2xl p-8 border border-cream-dark max-w-3xl mx-auto">
-            <h3 className="font-serif text-2xl font-bold text-text-dark mb-4">Good to Know</h3>
-            <ul className="space-y-3 text-lg text-text-body">
+          <div className="bg-canvas rounded-sm p-8 border-2 border-bark/15 border-l-8 border-l-ember max-w-3xl mx-auto">
+            <h3 className="font-display text-3xl font-bold uppercase text-bark mb-4">Good to Know</h3>
+            <ul className="space-y-3 text-lg">
               <li>Registering early has saved men 20% on bunkhouse rates.</li>
               <li>Payments may be split into more than one payment.</li>
               <li>Private and semi-private rooms fill up first, so register early if you want one.</li>
@@ -61,10 +65,10 @@ export default function RegisterPage() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-lg text-text-body mb-4">Want to hear as soon as registration opens?</p>
+            <p className="text-lg mb-4">Want to hear as soon as registration opens?</p>
             <a
               href="tel:+13036593818"
-              className="inline-block bg-gold text-brown-deep font-semibold text-base tracking-wide uppercase px-9 py-4 rounded-full border-2 border-gold hover:bg-gold-light hover:border-gold-light transition-all"
+              className="inline-block font-display text-lg font-semibold uppercase tracking-[0.15em] px-9 py-4 rounded-sm border-2 border-ember bg-ember text-parchment hover:bg-pine hover:border-pine transition-colors"
             >
               Call (303) 659-3818
             </a>
