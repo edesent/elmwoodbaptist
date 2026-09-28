@@ -81,13 +81,13 @@ export default function EventsPage() {
             {/* Featured — Praise and Pie Testimony Time */}
             <div className="mt-16 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
               <div className="grid md:grid-cols-2 items-center">
-                <div className="bg-brown-deep p-10 flex flex-col items-center justify-center text-center h-full">
-                  <p className="text-xs font-bold tracking-[0.2em] uppercase text-gold-light mb-3">
-                    Sunday Before Thanksgiving
-                  </p>
-                  <p className="font-serif text-7xl font-bold text-white leading-none">22</p>
-                  <p className="font-serif text-2xl font-semibold text-gold-light mt-2">November</p>
-                  <p className="text-white/70 font-medium mt-3">12:30 PM</p>
+                <div className="bg-white p-4 flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/events/praise-and-pie.png"
+                    alt="Praise and Pie Testimony Time, Sunday, November 22 at 12:30 PM, Elmwood Baptist Church"
+                    className="w-full h-auto rounded-lg"
+                  />
                 </div>
                 <div className="p-8 md:p-10">
                   <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
