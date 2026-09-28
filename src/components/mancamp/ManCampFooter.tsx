@@ -7,10 +7,15 @@ export default function ManCampFooter() {
       <MountainRidge className="text-pine bg-parchment" />
       <div className="max-w-6xl mx-auto px-6 py-14 grid gap-10 md:grid-cols-3">
         <div>
-          <div className="flex items-center gap-3">
-            <PineMark className="w-9 h-9 text-ember" />
-            <p className="font-display text-3xl font-bold tracking-[0.1em] uppercase text-parchment">Man Camp</p>
-          </div>
+          {LOGO_LIGHT ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={LOGO_LIGHT} alt="Man Camp 10" className="w-full max-w-xs h-auto" />
+          ) : (
+            <div className="flex items-center gap-3">
+              <PineMark className="w-9 h-9 text-ember" />
+              <p className="font-display text-3xl font-bold tracking-[0.1em] uppercase text-parchment">Man Camp</p>
+            </div>
+          )}
           <p className="font-display text-sm tracking-[0.25em] uppercase text-ember-light mt-2">
             A ministry of Elmwood Baptist Church
           </p>
