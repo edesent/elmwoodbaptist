@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ManCampPageHero from "@/components/mancamp/ManCampPageHero";
 import PdfPopupLink from "@/components/PdfPopupLink";
+import { MountainRidge } from "@/components/mancamp/Outdoor";
 
 export const metadata: Metadata = {
   title: "Schedule",
@@ -23,6 +24,9 @@ const days = [
   },
 ];
 
+const btn =
+  "inline-block font-display text-lg font-semibold uppercase tracking-[0.15em] px-9 py-4 rounded-sm border-2 border-ember bg-ember text-parchment hover:bg-pine hover:border-pine transition-colors";
+
 export default function SchedulePage() {
   return (
     <>
@@ -32,20 +36,23 @@ export default function SchedulePage() {
         subtitle="Thursday afternoon through Saturday afternoon at Silver State Baptist Camp in Sedalia, Colorado."
       />
 
-      <section className="py-20 bg-warm-white">
+      <section className="py-16 bg-parchment mc-topo">
         <div className="max-w-5xl mx-auto px-6">
-          <p className="text-center text-lg text-text-body mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-lg mb-12 max-w-2xl mx-auto">
             This is the general shape of the weekend, based on Man Camp 9. The full schedule for
             Man Camp 10 will be posted here once it is set.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
-            {days.map((d) => (
-              <div key={d.day} className="bg-cream rounded-2xl p-8 border border-cream-dark">
-                <h2 className="font-serif text-3xl font-bold text-text-dark mb-5">{d.day}</h2>
-                <ul className="space-y-3">
+            {days.map((d, i) => (
+              <div key={d.day} className="bg-canvas rounded-sm border-2 border-bark/15 shadow-md overflow-hidden">
+                <div className="bg-pine px-8 py-5 flex items-baseline justify-between">
+                  <h2 className="font-display text-3xl font-bold uppercase tracking-[0.08em] text-parchment">{d.day}</h2>
+                  <span className="font-display text-sm tracking-[0.25em] uppercase text-ember-light">Day {i + 1}</span>
+                </div>
+                <ul className="space-y-3 p-8">
                   {d.items.map((item) => (
-                    <li key={item} className="flex gap-3 text-lg text-text-body">
-                      <span className="text-gold-dark font-bold">&bull;</span>
+                    <li key={item} className="flex gap-3 text-lg">
+                      <span className="text-ember font-bold">&#9650;</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -56,39 +63,47 @@ export default function SchedulePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-cream">
+      <MountainRidge className="text-pine bg-parchment" />
+      <section className="py-16 bg-pine text-canvas">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-          <div className="rounded-2xl overflow-hidden shadow-xl">
+          <div className="rounded-sm overflow-hidden shadow-2xl border-4 border-canvas/20">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/mancamp/devils-head-nice.jpg" alt="Angel's Head Lookout at sunset" className="w-full h-auto" />
           </div>
           <div>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark mb-4">The Hike</h2>
-            <p className="text-lg text-text-body leading-relaxed mb-6">
+            <p className="font-display text-base tracking-[0.3em] uppercase text-ember-light mb-3">Hit the Trail</p>
+            <h2 className="font-display text-5xl font-bold uppercase text-parchment mb-5">The Hike</h2>
+            <p className="text-lg leading-relaxed mb-6">
               At Man Camp 9, men had the option to hike to Angel&rsquo;s Head Lookout, a historic fire
               tower in the Rampart Range with sweeping views of the Front Range, in place of the annual
-              competition. The hike is about 2.9 miles round trip with roughly 869 feet of elevation gain.
+              competition.
             </p>
-            <PdfPopupLink
-              href="/mancamp/man-camp-devils-head-hike.pdf"
-              className="inline-block bg-brown-deep text-white font-semibold text-base tracking-wide uppercase px-9 py-4 rounded-full border-2 border-brown-deep hover:bg-brown-light hover:border-brown-light transition-all"
-            >
+            <dl className="grid grid-cols-2 gap-4 mb-8">
+              <div className="border-2 border-parchment/20 rounded-sm py-4 text-center">
+                <dt className="font-display text-sm tracking-[0.2em] uppercase text-ember-light">Distance</dt>
+                <dd className="font-display text-2xl text-parchment mt-1">2.9 mi round trip</dd>
+              </div>
+              <div className="border-2 border-parchment/20 rounded-sm py-4 text-center">
+                <dt className="font-display text-sm tracking-[0.2em] uppercase text-ember-light">Climb</dt>
+                <dd className="font-display text-2xl text-parchment mt-1">About 869 ft</dd>
+              </div>
+            </dl>
+            <PdfPopupLink href="/mancamp/man-camp-devils-head-hike.pdf" className={btn}>
               View Hike Details (PDF)
             </PdfPopupLink>
           </div>
         </div>
       </section>
+      <MountainRidge className="text-parchment bg-pine" />
 
-      <section className="py-20 bg-warm-white">
+      <section className="py-16 bg-parchment mc-topo">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark mb-4">Things to Know Before You Go</h2>
-          <p className="text-lg text-text-body leading-relaxed mb-8">
+          <p className="font-display text-base tracking-[0.3em] uppercase text-moss mb-3">Pack Your Gear</p>
+          <h2 className="font-display text-5xl font-bold uppercase text-bark mb-4">Things to Know Before You Go</h2>
+          <p className="text-lg leading-relaxed mb-8">
             A packing list and a few important details about your stay at Silver State Baptist Camp.
           </p>
-          <PdfPopupLink
-            href="/mancamp/things-to-know-before-you-go.pdf"
-            className="inline-block bg-brown-deep text-white font-semibold text-base tracking-wide uppercase px-9 py-4 rounded-full border-2 border-brown-deep hover:bg-brown-light hover:border-brown-light transition-all"
-          >
+          <PdfPopupLink href="/mancamp/things-to-know-before-you-go.pdf" className={btn}>
             View Packing List (PDF)
           </PdfPopupLink>
         </div>
