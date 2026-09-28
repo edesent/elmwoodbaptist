@@ -47,6 +47,15 @@ export default function PraiseAndPie() {
                   </div>
                 ))}
               </dl>
+
+              <div className="mt-8 pt-6 border-t border-white/10">
+                <p className="font-serif text-xl italic text-white leading-relaxed">
+                  &ldquo;Let the redeemed of the LORD say so&rdquo;
+                </p>
+                <p className="text-xs font-bold tracking-[0.16em] uppercase text-gold-light/80 mt-2">
+                  Psalm 107:2
+                </p>
+              </div>
             </div>
           </AnimateOnScroll>
         </div>
