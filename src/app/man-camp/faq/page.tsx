@@ -14,11 +14,11 @@ const faqs = [
   },
   {
     q: "Where is it held?",
-    a: "Man Camp 9 was held at Silver State Baptist Camp in Sedalia, Colorado. The location for Man Camp 10 will be posted with the dates.",
+    a: "Man Camp 10 will be held at Silver State Baptist Youth Camp in Sedalia, Colorado. There is a map and directions on the Man Camp home page.",
   },
   {
     q: "When is Man Camp 10?",
-    a: "Dates have not been announced yet. They will be posted on this site as soon as they are set.",
+    a: "Thursday, September 23 through Saturday, September 25, 2027.",
   },
   {
     q: "How much does it cost?",
