@@ -18,31 +18,26 @@ const photos = [
 export default function PhotosPage() {
   return (
     <>
-      <ManCampPageHero
-        eyebrow="Man Camp"
-        title="Photos"
-        subtitle="The men, the mountains, and the fellowship."
-      />
+      <ManCampPageHero eyebrow="Man Camp" title="Photos" subtitle="The men, the mountains, and the fellowship." />
 
-      <section className="py-20 bg-warm-white">
+      <section className="py-16 bg-parchment mc-topo">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-8">
             {photos.map((p) => (
               <a
                 key={p.src}
                 href={p.src}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block rounded-2xl overflow-hidden shadow-lg bg-cream hover:shadow-2xl transition-shadow"
+                className="block bg-canvas p-3 pb-4 rounded-sm shadow-lg border-2 border-bark/15 hover:border-ember hover:shadow-2xl transition-all"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.src} alt={p.alt} className="w-full h-80 object-cover" loading="lazy" />
+                <img src={p.src} alt={p.alt} className="w-full h-80 object-cover rounded-sm" loading="lazy" />
+                <p className="font-display text-sm tracking-[0.2em] uppercase text-moss mt-3 text-center">{p.alt}</p>
               </a>
             ))}
           </div>
-          <p className="text-center text-lg text-text-body mt-12">
-            More photos from Man Camp 9 are coming soon.
-          </p>
+          <p className="text-center text-lg mt-12">More photos from Man Camp 9 are coming soon.</p>
         </div>
       </section>
     </>
