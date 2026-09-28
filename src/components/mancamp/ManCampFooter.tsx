@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MountainRidge, PineMark } from "@/components/mancamp/Outdoor";
+import { LOGO_LIGHT } from "@/components/mancamp/brand";
 
 export default function ManCampFooter() {
   return (
