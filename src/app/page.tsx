@@ -67,8 +67,7 @@ export default function Home() {
         <Leaders />
         <ServiceTimes />
         <ChurchEvents />
-        <FallRevival />
-        <ManCamp />
+        <PraiseAndPie />
         <ScriptureBanner />
         <LatestSermon />
         <Give />
