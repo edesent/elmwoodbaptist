@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   },
 };
 
+const HERO_PHOTO =
+  "https://o3hectmev11nr3rl.public.blob.vercel-storage.com/church-uploads/qB8IjNb83f0eVAWg8MbZ9V70mF-w25Yf/Man-Camp-%20Devils%20Head%20Lookout%20Trail-NpQs14uL4mzKp26s2ZTcJNCpko7600.jpg";
+
 const pillars = [
   { title: "Bold Preaching", text: "Straight from the King James Bible, aimed right at the heart of a man." },
   { title: "Real Fellowship", text: "Men from every season of life, shoulder to shoulder around the fire." },
