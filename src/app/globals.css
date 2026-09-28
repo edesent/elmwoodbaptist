@@ -29,6 +29,24 @@
   --color-text-body: #3c4a57;
   --color-text-light: #66747f;
   --color-text-muted: #95a1ab;
+
+  /* Man Camp — outdoor palette (used only on the Man Camp pages) */
+  --font-display: var(--font-oswald);
+  --color-pine: #1f2b1f;        /* deep forest — dark sections */
+  --color-pine-light: #2f3f2c;  /* lighter forest */
+  --color-moss: #5b6b3a;        /* olive moss accents */
+  --color-ember: #c8642a;       /* campfire orange — buttons */
+  --color-ember-light: #e89a5e; /* orange text on dark green */
+  --color-canvas: #e7dec9;      /* khaki canvas */
+  --color-parchment: #f5f0e4;   /* light trail-map paper */
+  --color-bark: #2e241a;        /* dark brown headings */
+  --color-bark-light: #4d4034;  /* brown body text */
+}
+
+/* Man Camp: faint topographic map lines */
+.mc-topo {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Cg fill='none' stroke='%235b6b3a' stroke-opacity='0.18' stroke-width='1.5'%3E%3Cpath d='M-20 80 C60 40 120 120 200 90 S340 30 420 70'/%3E%3Cpath d='M-20 130 C70 90 130 170 210 140 S350 80 420 120'/%3E%3Cpath d='M-20 180 C80 140 140 220 220 190 S360 130 420 170'/%3E%3Cpath d='M-20 260 C60 230 150 300 230 270 S340 220 420 250'/%3E%3Cpath d='M-20 310 C70 280 160 350 240 320 S350 270 420 300'/%3E%3Cpath d='M-20 360 C80 330 170 400 250 370 S360 320 420 350'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 400px 400px;
 }
 
 html {
