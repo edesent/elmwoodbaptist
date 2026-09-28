@@ -31,9 +31,9 @@ export default function SchedulePage() {
   return (
     <>
       <ManCampPageHero
-        eyebrow="Man Camp"
+        eyebrow="Man Camp 10 &middot; September 23&ndash;25, 2027"
         title="The Weekend"
-        subtitle="Thursday afternoon through Saturday afternoon at Silver State Baptist Camp in Sedalia, Colorado."
+        subtitle="Thursday afternoon through Saturday afternoon at Silver State Baptist Youth Camp in Sedalia, Colorado."
       />
 
       <section className="py-16 bg-parchment mc-topo">
