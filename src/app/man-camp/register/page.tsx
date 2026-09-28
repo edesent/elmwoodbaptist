@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const rooms = [
   { name: "Bunkhouse", price: "$125", note: "Early rate · $150 regular rate", featured: true },
   { name: "Semi-Private Double", price: "$175", note: "Evalena House" },
-  { name: "Private Room", price: "$200", note: "Allen House" },
+  { name: "Private Room", price: "$200", note: "Allenhouse" },
 ];
 
 export default function RegisterPage() {
