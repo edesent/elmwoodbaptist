@@ -38,18 +38,14 @@ const btn =
 export default function ManCampHome() {
   return (
     <>
-      {/* Hero: group photo in full view, title on the green band below */}
+      {/* Hero: title over the photo */}
       <header className="relative bg-pine overflow-hidden">
-        <div className="relative w-full">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={HERO_PHOTO}
-            alt="The men of Man Camp on the trail"
-            className="w-full h-[55vh] md:h-[75vh] object-cover object-center block"
-          />
-          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-pine" />
-        </div>
-        <div className="relative max-w-4xl mx-auto px-6 pt-6 pb-12 text-center">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-60"
+          style={{ backgroundImage: `url("${HERO_PHOTO}")` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-pine/30 via-pine/50 to-pine/95" />
+        <div className="relative max-w-4xl mx-auto px-6 pt-24 md:pt-32 pb-12 text-center">
           <PineMark className="w-14 h-14 text-ember mx-auto mb-5" />
           <p className="font-display text-base md:text-lg tracking-[0.35em] uppercase text-ember-light mb-4">
             The Men&rsquo;s Retreat of Elmwood Baptist Church
