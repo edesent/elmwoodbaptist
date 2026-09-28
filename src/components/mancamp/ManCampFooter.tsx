@@ -1,51 +1,62 @@
 import Link from "next/link";
+import { MountainRidge, PineMark } from "@/components/mancamp/Outdoor";
 
 export default function ManCampFooter() {
   return (
-    <footer className="bg-brown-deep text-white/80 border-t border-gold/30">
+    <footer className="bg-pine text-canvas/85">
+      <MountainRidge className="text-pine bg-parchment" />
       <div className="max-w-6xl mx-auto px-6 py-14 grid gap-10 md:grid-cols-3">
         <div>
-          <p className="font-serif text-2xl font-bold tracking-[0.12em] uppercase text-white">Man Camp</p>
-          <p className="text-sm tracking-[0.2em] uppercase text-gold-light mt-1">
+          <div className="flex items-center gap-3">
+            <PineMark className="w-9 h-9 text-ember" />
+            <p className="font-display text-3xl font-bold tracking-[0.1em] uppercase text-parchment">Man Camp</p>
+          </div>
+          <p className="font-display text-sm tracking-[0.25em] uppercase text-ember-light mt-2">
             A ministry of Elmwood Baptist Church
           </p>
-          <p className="mt-4 text-base leading-relaxed">
+          <p className="mt-5 text-lg leading-relaxed">
             &ldquo;Iron sharpeneth iron; so a man sharpeneth the countenance of his friend.&rdquo;
-            <span className="block text-sm text-gold-light mt-1">Proverbs 27:17</span>
+            <span className="block font-display text-sm tracking-[0.2em] uppercase text-ember-light mt-2">
+              Proverbs 27:17
+            </span>
           </p>
         </div>
 
         <div>
-          <p className="text-sm font-bold tracking-[0.2em] uppercase text-gold-light mb-3">Man Camp</p>
-          <ul className="space-y-2 text-base">
-            <li><Link href="/man-camp" className="hover:text-gold-light">Home</Link></li>
-            <li><Link href="/man-camp/schedule" className="hover:text-gold-light">Schedule</Link></li>
-            <li><Link href="/man-camp/register" className="hover:text-gold-light">Register</Link></li>
-            <li><Link href="/man-camp/photos" className="hover:text-gold-light">Photos</Link></li>
-            <li><Link href="/man-camp/faq" className="hover:text-gold-light">FAQ</Link></li>
+          <p className="font-display text-base font-semibold tracking-[0.25em] uppercase text-ember-light mb-4">
+            The Trail
+          </p>
+          <ul className="space-y-2 text-lg">
+            <li><Link href="/man-camp" className="hover:text-ember-light">Home</Link></li>
+            <li><Link href="/man-camp/schedule" className="hover:text-ember-light">Schedule</Link></li>
+            <li><Link href="/man-camp/register" className="hover:text-ember-light">Register</Link></li>
+            <li><Link href="/man-camp/photos" className="hover:text-ember-light">Photos</Link></li>
+            <li><Link href="/man-camp/faq" className="hover:text-ember-light">FAQ</Link></li>
           </ul>
         </div>
 
         <div>
-          <p className="text-sm font-bold tracking-[0.2em] uppercase text-gold-light mb-3">Questions?</p>
-          <p className="text-base leading-relaxed">
+          <p className="font-display text-base font-semibold tracking-[0.25em] uppercase text-ember-light mb-4">
+            Base Camp
+          </p>
+          <p className="text-lg leading-relaxed">
             Elmwood Baptist Church
             <br />
             13100 E 144th Ave
             <br />
             Brighton, CO 80601
             <br />
-            <a href="tel:+13036593818" className="text-gold-light font-semibold">(303) 659-3818</a>
+            <a href="tel:+13036593818" className="text-ember-light font-semibold">(303) 659-3818</a>
           </p>
           <a
             href="https://www.elmwoodbaptist.org"
-            className="inline-block mt-4 text-sm font-semibold uppercase tracking-wide text-white border border-white/40 rounded-full px-5 py-2 hover:border-gold-light hover:text-gold-light"
+            className="inline-block mt-5 font-display text-sm uppercase tracking-[0.15em] text-parchment border-2 border-parchment/40 rounded-sm px-5 py-2 hover:border-ember hover:text-ember-light"
           >
             Visit the church website
           </a>
         </div>
       </div>
-      <p className="text-center text-sm text-white/50 pb-8">
+      <p className="text-center text-sm text-canvas/50 pb-8">
         &copy; {new Date().getFullYear()} Elmwood Baptist Church. All rights reserved.
       </p>
     </footer>
