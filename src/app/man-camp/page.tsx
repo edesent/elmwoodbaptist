@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { MountainRidge, PineMark } from "@/components/mancamp/Outdoor";
 
 export const metadata: Metadata = {
   title: { absolute: "Man Camp | Elmwood Baptist Church" },
@@ -15,108 +16,128 @@ export const metadata: Metadata = {
   },
 };
 
+const pillars = [
+  { title: "Bold Preaching", text: "Straight from the King James Bible, aimed right at the heart of a man." },
+  { title: "Real Fellowship", text: "Men from every season of life, shoulder to shoulder around the fire." },
+  { title: "God\u2019s Creation", text: "Mountain air, pine trees, and no noise but what matters." },
+];
+
 const quickLinks = [
   { href: "/man-camp/schedule", title: "Schedule", text: "What a weekend at Man Camp looks like." },
   { href: "/man-camp/register", title: "Register", text: "Rooms, pricing, and how to save your spot." },
-  { href: "/man-camp/photos", title: "Photos", text: "A look at the men, the mountains, and the fellowship." },
+  { href: "/man-camp/photos", title: "Photos", text: "The men, the mountains, and the fellowship." },
   { href: "/man-camp/faq", title: "FAQ", text: "Answers to the questions men ask most." },
 ];
+
+const btn =
+  "inline-block font-display text-lg font-semibold uppercase tracking-[0.15em] px-9 py-4 rounded-sm border-2 transition-colors";
 
 export default function ManCampHome() {
   return (
     <>
       {/* Hero */}
-      <header className="relative py-24 md:py-32 bg-brown-deep overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-35"
-          style={{ backgroundImage: "url(/mancamp/men.jpg)" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-brown-deep/50 to-brown-deep" />
-        <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <p className="text-sm font-bold tracking-[0.25em] uppercase text-gold-light mb-5">
+      <header className="relative bg-pine overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-50" style={{ backgroundImage: "url(/mancamp/men.jpg)" }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-pine/30 via-pine/55 to-pine/95" />
+        <div className="relative max-w-4xl mx-auto px-6 pt-24 md:pt-32 pb-12 text-center">
+          <PineMark className="w-14 h-14 text-ember mx-auto mb-5" />
+          <p className="font-display text-base md:text-lg tracking-[0.35em] uppercase text-ember-light mb-4">
             The Men&rsquo;s Retreat of Elmwood Baptist Church
           </p>
-          <h1 className="font-serif text-5xl md:text-7xl font-bold text-white uppercase tracking-[0.08em]">
+          <h1 className="font-display text-7xl md:text-9xl font-bold text-parchment uppercase tracking-[0.04em] leading-none">
             Man Camp
           </h1>
-          <p className="font-serif text-2xl md:text-3xl italic text-white/90 mt-6">
-            Three days where men trade comfort for <span className="text-gold-light">conviction.</span>
+          <p className="text-2xl md:text-3xl text-canvas mt-6">
+            Three days where men trade comfort for <span className="text-ember-light font-semibold">conviction.</span>
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/man-camp/register"
-              className="bg-gold text-brown-deep font-semibold text-base tracking-wide uppercase px-9 py-4 rounded-full border-2 border-gold hover:bg-gold-light hover:border-gold-light transition-all"
-            >
+            <Link href="/man-camp/register" className={`${btn} bg-ember border-ember text-parchment hover:bg-ember-light hover:border-ember-light hover:text-pine`}>
               Registration Info
             </Link>
-            <Link
-              href="/man-camp/photos"
-              className="text-white font-semibold text-base tracking-wide uppercase px-9 py-4 rounded-full border-2 border-white/60 hover:border-gold-light hover:text-gold-light transition-all"
-            >
+            <Link href="/man-camp/photos" className={`${btn} border-parchment/70 text-parchment hover:border-ember-light hover:text-ember-light`}>
               See the Photos
             </Link>
           </div>
         </div>
+        <MountainRidge className="relative text-parchment" />
       </header>
 
       {/* Save the date + recap */}
-      <section className="py-20 bg-cream">
-        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-          <div className="bg-brown-deep text-white rounded-2xl p-10 shadow-xl">
-            <p className="text-sm font-bold tracking-[0.2em] uppercase text-gold-light mb-3">Save the Date</p>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">Man Camp 10</h2>
-            <p className="text-lg text-white/85 leading-relaxed">
+      <section className="py-20 bg-parchment mc-topo">
+        <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-8">
+          <div className="bg-pine text-canvas rounded-sm p-10 shadow-xl border-t-8 border-ember">
+            <p className="font-display text-base tracking-[0.3em] uppercase text-ember-light mb-3">Save the Date</p>
+            <h2 className="font-display text-5xl font-bold uppercase text-parchment mb-4">Man Camp 10</h2>
+            <p className="text-lg leading-relaxed">
               Our tenth year is on the way. Dates, speaker, and registration details will be posted
-              here as soon as they are set. Check back soon, or call the church to be added to the list.
+              here as soon as they are set. Call the church to be the first to know.
             </p>
-            <a href="tel:+13036593818" className="inline-block mt-6 text-gold-light font-semibold text-lg">
+            <a href="tel:+13036593818" className="inline-block mt-6 font-display text-2xl tracking-[0.08em] text-ember-light">
               (303) 659-3818
             </a>
           </div>
 
-          <div className="bg-warm-white rounded-2xl p-10 border border-cream-dark">
-            <p className="text-sm font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">Thank You, Men</p>
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark mb-4">Man Camp 9</h2>
-            <p className="text-lg text-text-body leading-relaxed mb-5">
+          <div className="bg-canvas rounded-sm p-10 border-2 border-bark/20 shadow-md">
+            <p className="font-display text-base tracking-[0.3em] uppercase text-moss mb-3">Thank You, Men</p>
+            <h2 className="font-display text-5xl font-bold uppercase text-bark mb-4">Man Camp 9</h2>
+            <p className="text-lg leading-relaxed mb-5">
               Thank you to every man who came to Silver State Baptist Camp this September, and to
               Evangelist Paul Schwanke for preaching the Word under the theme &ldquo;Faithful to the
               Last Amen.&rdquo;
             </p>
-            <blockquote className="font-serif italic text-lg text-text-body border-l-4 border-gold pl-5">
+            <blockquote className="italic text-lg text-bark border-l-4 border-ember pl-5">
               &ldquo;Therefore, my beloved brethren, be ye stedfast, unmoveable, always abounding in
               the work of the Lord, forasmuch as ye know that your labour is not in vain in the Lord.&rdquo;
-              <span className="block not-italic text-sm text-gold-dark mt-2">1 Corinthians 15:58</span>
+              <span className="block not-italic font-display text-sm tracking-[0.2em] uppercase text-moss mt-2">
+                1 Corinthians 15:58
+              </span>
             </blockquote>
           </div>
         </div>
       </section>
 
       {/* What is Man Camp */}
-      <section className="py-20 bg-warm-white">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark mb-6">What Is Man Camp?</h2>
-          <p className="text-xl text-text-body leading-relaxed">
-            Man Camp is three days out in God&rsquo;s creation, away from the noise and the daily
-            grind. There is bold preaching, real fellowship, and iron sharpening iron. It is a weekend
-            built to strengthen you as a man of God: standing firm, leading your home well, and
-            staying faithful to the last amen.
-          </p>
+      <MountainRidge className="text-pine bg-parchment" />
+      <section className="bg-pine text-canvas pb-20 pt-10">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <h2 className="font-display text-5xl font-bold uppercase tracking-[0.05em] text-parchment mb-6">
+              What Is Man Camp?
+            </h2>
+            <p className="text-xl leading-relaxed">
+              Three days out in God&rsquo;s creation, away from the noise and the daily grind. It is a
+              weekend built to strengthen you as a man of God: standing firm, leading your home well,
+              and staying faithful to the last amen.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {pillars.map((p) => (
+              <div key={p.title} className="border-2 border-parchment/15 rounded-sm p-8 text-center bg-pine-light/60">
+                <PineMark className="w-10 h-10 text-ember mx-auto mb-4" />
+                <h3 className="font-display text-2xl font-semibold uppercase tracking-[0.1em] text-parchment mb-3">
+                  {p.title}
+                </h3>
+                <p className="text-lg leading-relaxed">{p.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+      <MountainRidge className="text-parchment bg-pine" />
 
       {/* Quick links */}
-      <section className="py-20 bg-cream">
+      <section className="py-20 bg-parchment mc-topo">
         <div className="max-w-6xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {quickLinks.map((q) => (
             <Link
               key={q.href}
               href={q.href}
-              className="group block bg-warm-white rounded-2xl p-8 border border-cream-dark hover:border-gold hover:shadow-lg transition-all"
+              className="group block bg-canvas rounded-sm p-8 border-2 border-bark/15 hover:border-ember hover:shadow-lg transition-all"
             >
-              <h3 className="font-serif text-2xl font-bold text-text-dark group-hover:text-brown-light">{q.title}</h3>
-              <p className="text-lg text-text-body mt-2 leading-relaxed">{q.text}</p>
-              <span className="inline-block mt-4 text-sm font-bold uppercase tracking-wide text-gold-dark">
-                Learn more &rarr;
+              <h3 className="font-display text-3xl font-bold uppercase text-bark group-hover:text-ember">{q.title}</h3>
+              <p className="text-lg mt-2 leading-relaxed">{q.text}</p>
+              <span className="inline-block mt-4 font-display text-base uppercase tracking-[0.2em] text-ember">
+                Head out &rarr;
               </span>
             </Link>
           ))}
