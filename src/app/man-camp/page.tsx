@@ -135,8 +135,10 @@ export default function ManCampHome() {
       </section>
       <MountainRidge className="text-parchment bg-pine" />
 
+      <CampMap />
+
       {/* Quick links */}
-      <section className="py-20 bg-parchment mc-topo">
+      <section className="pb-20 pt-4 bg-parchment mc-topo">
         <div className="max-w-6xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {quickLinks.map((q) => (
             <Link
