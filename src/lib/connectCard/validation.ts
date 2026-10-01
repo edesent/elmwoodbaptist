@@ -2,7 +2,7 @@
 // Kept dependency-free and side-effect-free so it can be unit tested with
 // node's built-in test runner (no new dependency needed).
 
-export const ATTENDANCE_STATUSES = ["first_time", "visited_before", "regular"] as const;
+export const ATTENDANCE_STATUSES = ["first_time", "visited_before", "regular", "member"] as const;
 export type AttendanceStatus = (typeof ATTENDANCE_STATUSES)[number];
 
 export const PREFERRED_CONTACTS = ["text", "call", "email", "no_preference"] as const;
@@ -12,7 +12,6 @@ export const MARITAL_STATUSES = ["single", "married", "widowed"] as const;
 export type MaritalStatus = (typeof MARITAL_STATUSES)[number];
 
 export const AGE_GROUPS = [
-  "under_18",
   "18_24",
   "25_34",
   "35_44",
@@ -119,21 +118,27 @@ export function trim(value: unknown): string {
   return typeof value === "string" ? value.trim() : "";
 }
 
-/** Basic, permissive email check — good enough to catch typos without rejecting valid addresses. */
+/** Email check strict enough to reject obvious typos (`a@b`, `a@b.c`,
+ *  `a..b@c.com`) while still accepting normal addresses (`a.b+tag@sub.co.uk`).
+ *  Requires at least one domain label plus a 2+ letter TLD. */
 export function isValidEmail(value: string): boolean {
   if (value.length > 254) return false;
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  return /^[^\s@.]+(?:\.[^\s@.]+)*@[^\s@.]+(?:\.[^\s@.]+)*\.[A-Za-z]{2,}$/.test(value);
 }
 
-/** Normalizes a phone number to digits only (keeping a leading "+" for intl numbers), for
- *  storage/comparison. Returns null if it doesn't look like a plausible phone number. */
+/** Validates a US (NANP) phone number and normalizes it to 10 digits.
+ *  Accepts common formatting and an optional leading `1`/`+1`. Returns null
+ *  for anything that isn't a plausible US number (area code and exchange must
+ *  not start with 0 or 1). */
 export function normalizePhone(value: string): string | null {
   const trimmed = value.trim();
   if (!trimmed) return null;
-  const hasPlus = trimmed.startsWith("+");
-  const digits = trimmed.replace(/[^\d]/g, "");
-  if (digits.length < 7 || digits.length > 15) return null;
-  return (hasPlus ? "+" : "") + digits;
+  const digits = trimmed.replace(/\D/g, "");
+  const national = digits.length === 11 && digits.startsWith("1") ? digits.slice(1) : digits;
+  if (national.length !== 10) return null;
+  if (national[0] < "2" || national[0] > "9") return null;
+  if (national[3] < "2" || national[3] > "9") return null;
+  return national;
 }
 
 export function normalizeEmail(value: string): string | null {
@@ -200,7 +205,7 @@ export function validateConnectCard(raw: Record<string, unknown>): {
   let phone: string | null = null;
   if (phoneRaw) {
     phone = normalizePhone(phoneRaw);
-    if (!phone) errors.phone = "Please enter a valid phone number.";
+    if (!phone) errors.phone = "Please enter a valid 10-digit US phone number.";
   }
 
   const preferredContactRaw = trim(raw.preferredContact);

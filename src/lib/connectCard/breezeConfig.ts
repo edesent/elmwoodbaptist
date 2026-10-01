@@ -10,7 +10,7 @@
 
 export interface BreezeFieldMapEntry {
   fieldId: string;
-  fieldType: "email" | "phone" | "address" | "radio" | "multiple_choice" | "checkbox" | "date" | "text" | "textarea" | "grade";
+  fieldType: "email" | "phone" | "address" | "radio" | "multiple_choice" | "checkbox" | "date" | "text" | "textarea" | "dropdown" | "grade";
   options?: Record<string, string>;
 }
 
@@ -24,14 +24,15 @@ export interface BreezeFieldMap {
   firstVisitDate?: BreezeFieldMapEntry;
   howHeard?: BreezeFieldMapEntry;
   permissionToContact?: BreezeFieldMapEntry;
+  ageGroup?: BreezeFieldMapEntry;
   grade?: BreezeFieldMapEntry;
 }
 
 // Pulled from Elmwood's Breeze account profile-fields export (/api/profile).
-// preferredContact, howHeard, firstVisitDate, and permissionToContact are
-// intentionally omitted — Elmwood's account has no matching custom fields
-// for those yet, so those Connect Card answers stay email/Slack-only until
-// someone creates the fields in Breeze and adds them here.
+// firstVisitDate and permissionToContact are intentionally omitted —
+// Elmwood's account has no matching custom fields for those yet, so those
+// Connect Card answers stay email/Slack-only until someone creates the fields
+// in Breeze and adds them here.
 export const ELMWOOD_DEFAULT_FIELD_MAP: BreezeFieldMap = {
   email: { fieldId: "682313441", fieldType: "email" },
   phone: { fieldId: "639540696", fieldType: "phone" },
@@ -40,6 +41,48 @@ export const ELMWOOD_DEFAULT_FIELD_MAP: BreezeFieldMap = {
     fieldId: "1481884841",
     fieldType: "multiple_choice",
     options: { single: "9", married: "12", widowed: "5" },
+  },
+  attendanceStatus: {
+    fieldId: "195090343",
+    fieldType: "multiple_choice",
+    options: {
+      first_time: "145",
+      visited_before: "15",
+      regular: "2",
+      member: "8",
+    },
+  },
+  preferredContact: {
+    fieldId: "1525684764",
+    fieldType: "multiple_choice",
+    options: { text: "129", call: "130", email: "131", no_preference: "132" },
+  },
+  howHeard: {
+    fieldId: "1525684763",
+    fieldType: "dropdown",
+    options: {
+      friend_family: "126",
+      church_member: "127",
+      website: "128",
+      search_engine: "140",
+      social_media: "141",
+      church_event: "142",
+      bus_ministry: "143",
+      other: "144",
+    },
+  },
+  ageGroup: {
+    fieldId: "1525684765",
+    fieldType: "multiple_choice",
+    options: {
+      "18_24": "134",
+      "25_34": "135",
+      "35_44": "136",
+      "45_54": "137",
+      "55_64": "138",
+      "65_plus": "139",
+      prefer_not_to_answer: "133",
+    },
   },
   grade: { fieldId: "183091182", fieldType: "grade" },
 };
@@ -73,6 +116,7 @@ const KNOWN_MAP_KEYS = new Set([
   "firstVisitDate",
   "howHeard",
   "permissionToContact",
+  "ageGroup",
   "grade",
 ]);
 
@@ -86,6 +130,7 @@ const KNOWN_FIELD_TYPES = new Set([
   "date",
   "text",
   "textarea",
+  "dropdown",
   "grade",
 ]);
 

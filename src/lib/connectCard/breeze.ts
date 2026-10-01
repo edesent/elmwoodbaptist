@@ -98,11 +98,25 @@ function buildAdultFieldUpdates(data: ValidatedConnectCard, map: BreezeFieldMap)
       response: map.maritalStatus.options[data.maritalStatus],
     });
   }
+  if (map.attendanceStatus && map.attendanceStatus.options?.[data.attendanceStatus]) {
+    updates.push({
+      field_id: map.attendanceStatus.fieldId,
+      field_type: map.attendanceStatus.fieldType,
+      response: map.attendanceStatus.options[data.attendanceStatus],
+    });
+  }
   if (map.preferredContact && data.preferredContact && map.preferredContact.options?.[data.preferredContact]) {
     updates.push({
       field_id: map.preferredContact.fieldId,
       field_type: map.preferredContact.fieldType,
       response: map.preferredContact.options[data.preferredContact],
+    });
+  }
+  if (map.ageGroup && data.ageGroup && map.ageGroup.options?.[data.ageGroup]) {
+    updates.push({
+      field_id: map.ageGroup.fieldId,
+      field_type: map.ageGroup.fieldType,
+      response: map.ageGroup.options[data.ageGroup],
     });
   }
   if (map.firstVisitDate && data.visitDate) {
@@ -212,7 +226,7 @@ async function syncAdult(
     // Name-only match is never sufficient to update. Create a separate
     // profile and flag it so staff can decide whether to merge manually.
     const res = await client.addPerson(data.firstName, data.lastName, buildAdultFieldUpdates(data, map));
-    if (!res.ok || !res.data?.[0]) {
+    if (!res.ok || !res.data) {
       return { status: "failed", name, note: res.ok ? "Breeze did not return a new person." : res.message };
     }
     conflicts.push(
@@ -220,7 +234,7 @@ async function syncAdult(
     );
     return {
       status: "possible_duplicate_created",
-      personId: res.data[0].id,
+      personId: res.data.id,
       name,
       note: `Existing profile with the same name: ${match.person!.id}`,
       raw: res.data,
@@ -228,10 +242,10 @@ async function syncAdult(
   }
 
   const res = await client.addPerson(data.firstName, data.lastName, buildAdultFieldUpdates(data, map));
-  if (!res.ok || !res.data?.[0]) {
+  if (!res.ok || !res.data) {
     return { status: "failed", name, note: res.ok ? "Breeze did not return a new person." : res.message };
   }
-  return { status: "created", personId: res.data[0].id, name, raw: res.data };
+  return { status: "created", personId: res.data.id, name, raw: res.data };
 }
 
 // ── Children sync ────────────────────────────────────────────────────────
@@ -263,10 +277,10 @@ async function syncChild(
   }
 
   const res = await client.addPerson(child.firstName, child.lastName ?? "", fields);
-  if (!res.ok || !res.data?.[0]) {
+  if (!res.ok || !res.data) {
     return { status: "failed", name, note: res.ok ? "Breeze did not return a new person." : res.message };
   }
-  return { status: "created", personId: res.data[0].id, name };
+  return { status: "created", personId: res.data.id, name };
 }
 
 // ── Tags ─────────────────────────────────────────────────────────────────
@@ -278,6 +292,7 @@ function tagIdsFor(status: AttendanceStatus, config: ReturnType<typeof loadBreez
     first_time: config.tags.firstTimeVisitorTagId,
     visited_before: config.tags.returningVisitorTagId,
     regular: config.tags.regularAttenderTagId,
+    member: config.tags.memberTagId,
   };
   const statusTag = byStatus[status];
   if (statusTag) ids.push(statusTag);
@@ -316,7 +331,23 @@ export async function syncToBreeze(
   if (adult.personId && (adult.status === "updated")) {
     const detail = await client.showPerson(adult.personId);
     if (detail.ok && Array.isArray(detail.data.family)) {
-      familyCandidates = detail.data.family as BreezePerson[];
+      // Breeze returns family entries as membership records, with the actual
+      // person nested under ".details" — normalize them to the person shape
+      // the rest of this file expects.
+      familyCandidates = detail.data.family
+        .map((member) => {
+          const m = member as {
+            person_id?: string;
+            details?: { id?: string; first_name?: string; last_name?: string };
+          };
+          if (!m.details?.first_name) return null;
+          return {
+            id: m.details.id ?? m.person_id ?? "",
+            first_name: m.details.first_name,
+            last_name: m.details.last_name ?? "",
+          };
+        })
+        .filter((p): p is BreezePerson => p !== null);
     }
   }
 

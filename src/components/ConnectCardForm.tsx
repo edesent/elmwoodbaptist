@@ -1,14 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import type {
-  AgeGroup,
-  AttendanceStatus,
-  Grade,
-  HeardAbout,
-  Interest,
-  MaritalStatus,
-  PreferredContact,
+import {
+  isValidEmail,
+  normalizePhone,
+  type AgeGroup,
+  type AttendanceStatus,
+  type Grade,
+  type HeardAbout,
+  type Interest,
+  type MaritalStatus,
+  type PreferredContact,
 } from "@/lib/connectCard/validation";
 
 const inputClass =
@@ -48,7 +50,6 @@ const GRADE_OPTIONS: { value: Grade; label: string }[] = [
 ];
 
 const AGE_OPTIONS: { value: AgeGroup; label: string }[] = [
-  { value: "under_18", label: "Under 18" },
   { value: "18_24", label: "18–24" },
   { value: "25_34", label: "25–34" },
   { value: "35_44", label: "35–44" },
@@ -145,6 +146,23 @@ export default function ConnectCardForm() {
     setStatus("submitting");
     setErrorMessage(null);
     setFieldErrors({});
+
+    // Check the free-text contact fields up front so the visitor gets an
+    // immediate, per-field error instead of a server round-trip. The server
+    // re-validates every field regardless.
+    const localErrors: Record<string, string> = {};
+    if (email.trim() && !isValidEmail(email.trim())) {
+      localErrors.email = "That email address doesn't look quite right.";
+    }
+    if (phone.trim() && !normalizePhone(phone)) {
+      localErrors.phone = "Please enter a valid 10-digit US phone number.";
+    }
+    if (Object.keys(localErrors).length > 0) {
+      setStatus("error");
+      setFieldErrors(localErrors);
+      setErrorMessage("Please check the highlighted fields.");
+      return;
+    }
 
     const formEl = e.currentTarget;
     const botcheck = (new FormData(formEl).get("botcheck") as string) || "";
@@ -453,6 +471,7 @@ export default function ConnectCardForm() {
               ["first_time", "This is my first time"],
               ["visited_before", "I've visited before"],
               ["regular", "I've been coming for a while"],
+              ["member", "I'm a church member"],
             ] as [AttendanceStatus, string][]).map(([value, label]) => (
               <label key={value} className={radioRowClass}>
                 <input

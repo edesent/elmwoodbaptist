@@ -5,6 +5,7 @@ const ATTENDANCE_LABELS: Record<string, string> = {
   first_time: "This is my first time",
   visited_before: "I've visited before",
   regular: "I've been coming for a while",
+  member: "I'm a church member",
 };
 
 const CONTACT_LABELS: Record<string, string> = {
@@ -26,7 +27,6 @@ const HEARD_LABELS: Record<string, string> = {
 };
 
 const AGE_LABELS: Record<string, string> = {
-  under_18: "Under 18",
   "18_24": "18–24",
   "25_34": "25–34",
   "35_44": "35–44",

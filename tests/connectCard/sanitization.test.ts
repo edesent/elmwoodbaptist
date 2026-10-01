@@ -40,8 +40,13 @@ describe("normalizePhone", () => {
     assert.equal(normalizePhone("3035550123"), "3035550123");
   });
 
-  test("accepts international format with a leading plus", () => {
-    assert.equal(normalizePhone("+44 20 7946 0958"), "+442079460958");
+  test("accepts +1 / leading-1 US formatting", () => {
+    assert.equal(normalizePhone("+1 (303) 555-0123"), "3035550123");
+    assert.equal(normalizePhone("1 303 555 0123"), "3035550123");
+  });
+
+  test("rejects international numbers (US-only validation)", () => {
+    assert.equal(normalizePhone("+44 20 7946 0958"), null);
   });
 
   test("rejects implausible values without erroring", () => {
