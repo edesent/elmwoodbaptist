@@ -88,10 +88,28 @@ async function request<T>(path: string, params: Record<string, string | number |
   }
 
   let json: unknown;
+  const text = await res.text();
+  if (!text) {
+    // Several write endpoints (e.g. /tags/assign) return 204 with no body.
+    // An empty successful response is still a success.
+    return { ok: true, data: true as T };
+  }
   try {
-    json = await res.json();
+    json = JSON.parse(text);
   } catch {
     return { ok: false, code: "invalid_response", retryable: false, message: "Breeze returned an unparseable response." };
+  }
+
+  // Some Breeze write endpoints (/people/add, /families/create) wrap their
+  // JSON payload in an extra layer of JSON string encoding, so the body is
+  // e.g. "{\"id\":\"123\"}" rather than {"id":"123"}. Unwrap that once so
+  // callers always receive the actual object.
+  if (typeof json === "string") {
+    try {
+      json = JSON.parse(json);
+    } catch {
+      // Not double-encoded after all — leave the plain string as-is.
+    }
   }
 
   return { ok: true, data: json as T };
@@ -125,7 +143,7 @@ export interface BreezeFieldUpdate {
 }
 
 export function addPerson(first: string, last: string, fields?: BreezeFieldUpdate[]) {
-  return request<BreezePerson[]>("/people/add", {
+  return request<BreezePerson>("/people/add", {
     first,
     last,
     fields_json: fields && fields.length ? JSON.stringify(fields) : undefined,
@@ -133,7 +151,7 @@ export function addPerson(first: string, last: string, fields?: BreezeFieldUpdat
 }
 
 export function updatePerson(personId: string, fields: BreezeFieldUpdate[]) {
-  return request<BreezePerson[]>("/people/update", {
+  return request<BreezePerson>("/people/update", {
     person_id: personId,
     fields_json: JSON.stringify(fields),
   });

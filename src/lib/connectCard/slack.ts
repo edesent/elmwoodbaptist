@@ -8,6 +8,7 @@ const ATTENDANCE_LABELS: Record<string, string> = {
   first_time: "First-time visitor",
   visited_before: "Returning visitor",
   regular: "Regular attendee",
+  member: "Church member",
 };
 
 const CONTACT_LABELS: Record<string, string> = {

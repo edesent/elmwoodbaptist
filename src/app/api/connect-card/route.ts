@@ -42,6 +42,20 @@ async function processSubmission(data: ValidatedConnectCard): Promise<Submission
     breeze = null;
   }
 
+  // Local-development convenience: surface what Breeze actually did without
+  // needing the staff email/Slack configured. Never runs in production.
+  if (process.env.NODE_ENV === "development" && breeze) {
+    console.log(`[connect-card ${submissionId}] Breeze:`, JSON.stringify({
+      enabled: breeze.enabled,
+      configError: breeze.configError,
+      adult: breeze.adult,
+      children: breeze.children,
+      family: breeze.family,
+      tags: breeze.tags,
+      conflicts: breeze.conflicts,
+    }, null, 2));
+  }
+
   // 2. Staff notification email.
   const churchTo = process.env.CONNECT_CARD_EMAIL_TO;
   let churchEmailStatus: "sent" | "failed" = "failed";

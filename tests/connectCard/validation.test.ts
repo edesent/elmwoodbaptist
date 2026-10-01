@@ -1,6 +1,6 @@
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
-import { validateConnectCard, hasUnexpectedFields, MAX_NAME_LEN, MAX_CHILDREN } from "../../src/lib/connectCard/validation";
+import { validateConnectCard, hasUnexpectedFields, isValidEmail, normalizePhone, MAX_NAME_LEN, MAX_CHILDREN } from "../../src/lib/connectCard/validation";
 
 function baseInput(overrides: Record<string, unknown> = {}) {
   return {
@@ -56,6 +56,37 @@ describe("validateConnectCard", () => {
     const { data, errors } = validateConnectCard(baseInput({ email: "visitor@example.com" }));
     assert.equal(Object.keys(errors).length, 0);
     assert.equal(data!.email, "visitor@example.com");
+  });
+
+  test("rejects emails without a valid domain or TLD", () => {
+    for (const email of ["a@b", "a@b.c", "a..b@c.com", "jane@.com", "jane@example."]) {
+      assert.equal(isValidEmail(email), false, `expected "${email}" to be rejected`);
+    }
+  });
+
+  test("accepts normal email shapes", () => {
+    for (const email of ["visitor@example.com", "a.b+tag@sub.co.uk", "first.last@elmwoodbaptist.org"]) {
+      assert.equal(isValidEmail(email), true, `expected "${email}" to be accepted`);
+    }
+  });
+
+  test("normalizes plausible US phone numbers to 10 digits", () => {
+    const cases: [string, string][] = [
+      ["(303) 555-0101", "3035550101"],
+      ["303-555-0101", "3035550101"],
+      ["+1 303 555 0101", "3035550101"],
+      ["1 303 555 0101", "3035550101"],
+      ["3035550101", "3035550101"],
+    ];
+    for (const [input, expected] of cases) {
+      assert.equal(normalizePhone(input), expected, `expected "${input}" -> ${expected}`);
+    }
+  });
+
+  test("rejects non-US or implausible phone numbers", () => {
+    for (const phone of ["1234567", "0000000000", "1235550101", "3031550101", "+44 20 7946 0958", "30355501012"]) {
+      assert.equal(normalizePhone(phone), null, `expected "${phone}" to be rejected`);
+    }
   });
 
   test("rejects a submission missing required fields", () => {
