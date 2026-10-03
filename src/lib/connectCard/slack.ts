@@ -64,6 +64,7 @@ export async function sendSlackNotification(
 
   const fields = [
     `*Name:* ${name}`,
+    `*Location:* ${data.location ? escapeSlack(data.location) : "Not specified"}`,
     `*Status:* ${ATTENDANCE_LABELS[data.attendanceStatus] ?? escapeSlack(data.attendanceStatus)}`,
     `*Preferred Contact:* ${data.preferredContact ? CONTACT_LABELS[data.preferredContact] : "Not specified"}`,
     `*Phone:* ${data.phone ? escapeSlack(data.phone) : "Not provided"}`,

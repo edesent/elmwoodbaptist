@@ -17,7 +17,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ConnectPage() {
+export default async function ConnectPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ location?: string | string[] }>;
+}) {
+  const { location } = await searchParams;
+  const cardLocation = Array.isArray(location) ? location[0] : location;
   return (
     <>
       <Navbar />
@@ -29,7 +35,7 @@ export default function ConnectPage() {
         />
         <section className="py-16 md:py-20 bg-cream">
           <div className="px-6">
-            <ConnectCardForm />
+            <ConnectCardForm location={cardLocation} />
           </div>
         </section>
       </main>

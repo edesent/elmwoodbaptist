@@ -56,11 +56,12 @@ describe("sendSlackNotification", () => {
       return new Response("ok", { status: 200 });
     }) as typeof fetch;
 
-    const result = await sendSlackNotification(sampleData(), "sub-2", null);
+    const result = await sendSlackNotification(sampleData({ location: "A1" }), "sub-2", null);
     assert.equal(result.ok, true);
     assert.ok(capturedBody);
     const parsed = JSON.parse(capturedBody!);
     assert.ok(JSON.stringify(parsed).includes("Jane"));
+    assert.ok(JSON.stringify(parsed).includes("*Location:* A1"));
   });
 
   test("reports failure when the webhook responds with a non-2xx status (Slack delivery failure)", async () => {
@@ -92,10 +93,12 @@ describe("sendSlackNotification", () => {
     const malicious = sampleData({
       interests: ["prayer_request"],
       prayerRequest: "<!channel> please pray & <b>help</b>",
+      location: "<!channel>",
     });
     await sendSlackNotification(malicious, "sub-5", null);
     assert.ok(capturedBody);
     assert.ok(!capturedBody!.includes("<!channel>"));
     assert.ok(capturedBody!.includes("&lt;!channel&gt;"));
+    assert.ok(capturedBody!.includes("*Location:* &lt;!channel&gt;"));
   });
 });

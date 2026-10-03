@@ -12,6 +12,14 @@ function baseInput(overrides: Record<string, unknown> = {}) {
 }
 
 describe("validateConnectCard", () => {
+  test("accepts location metadata and normalizes it safely", () => {
+    assert.deepEqual(hasUnexpectedFields(baseInput({ location: "A1" })), []);
+    assert.equal(validateConnectCard(baseInput({ location: " A1 " })).data?.location, "A1");
+    assert.equal(validateConnectCard(baseInput()).data?.location, null);
+    assert.equal(validateConnectCard(baseInput({ location: 123 })).data?.location, null);
+    assert.equal(validateConnectCard(baseInput({ location: "A1\nA2" })).data?.location, "A1 A2");
+    assert.equal(validateConnectCard(baseInput({ location: "A".repeat(200) })).data?.location?.length, 120);
+  });
   test("accepts a valid basic submission", () => {
     const { data, errors } = validateConnectCard(baseInput());
     assert.equal(Object.keys(errors).length, 0);

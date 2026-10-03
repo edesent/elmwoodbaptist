@@ -43,6 +43,12 @@ Nothing else was touched — no other pages, components, or styling changed.
 **`/connect`** — publicly accessible, linked from the homepage's "Visit Us"
 section and the footer.
 
+Add an optional location code to the URL, such as `/connect?location=A1`.
+The form carries it into the Slack notification as **Location: A1** without
+adding a visible field. Without the parameter, Slack shows **Not specified**.
+Location codes are trimmed and limited to 120 characters; repeated location
+parameters use the first value.
+
 ## 3. Environment variables
 
 All are in `.env.example` with empty placeholders. None of these are set in

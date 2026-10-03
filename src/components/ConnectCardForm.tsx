@@ -85,7 +85,7 @@ const MAX_CHILDREN = 10;
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export default function ConnectCardForm() {
+export default function ConnectCardForm({ location }: { location?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
@@ -168,6 +168,7 @@ export default function ConnectCardForm() {
     const botcheck = (new FormData(formEl).get("botcheck") as string) || "";
 
     const payload = {
+      location,
       firstName,
       lastName,
       email,

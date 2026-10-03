@@ -57,6 +57,7 @@ export interface ChildInput {
 }
 
 export interface ConnectCardInput {
+  location?: string;
   firstName: string;
   lastName: string;
   email: string;
@@ -83,6 +84,7 @@ export interface ConnectCardInput {
 }
 
 export interface ValidatedConnectCard {
+  location?: string | null;
   firstName: string;
   lastName: string;
   email: string | null;
@@ -185,6 +187,7 @@ export function validateConnectCard(raw: Record<string, unknown>): {
   errors: FieldErrors;
 } {
   const errors: FieldErrors = {};
+  const location = clip(trim(raw.location).replace(/[\r\n\t]/g, " "), MAX_SHORT_LEN) || null;
 
   const firstName = clip(trim(raw.firstName), MAX_NAME_LEN);
   const lastName = clip(trim(raw.lastName), MAX_NAME_LEN);
@@ -307,6 +310,7 @@ export function validateConnectCard(raw: Record<string, unknown>): {
       prayerRequest,
       comments,
       contactConsent,
+      location,
     },
     errors: {},
   };
@@ -315,6 +319,7 @@ export function validateConnectCard(raw: Record<string, unknown>): {
 /** Rejects request bodies containing keys we don't recognize, to stop mass-assignment
  *  style abuse before it ever reaches validation. */
 export const ALLOWED_FIELDS = new Set([
+  "location",
   "firstName",
   "lastName",
   "email",
