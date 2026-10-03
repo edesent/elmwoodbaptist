@@ -54,7 +54,7 @@ this repo — you'll set the real values in Vercel's Project Settings.
 | `CONNECT_CARD_EMAIL_TO` | Staff email | If unset, the staff email is skipped (Slack/Breeze still run). |
 | `CONNECT_CARD_EMAIL_FROM` | Staff + autoreply email | Falls back to the existing `SENDER` in `src/lib/email.ts`. |
 | `SLACK_CONNECT_CARD_WEBHOOK_URL` | Slack notification | Server-side only — never exposed to the browser. |
-| `CONNECT_CARD_SEND_AUTOREPLY` | Visitor thank-you email | `"true"` to enable; defaults to off. |
+| `CONNECT_CARD_SEND_AUTOREPLY` | Visitor thank-you email | Enabled by default; set to `"false"` to disable. |
 | `BREEZE_ENABLED` | Breeze sync | Must be `"true"` **and** have a subdomain + API key before any Breeze call is made. |
 | `BREEZE_SUBDOMAIN` | Breeze sync | e.g. `elmwoodbaptist` for `elmwoodbaptist.breezechms.com`. |
 | `BREEZE_API_KEY` | Breeze sync | Secret — never logged, never sent to the browser. |

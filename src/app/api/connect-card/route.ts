@@ -87,9 +87,9 @@ async function processSubmission(data: ValidatedConnectCard): Promise<Submission
     }
   }
 
-  // 4. Optional visitor thank-you email.
+  // 4. Visitor thank-you email (enabled unless explicitly turned off).
   let autoreplyStatus: "sent" | "failed" | "skipped" = "skipped";
-  if (data.email && process.env.CONNECT_CARD_SEND_AUTOREPLY === "true") {
+  if (data.email && process.env.CONNECT_CARD_SEND_AUTOREPLY !== "false") {
     const { subject, text, html } = buildVisitorAutoreply(data);
     const result = await sendEmail({
       to: data.email,

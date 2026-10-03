@@ -194,7 +194,7 @@ export function loadBreezeConfig(): BreezeConfig {
   const fieldMap = process.env.BREEZE_PROFILE_FIELD_MAP
     ? parseFieldMap(process.env.BREEZE_PROFILE_FIELD_MAP)
     : ELMWOOD_DEFAULT_FIELD_MAP;
-  const sendAutoreply = process.env.CONNECT_CARD_SEND_AUTOREPLY === "true";
+  const sendAutoreply = process.env.CONNECT_CARD_SEND_AUTOREPLY !== "false";
 
   return {
     enabled,
