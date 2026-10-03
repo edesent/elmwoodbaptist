@@ -75,9 +75,7 @@ export default function MapAddress() {
                 </a>
                 <ContactModal />
                 <a
-                  href="https://elmwoodbaptistchurchacademy.breezechms.com/form/ba4d32"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/connect"
                   className="inline-block text-brown-light font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-brown-light/50 hover:bg-brown-light/10 hover:border-brown-light transition-all"
                 >
                   Fill Out a Connect Card
