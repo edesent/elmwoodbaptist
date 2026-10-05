@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   isValidEmail,
   normalizePhone,
@@ -89,7 +89,13 @@ export default function ConnectCardForm({ location }: { location?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+  const [showContactPrompt, setShowContactPrompt] = useState(false);
+  const contactPromptRef = useRef<HTMLDivElement>(null);
   const [idempotencyKey] = useState(() => crypto.randomUUID());
+
+  useEffect(() => {
+    if (showContactPrompt) contactPromptRef.current?.focus();
+  }, [showContactPrompt]);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -143,7 +149,6 @@ export default function ConnectCardForm({ location }: { location?: string }) {
     e.preventDefault();
     if (status === "submitting") return;
 
-    setStatus("submitting");
     setErrorMessage(null);
     setFieldErrors({});
 
@@ -164,6 +169,17 @@ export default function ConnectCardForm({ location }: { location?: string }) {
       return;
     }
 
+    const submitter = (e.nativeEvent as SubmitEvent).submitter;
+    const submitWithoutContact = submitter instanceof HTMLButtonElement
+      && submitter.value === "without-contact";
+    if ((!email.trim() || !phone.trim()) && !submitWithoutContact) {
+      setStatus("idle");
+      setShowContactPrompt(true);
+      return;
+    }
+
+    setShowContactPrompt(false);
+    setStatus("submitting");
     const formEl = e.currentTarget;
     const botcheck = (new FormData(formEl).get("botcheck") as string) || "";
 
@@ -334,7 +350,7 @@ export default function ConnectCardForm({ location }: { location?: string }) {
         <div className="grid sm:grid-cols-2 gap-4 mb-5">
           <div>
             <label htmlFor="cc-email" className={labelClass}>
-              Email
+              Email <span className="font-normal text-text-light">(encouraged)</span>
             </label>
             <input
               id="cc-email"
@@ -352,7 +368,7 @@ export default function ConnectCardForm({ location }: { location?: string }) {
           </div>
           <div>
             <label htmlFor="cc-phone" className={labelClass}>
-              Phone Number
+              Phone Number <span className="font-normal text-text-light">(encouraged)</span>
             </label>
             <input
               id="cc-phone"
@@ -730,6 +746,46 @@ export default function ConnectCardForm({ location }: { location?: string }) {
           <p role="alert" className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-3 mb-4">
             {errorMessage}
           </p>
+        )}
+
+        {showContactPrompt && (
+          <div
+            ref={contactPromptRef}
+            tabIndex={-1}
+            role="region"
+            aria-labelledby="cc-contact-prompt-title"
+            aria-describedby="cc-contact-prompt-description"
+            className="bg-cream border border-gold/40 rounded-lg p-5 mb-4 focus:outline-none focus:ring-2 focus:ring-gold/40"
+          >
+            <h3 id="cc-contact-prompt-title" className="font-semibold text-text-dark mb-2">
+              Would you share your {!email.trim() && !phone.trim() ? "email and phone number" : !email.trim() ? "email" : "phone number"}?
+            </h3>
+            <p id="cc-contact-prompt-description" className="text-sm text-text-body leading-relaxed mb-4">
+              We'd love a way to stay in touch with you. Your email and phone number are only used
+              for communication from Elmwood Baptist Church. We never sell your information.
+              If you'd rather not share, you're still welcome to submit your card.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                type="button"
+                className="bg-brown-light text-white font-semibold text-sm px-5 py-3 rounded-full hover:bg-brown transition-colors"
+                onClick={() => {
+                  setShowContactPrompt(false);
+                  document.getElementById(!email.trim() ? "cc-email" : "cc-phone")?.focus();
+                }}
+              >
+                Add contact information
+              </button>
+              <button
+                type="submit"
+                name="contactChoice"
+                value="without-contact"
+                className="text-brown-light font-semibold text-sm px-5 py-3 rounded-full border border-brown-light/50 hover:bg-brown-light/10 transition-colors"
+              >
+                Submit without adding it
+              </button>
+            </div>
+          </div>
         )}
 
         <button
