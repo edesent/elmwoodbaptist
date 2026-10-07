@@ -144,6 +144,15 @@ const steps = [
   },
 ];
 
+const busNotes = [
+  { left: "18%", color: "#ff6b57", delay: "0s", dx: "-110px", dy: "-80px", rot: "-24deg", size: 26 },
+  { left: "42%", color: "#2bb3d6", delay: ".55s", dx: "-150px", dy: "-95px", rot: "18deg", size: 30 },
+  { left: "64%", color: "#8b5cf6", delay: "1.1s", dx: "-130px", dy: "-70px", rot: "-14deg", size: 24 },
+  { left: "30%", color: "#34c759", delay: "1.65s", dx: "-170px", dy: "-90px", rot: "26deg", size: 28 },
+  { left: "76%", color: "#ffb300", delay: "2.2s", dx: "-120px", dy: "-100px", rot: "-30deg", size: 26 },
+  { left: "52%", color: "#ec4899", delay: "2.75s", dx: "-160px", dy: "-75px", rot: "12deg", size: 24 },
+];
+
 const faqs = [
   {
     q: "Is that really a church bus, and not a school bus?",
@@ -656,13 +665,36 @@ export default function BusMinistryPage() {
 
         {/* ───────── Road ───────── */}
         <div
+          id="tmp-road"
           aria-hidden="true"
-          className="relative h-28 overflow-hidden bg-warm-white"
+          className="relative h-44 overflow-hidden bg-warm-white"
         >
           <div className="absolute inset-x-0 bottom-0 h-10 bg-[#26394b]">
             <div className="absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 bg-[linear-gradient(90deg,#ffc61a_50%,transparent_50%)] bg-[length:64px_100%] motion-safe:animate-[road-dashes_1.2s_linear_infinite]" />
           </div>
-          <BusIcon className="absolute bottom-6 left-0 w-28 motion-safe:animate-[drive_18s_linear_infinite] motion-reduce:left-[40%]" />
+          <div className="absolute bottom-6 left-0 w-28 motion-safe:animate-[drive_18s_linear_infinite] motion-reduce:left-[40%]">
+            <BusIcon className="w-full" />
+            {/* Music notes pop out of the windows, drift up, and are left
+                behind (they slide backward relative to the moving bus). */}
+            {busNotes.map(({ left, color, delay, dx, dy, rot, size }, i) => (
+              <MusicIcon
+                key={i}
+                className="absolute top-2 opacity-0 motion-reduce:hidden motion-safe:animate-[note-float_3.2s_ease-out_infinite_backwards]"
+                style={
+                  {
+                    left,
+                    color,
+                    width: size,
+                    height: size,
+                    animationDelay: delay,
+                    "--dx": dx,
+                    "--dy": dy,
+                    "--rot": rot,
+                  } as React.CSSProperties
+                }
+              />
+            ))}
+          </div>
         </div>
       </main>
       <Footer />

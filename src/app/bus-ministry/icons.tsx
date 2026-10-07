@@ -1,7 +1,7 @@
 // Small, chunky inline icons for the bus ministry page. All are decorative
 // (aria-hidden) — the text next to them carries the meaning.
 
-type IconProps = { className?: string };
+type IconProps = { className?: string; style?: React.CSSProperties };
 
 const base = {
   viewBox: "0 0 48 48",
@@ -14,9 +14,9 @@ const base = {
   focusable: false,
 };
 
-export function MusicIcon({ className }: IconProps) {
+export function MusicIcon({ className, style }: IconProps) {
   return (
-    <svg {...base} className={className}>
+    <svg {...base} className={className} style={style}>
       <path d="M18 36V10l22-5v26" />
       <circle cx="12" cy="36" r="6" fill="currentColor" />
       <circle cx="34" cy="31" r="6" fill="currentColor" />
