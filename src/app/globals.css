@@ -25,6 +25,14 @@
   --color-burgundy: #0e4d63;    /* deep teal-navy */
   --color-burgundy-dark: #08394c;
 
+  /* Bus ministry page — school-bus yellow and a playful coral that sit
+     alongside the brand navy/teal and match the bus illustrations. */
+  --color-bus: #ffc61a;
+  --color-bus-dark: #c99600;
+  --color-bus-soft: #fff6d6;
+  --color-coral: #ff6b57;
+  --color-sky-soft: #e4f5fb;
+
   --color-text-dark: #122c43;
   --color-text-body: #3c4a57;
   --color-text-light: #66747f;
@@ -93,4 +101,28 @@ body {
 @keyframes shimmer {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
+}
+
+/* Bus ministry page — little bus drives across the road, balloons bob. */
+@keyframes drive {
+  0% { transform: translateX(-160px); }
+  100% { transform: translateX(calc(100vw + 160px)); }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0) rotate(var(--bob-rotate, 0deg)); }
+  50% { transform: translateY(-8px) rotate(var(--bob-rotate, 0deg)); }
+}
+
+@keyframes road-dashes {
+  to { background-position: -64px 0; }
+}
+
+/* Keep scroll-reveal content visible for people who prefer less motion. */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in-up {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
