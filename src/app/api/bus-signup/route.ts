@@ -9,7 +9,7 @@ import { issueFormToken, verifyFormToken } from "@/lib/planVisit/formToken";
 import { isRateLimited, getClientKey } from "@/lib/connectCard/rateLimit";
 import { getRememberedResult, rememberResult } from "@/lib/connectCard/idempotency";
 import { sendBusSignupSlack } from "@/lib/busSignup/slack";
-import { CHURCH_INBOX, sendEmail } from "@/lib/email";
+import { CHURCH_INBOX, SENDER, sendEmail } from "@/lib/email";
 
 // Node.js runtime, like the Connect Card: the in-memory rate-limit and
 // idempotency stores both assume it.
@@ -17,8 +17,13 @@ export const runtime = "nodejs";
 
 const MAX_BODY_BYTES = 20_000; // room for ~10 children; anything bigger is noise
 
-// Where sign-ups are emailed. Defaults to the church office inbox.
-const SIGNUP_TO = process.env.BUS_SIGNUP_EMAIL_TO || CHURCH_INBOX;
+// Where sign-ups are emailed, and from which address. These fall back to the
+// Connect Card's settings (already known to work in production, with a sender
+// address verified in Resend), then to the church-wide defaults.
+const SIGNUP_TO =
+  process.env.BUS_SIGNUP_EMAIL_TO || process.env.CONNECT_CARD_EMAIL_TO || CHURCH_INBOX;
+const SIGNUP_FROM =
+  process.env.BUS_SIGNUP_EMAIL_FROM || process.env.CONNECT_CARD_EMAIL_FROM || SENDER;
 
 // A cheerful success that costs the church nothing — what bots get.
 const PRETEND_SUCCESS = { success: true };
@@ -119,11 +124,18 @@ export async function POST(request: Request) {
 
   // Tell the church two ways — email (the full record) and Slack (the quick
   // heads-up). Both are tried; the sign-up counts as received if at least one
-  // reached the church, so a Slack hiccup never costs a family their seat.
-  const [emailResult, slackResult] = await Promise.all([
-    sendEmail({ to: SIGNUP_TO, subject, text, html }),
-    sendBusSignupSlack(data, submissionId),
-  ]);
+  // reached the church, so a hiccup in one never costs a family their seat.
+  // Email goes first so Slack can say so if the email didn't make it.
+  const emailResult = await sendEmail({
+    to: SIGNUP_TO,
+    from: SIGNUP_FROM,
+    subject,
+    text,
+    html,
+  });
+  const slackResult = await sendBusSignupSlack(data, submissionId, {
+    emailFailed: !emailResult.ok,
+  });
 
   // Sanitized, non-personal logs only — no family data.
   if (!emailResult.ok) {

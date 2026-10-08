@@ -12,7 +12,11 @@ function ageLabel(age: number): string {
   return age === 0 ? "under 1" : String(age);
 }
 
-export function buildBusSignupSlackBlocks(d: BusSignupInput, submissionId: string): unknown[] {
+export function buildBusSignupSlackBlocks(
+  d: BusSignupInput,
+  submissionId: string,
+  opts: { emailFailed?: boolean } = {}
+): unknown[] {
   const kidsOnly = !d.guardianRiding;
   const kids = d.children.length;
 
@@ -62,6 +66,16 @@ export function buildBusSignupSlackBlocks(d: BusSignupInput, submissionId: strin
     });
   }
 
+  if (opts.emailFailed) {
+    blocks.push({
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: ":x: *The email copy of this sign-up failed to send.* This Slack message is the only record — check the site's logs for the cause.",
+      },
+    });
+  }
+
   blocks.push({
     type: "context",
     elements: [{ type: "mrkdwn", text: `Submission ID: \`${submissionId}\`` }],
@@ -73,7 +87,8 @@ export function buildBusSignupSlackBlocks(d: BusSignupInput, submissionId: strin
  *  without failing the whole sign-up. */
 export async function sendBusSignupSlack(
   d: BusSignupInput,
-  submissionId: string
+  submissionId: string,
+  opts: { emailFailed?: boolean } = {}
 ): Promise<SlackResult> {
   const webhookUrl =
     process.env.BUS_SIGNUP_SLACK_WEBHOOK_URL || process.env.SLACK_CONNECT_CARD_WEBHOOK_URL;
@@ -88,7 +103,7 @@ export async function sendBusSignupSlack(
       body: JSON.stringify({
         // Shown in notifications / on phones where blocks aren't rendered.
         text: `New bus pickup sign-up: ${d.guardianName}`,
-        blocks: buildBusSignupSlackBlocks(d, submissionId),
+        blocks: buildBusSignupSlackBlocks(d, submissionId, opts),
       }),
       signal: AbortSignal.timeout(8000),
     });

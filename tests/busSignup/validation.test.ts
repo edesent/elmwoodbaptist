@@ -229,6 +229,12 @@ describe("Slack notification", () => {
     assert.doesNotMatch(asText(buildBusSignupSlackBlocks(valid(), "x")), /permission slip needed/);
   });
 
+  test("tells staff when the email copy failed", () => {
+    const failed = asText(buildBusSignupSlackBlocks(valid(), "x", { emailFailed: true }));
+    assert.match(failed, /email copy of this sign-up failed/);
+    assert.doesNotMatch(asText(buildBusSignupSlackBlocks(valid(), "x")), /failed to send/);
+  });
+
   test("escapes Slack formatting characters in family input", () => {
     const text = asText(buildBusSignupSlackBlocks(valid({ children: [{ name: "Sam <!channel>", age: 8 }] }), "x"));
     assert.doesNotMatch(text, /<!channel>/);

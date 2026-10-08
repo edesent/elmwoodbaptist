@@ -2,11 +2,17 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Fredoka } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { MIN_AGE_RIDING_ALONE } from "@/lib/busSignup/validation";
+import BusFooter from "./BusFooter";
+import BusNavbar from "./BusNavbar";
 import BusSignupForm from "./BusSignupForm";
+import {
+  BUS_SITE_URL,
+  EMAIL,
+  PHONE_DISPLAY,
+  PHONE_HREF,
+} from "./site";
 import {
   ArrowRightIcon,
   BusIcon,
@@ -35,7 +41,9 @@ export const metadata: Metadata = {
   title: "Bus Ministry",
   description:
     "Ride the Elmwood church bus! We pick up kids and families around the city for songs, games, prizes, and new friends on the way to church. Licensed drivers, background-checked workers, and trained medical staff on site.",
-  alternates: { canonical: "/bus-ministry" },
+  // The page lives at its own address; /bus-ministry on the main domain
+  // serves the same page but points search engines here.
+  alternates: { canonical: BUS_SITE_URL },
   // Keep hidden from search engines until online pickup sign-up is live and
   // the page is linked from the main site. Remove this block to launch.
   robots: {
@@ -47,7 +55,7 @@ export const metadata: Metadata = {
     title: "Ride the Church Bus! | Elmwood Baptist Church",
     description:
       "Songs, games, prizes, and new friends on the way to church. Kids and families welcome!",
-    url: "/bus-ministry",
+    url: BUS_SITE_URL,
     type: "website",
     images: [
       {
@@ -60,9 +68,6 @@ export const metadata: Metadata = {
   },
 };
 
-const PHONE_DISPLAY = "(303) 659-3818";
-const PHONE_HREF = "tel:+13036593818";
-const EMAIL = "office@elmwoodbaptist.org";
 const EMAIL_HREF = `mailto:${EMAIL}?subject=${encodeURIComponent(
   "Church bus pickup",
 )}`;
@@ -212,10 +217,11 @@ function Eyebrow({
 export default function BusMinistryPage() {
   return (
     <div className={fredoka.variable}>
-      <Navbar />
-      <main>
+      <BusNavbar />
+      <main id="main">
         {/* ───────── Hero ───────── */}
         <section
+          id="top"
           aria-labelledby="hero-title"
           className="relative isolate flex flex-col overflow-hidden bg-brown-deep text-white lg:block lg:min-h-[44rem] xl:min-h-[48rem]"
         >
@@ -506,6 +512,7 @@ export default function BusMinistryPage() {
 
         {/* ───────── How it works ───────── */}
         <section
+          id="how-it-works"
           aria-labelledby="steps-title"
           className="relative bg-sky-soft px-6 pb-28 pt-16 md:pb-36 md:pt-20"
         >
@@ -622,6 +629,7 @@ export default function BusMinistryPage() {
 
         {/* ───────── FAQ ───────── */}
         <section
+          id="faq"
           aria-labelledby="faq-title"
           className="bg-warm-white px-6 pb-20 pt-16 md:pt-20"
         >
@@ -696,7 +704,7 @@ export default function BusMinistryPage() {
           </div>
         </div>
       </main>
-      <Footer />
+      <BusFooter />
     </div>
   );
 }

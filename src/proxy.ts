@@ -1,14 +1,24 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-// When someone visits mancamp.elmwoodbaptist.org, show them the Man Camp
-// page while keeping the short address in their browser bar.
+// Some ministries have their own short addresses. When someone visits one,
+// show them that ministry's page while keeping the short address in their
+// browser bar:
+//   mancamp.elmwoodbaptist.org -> /man-camp
+//   bus.elmwoodbaptist.org     -> /bus-ministry
+const SUBDOMAIN_PAGES = new Map([
+  ["mancamp", "/man-camp"],
+  ["bus", "/bus-ministry"],
+]);
+
 export function proxy(request: NextRequest) {
   const host = request.headers.get("host") ?? "";
+  const subdomain = host.split(".")[0].toLowerCase();
+  const page = host.includes(".") ? SUBDOMAIN_PAGES.get(subdomain) : undefined;
 
-  if (host.startsWith("mancamp.")) {
+  if (page) {
     const url = request.nextUrl.clone();
-    url.pathname = "/man-camp";
+    url.pathname = page;
     return NextResponse.rewrite(url);
   }
 
