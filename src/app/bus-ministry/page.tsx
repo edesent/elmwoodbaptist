@@ -5,6 +5,8 @@ import { Fredoka } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import { MIN_AGE_RIDING_ALONE } from "@/lib/busSignup/validation";
+import BusSignupForm from "./BusSignupForm";
 import {
   ArrowRightIcon,
   BusIcon,
@@ -63,8 +65,6 @@ const PHONE_HREF = "tel:+13036593818";
 const EMAIL = "office@elmwoodbaptist.org";
 const EMAIL_HREF = `mailto:${EMAIL}?subject=${encodeURIComponent(
   "Church bus pickup",
-)}&body=${encodeURIComponent(
-  "Hi! We'd like to ride the church bus.\n\nRider names and ages:\n\nPickup address:\n\nBest phone number:\n",
 )}`;
 
 // Display font utility (Fredoka, rounded and friendly). Written as a literal so
@@ -74,7 +74,6 @@ const display = "font-[family-name:var(--font-fredoka)]";
 const btn =
   "inline-flex items-center justify-center gap-3 rounded-full px-6 py-3.5 text-base font-bold transition-all sm:px-8 sm:py-4 sm:text-lg hover:-translate-y-0.5 active:translate-y-1 active:shadow-none focus-visible:outline-4 focus-visible:outline-offset-4";
 const btnYellow = `${btn} ${display} bg-bus text-brown-deep shadow-[0_6px_0_var(--color-bus-dark)] focus-visible:outline-white`;
-const btnNavy = `${btn} ${display} bg-brown-deep text-white shadow-[0_6px_0_#000] focus-visible:outline-brown-deep`;
 const btnGhost = `${btn} ${display} border-4 border-white/80 text-white hover:bg-white/10 focus-visible:outline-white`;
 
 const funCards = [
@@ -145,12 +144,12 @@ const steps = [
 ];
 
 const busNotes = [
-  { left: "18%", color: "#ff6b57", delay: "0s", dx: "-110px", dy: "-80px", rot: "-24deg", size: 26 },
-  { left: "42%", color: "#2bb3d6", delay: ".55s", dx: "-150px", dy: "-95px", rot: "18deg", size: 30 },
-  { left: "64%", color: "#8b5cf6", delay: "1.1s", dx: "-130px", dy: "-70px", rot: "-14deg", size: 24 },
-  { left: "30%", color: "#34c759", delay: "1.65s", dx: "-170px", dy: "-90px", rot: "26deg", size: 28 },
-  { left: "76%", color: "#ffb300", delay: "2.2s", dx: "-120px", dy: "-100px", rot: "-30deg", size: 26 },
-  { left: "52%", color: "#ec4899", delay: "2.75s", dx: "-160px", dy: "-75px", rot: "12deg", size: 24 },
+  { left: "18%", color: "#ff6b57", delay: "0s", dx: "-110px", dy: "-110px", rot: "-24deg", size: 38 },
+  { left: "42%", color: "#2bb3d6", delay: ".55s", dx: "-150px", dy: "-130px", rot: "18deg", size: 46 },
+  { left: "64%", color: "#8b5cf6", delay: "1.1s", dx: "-130px", dy: "-100px", rot: "-14deg", size: 34 },
+  { left: "30%", color: "#34c759", delay: "1.65s", dx: "-170px", dy: "-120px", rot: "26deg", size: 42 },
+  { left: "76%", color: "#ffb300", delay: "2.2s", dx: "-120px", dy: "-135px", rot: "-30deg", size: 38 },
+  { left: "52%", color: "#ec4899", delay: "2.75s", dx: "-160px", dy: "-105px", rot: "12deg", size: 34 },
 ];
 
 const faqs = [
@@ -160,7 +159,11 @@ const faqs = [
   },
   {
     q: "Can my whole family ride?",
-    a: "Absolutely. We pick up kids and families, so come along with your children if you'd like to ride together.",
+    a: "Absolutely! Parents, kids, and the whole family are welcome. Children of any age can ride when a parent or guardian rides along.",
+  },
+  {
+    q: "Can my kids ride without me?",
+    a: `Yes, as long as they are ${MIN_AGE_RIDING_ALONE} or older and potty trained. Children riding without a parent or guardian also need a signed permission slip.`,
   },
   {
     q: "Who is on the bus with my child?",
@@ -172,7 +175,7 @@ const faqs = [
   },
   {
     q: "Does the bus come to my neighborhood?",
-    a: "We pick up all around the city. Call or email us with your address and we'll let you know how we can get you on the bus.",
+    a: "We pick up all around the city. Fill out the sign-up form with your pickup address and our team will be in touch to confirm. You can also call or email us.",
   },
 ];
 
@@ -549,8 +552,9 @@ export default function BusMinistryPage() {
           aria-labelledby="ride-title"
           className="relative scroll-mt-16 bg-bus px-6 pb-28 pt-16 md:pb-36 md:pt-20"
         >
-          <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
-            <AnimateOnScroll>
+          <div className="mx-auto grid max-w-6xl items-start gap-12 lg:grid-cols-[5fr_7fr]">
+            {/* Stays in view beside the (tall) form on large screens. */}
+            <AnimateOnScroll className="lg:sticky lg:top-28">
               <Eyebrow className="bg-brown-deep text-white">
                 Pickup sign-up
               </Eyebrow>
@@ -561,59 +565,55 @@ export default function BusMinistryPage() {
                 Save a seat on the bus!
               </h2>
               <p className="mt-5 max-w-lg text-xl leading-relaxed text-brown-deep">
-                Online pickup sign-up is coming soon. Until then, getting on
-                the list is simple &mdash; just call or email our church
-                office and we&rsquo;ll take it from there.
+                Tell us who&rsquo;s riding and where to pick you up. Our bus
+                team will reach out to confirm your ride.
               </p>
-            </AnimateOnScroll>
 
-            <AnimateOnScroll delay={150}>
-              {/*
-                Future home of the pickup registration form. When it's ready,
-                replace the "coming soon" notice and the contact buttons below
-                with the form (the "have these handy" list is the field list).
-              */}
-              <div
-                id="pickup-registration"
-                className="relative rounded-[2rem] border-4 border-brown-deep bg-white p-8 shadow-[0_10px_0_rgba(11,39,64,.35)] md:p-10"
-              >
-                <span
-                  className={`${display} absolute -top-5 right-6 rotate-3 rounded-full bg-coral px-4 py-1.5 text-sm font-bold uppercase tracking-wider text-white shadow-[0_4px_0_rgba(0,0,0,.2)]`}
-                >
-                  Online sign-up coming soon
-                </span>
-                <h3
-                  className={`${display} text-2xl font-bold text-brown-deep`}
-                >
-                  Have these handy when you reach out:
+              <div className="mt-8 rounded-[2rem] bg-brown-deep p-7 text-white shadow-[0_8px_0_rgba(0,0,0,.2)]">
+                <h3 className={`${display} text-2xl font-bold text-bus`}>
+                  Good to know
                 </h3>
-                <ul className="mt-4 space-y-3 text-lg">
+                <ul className="mt-4 space-y-3 text-lg leading-relaxed">
                   {[
-                    "Names and ages of everyone riding",
-                    "Your pickup address",
-                    "The best phone number to reach you",
+                    "The whole family is welcome! Parents, kids, everybody.",
+                    `Kids riding without a parent or guardian must be ${MIN_AGE_RIDING_ALONE} or older and potty trained.`,
+                    "Kids riding without a parent or guardian also need a signed permission slip.",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-bus text-brown-deep">
-                        <StarIcon className="h-3.5 w-3.5" />
-                      </span>
+                      <StarIcon className="mt-1.5 h-4 w-4 shrink-0 text-bus" />
                       {item}
                     </li>
                   ))}
                 </ul>
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <a href={PHONE_HREF} className={`${btnNavy} whitespace-nowrap`}>
-                    <PhoneIcon className="h-5 w-5" />
-                    Call {PHONE_DISPLAY}
-                  </a>
-                  <a
-                    href={EMAIL_HREF}
-                    className={`${btn} ${display} border-4 border-brown-deep text-brown-deep hover:bg-brown-deep/5 focus-visible:outline-brown-deep`}
-                  >
-                    <MailIcon className="h-5 w-5" />
-                    Email us
-                  </a>
-                </div>
+              </div>
+
+              <p className="mt-8 text-lg font-semibold text-brown-deep">
+                Would you rather talk to a person?
+              </p>
+              <div className="mt-3 flex flex-wrap gap-3">
+                <a
+                  href={PHONE_HREF}
+                  className={`${btn} ${display} whitespace-nowrap border-4 border-brown-deep text-brown-deep hover:bg-brown-deep/10 focus-visible:outline-brown-deep`}
+                >
+                  <PhoneIcon className="h-5 w-5" />
+                  Call {PHONE_DISPLAY}
+                </a>
+                <a
+                  href={EMAIL_HREF}
+                  className={`${btn} ${display} border-4 border-brown-deep text-brown-deep hover:bg-brown-deep/10 focus-visible:outline-brown-deep`}
+                >
+                  <MailIcon className="h-5 w-5" />
+                  Email us
+                </a>
+              </div>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={150}>
+              <div
+                id="pickup-registration"
+                className="scroll-mt-24 rounded-[2rem] border-4 border-brown-deep bg-white p-6 shadow-[0_10px_0_rgba(11,39,64,.35)] sm:p-8 md:p-10"
+              >
+                <BusSignupForm />
               </div>
             </AnimateOnScroll>
           </div>
@@ -665,9 +665,8 @@ export default function BusMinistryPage() {
 
         {/* ───────── Road ───────── */}
         <div
-          id="tmp-road"
           aria-hidden="true"
-          className="relative h-44 overflow-hidden bg-warm-white"
+          className="relative h-56 overflow-hidden bg-warm-white"
         >
           <div className="absolute inset-x-0 bottom-0 h-10 bg-[#26394b]">
             <div className="absolute inset-x-0 top-1/2 h-1 -translate-y-1/2 bg-[linear-gradient(90deg,#ffc61a_50%,transparent_50%)] bg-[length:64px_100%] motion-safe:animate-[road-dashes_1.2s_linear_infinite]" />
