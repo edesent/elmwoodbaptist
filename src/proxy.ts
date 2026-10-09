@@ -5,10 +5,10 @@ import type { NextRequest } from "next/server";
 // show them that ministry's page while keeping the short address in their
 // browser bar:
 //   mancamp.elmwoodbaptist.org -> /man-camp
-//   bus.elmwoodbaptist.org     -> /bus-ministry
+//   busbuddies.elmwoodbaptist.org -> /bus-ministry
 const SUBDOMAIN_PAGES = new Map([
   ["mancamp", "/man-camp"],
-  ["bus", "/bus-ministry"],
+  ["busbuddies", "/bus-ministry"],
 ]);
 
 export function proxy(request: NextRequest) {
