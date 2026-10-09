@@ -1,8 +1,8 @@
-// Shared constants for the bus ministry mini-site (bus.elmwoodbaptist.org).
+// Shared constants for the bus ministry mini-site (busbuddies.elmwoodbaptist.org).
 // Links back to the main church site are absolute, because on the bus
 // subdomain a path like "/visit-us" would resolve on the bus host.
 
-export const BUS_SITE_URL = "https://bus.elmwoodbaptist.org";
+export const BUS_SITE_URL = "https://busbuddies.elmwoodbaptist.org";
 export const MAIN_SITE_URL = "https://www.elmwoodbaptist.org";
 
 export const PHONE_DISPLAY = "(303) 659-3818";
