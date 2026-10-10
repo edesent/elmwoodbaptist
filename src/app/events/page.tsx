@@ -84,7 +84,7 @@ export default function EventsPage() {
                 <div className="bg-white p-4 flex items-center justify-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/events/youth-rally.jpg"
+                    src="/events/patriotic-youth-rally-at-sunset.png"
                     alt="Youth Rally, Friday, October 16, 2026 at Elmwood Baptist Church. Stand strong, live free, follow Christ."
                     className="w-full h-auto rounded-lg"
                   />
