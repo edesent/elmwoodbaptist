@@ -115,6 +115,50 @@ export default function EventsPage() {
               </div>
             </div>
 
+            {/* Featured — Master Clubs Fall Festival */}
+            <div className="mt-8 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
+              <div className="grid md:grid-cols-2 items-center">
+                <div className="bg-white p-4 flex items-center justify-center self-stretch">
+                  <div className="w-full h-full rounded-lg bg-cream border border-cream-dark px-6 py-12 flex flex-col items-center justify-center text-center">
+                    <p className="text-xs font-bold tracking-[0.3em] uppercase text-gold-dark mb-3">
+                      Master Clubs
+                    </p>
+                    <p className="font-serif text-5xl font-bold text-text-dark leading-none mb-6">
+                      Fall Festival
+                    </p>
+                    <div className="inline-block border-y-2 border-gold-dark/40 py-3 px-6">
+                      <p className="text-sm font-bold tracking-[0.2em] uppercase text-brown-light">
+                        Thursday
+                      </p>
+                      <p className="font-serif text-3xl font-bold text-text-dark leading-tight">
+                        October 29
+                      </p>
+                      <p className="text-sm font-bold tracking-[0.2em] uppercase text-brown-light">
+                        7:00 PM
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="p-8 md:p-10">
+                  <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
+                    Special Event
+                  </span>
+                  <h3 className="font-serif text-3xl font-bold text-text-dark leading-tight mb-3">
+                    Master Clubs Fall Festival
+                  </h3>
+                  <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-2">
+                    Thursday, October 29 · 7:00 PM
+                  </p>
+                  <p className="text-text-body leading-relaxed">
+                    Bring the whole family for a fun night of fall fellowship! We&rsquo;ll
+                    have a puppet show, pizza, games, and candy prizes for the kids.
+                    Costumes are welcome, but please make sure they are church
+                    appropriate. Everyone is invited!
+                  </p>
+                </div>
+              </div>
+            </div>
+
             {/* Featured — Praise and Pie Testimony Time */}
             <div className="mt-8 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
               <div className="grid md:grid-cols-2 items-center">
