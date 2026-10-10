@@ -137,10 +137,10 @@ export default function EventsPage() {
                     Thursday, October 29 · 7:00 PM
                   </p>
                   <p className="text-text-body leading-relaxed">
-                    Bring the whole family for a fun night of fall fellowship! We&rsquo;ll
-                    have a puppet show, pizza, games, and candy prizes for the kids.
+                    Calling all Master Clubbers! Join us for a fun night of fall
+                    fellowship with a puppet show, pizza, games, and candy prizes.
                     Costumes are welcome, but please make sure they are church
-                    appropriate. Everyone is invited!
+                    appropriate. This event is just for our Master Clubbers.
                   </p>
                 </div>
               </div>
