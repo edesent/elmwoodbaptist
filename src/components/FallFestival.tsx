@@ -31,10 +31,10 @@ export default function FallFestival() {
                 Master Clubs Fall Festival
               </h2>
               <p className="text-white/70 mb-7">
-                Bring the whole family for a fun night of fall fellowship! We&rsquo;ll
-                have a puppet show, pizza, games, and candy prizes for the kids.
+                Calling all Master Clubbers! Join us for a fun night of fall
+                fellowship with a puppet show, pizza, games, and candy prizes.
                 Costumes are welcome, but please make sure they are church
-                appropriate. Everyone is invited!
+                appropriate. This event is just for our Master Clubbers.
               </p>
 
               <dl className="space-y-3 border-t border-white/10 pt-6">
