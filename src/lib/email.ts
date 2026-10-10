@@ -23,7 +23,7 @@ type SendResult = { ok: true } | { ok: false; status: number; error: string };
  *  to/from — e.g. the Connect Card, whose recipient comes from
  *  CONNECT_CARD_EMAIL_TO rather than the fixed CHURCH_INBOX. */
 export async function sendEmail(opts: {
-  to: string;
+  to: string | string[];
   from?: string;
   subject: string;
   replyTo?: string;
