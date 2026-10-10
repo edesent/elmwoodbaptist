@@ -78,8 +78,45 @@ export default function EventsPage() {
             </h2>
             <EventList items={ministryEvents} />
 
-            {/* Featured — Praise and Pie Testimony Time */}
+            {/* Featured — Youth Rally */}
             <div className="mt-16 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
+              <div className="grid md:grid-cols-2 items-center">
+                <div className="bg-white p-4 flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/events/youth-rally.jpg"
+                    alt="Youth Rally, Friday, October 16, 2026 at Elmwood Baptist Church. Stand strong, live free, follow Christ."
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+                <div className="p-8 md:p-10">
+                  <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
+                    Special Event
+                  </span>
+                  <h3 className="font-serif text-3xl font-bold text-text-dark leading-tight mb-3">
+                    Youth Rally
+                  </h3>
+                  <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-2">
+                    Friday, October 16 · 7:00 to 9:30 PM
+                  </p>
+                  <p className="text-text-body leading-relaxed mb-3">
+                    Stand strong. Live free. Follow Christ. Bring your teens and their
+                    friends for a night of powerful preaching from John 8 and Romans 8,
+                    games, fellowship, and plenty of food. Come ready, leave changed!
+                  </p>
+                  <p className="font-serif italic text-text-dark leading-relaxed">
+                    &ldquo;Stand fast therefore in the liberty wherewith Christ hath made
+                    us free, and be not entangled again with the yoke of bondage.&rdquo;
+                    <span className="block not-italic font-sans text-xs font-bold tracking-[0.16em] uppercase text-gold-dark mt-1">
+                      Galatians 5:1
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Featured — Praise and Pie Testimony Time */}
+            <div className="mt-8 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
               <div className="grid md:grid-cols-2 items-center">
                 <div className="bg-white p-4 flex items-center justify-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
