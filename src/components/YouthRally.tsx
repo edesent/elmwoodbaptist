@@ -2,7 +2,7 @@ import AnimateOnScroll from "./AnimateOnScroll";
 
 const facts = [
   { label: "When", value: "Friday, October 16 · 7:00 to 9:30 PM" },
-  { label: "The Word", value: "John 8 and Romans 8" },
+  { label: "Chapters", value: "John 8 and Romans 8" },
   { label: "Expect", value: "Bible preaching, games and fellowship, food and fun" },
 ];
 
