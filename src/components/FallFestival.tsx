@@ -13,7 +13,7 @@ export default function FallFestival() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <AnimateOnScroll>
-            <div className="rounded-2xl overflow-hidden shadow-2xl bg-white p-3 max-w-md mx-auto">
+            <div className="rounded-2xl overflow-hidden shadow-2xl bg-white p-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/events/church-fall-festival-at-twilight.png"
