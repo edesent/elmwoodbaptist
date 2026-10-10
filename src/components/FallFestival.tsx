@@ -1,6 +1,7 @@
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const facts = [
+  { label: "Who", value: "Master Clubbers" },
   { label: "When", value: "Thursday, October 29 · 7:00 PM" },
   { label: "Fun", value: "Puppet show, pizza, games, and candy prizes" },
   { label: "Costumes", value: "Welcome, but must be church appropriate" },
