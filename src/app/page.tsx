@@ -70,6 +70,7 @@ export default function Home() {
         <ServiceTimes />
         <ChurchEvents />
         <YouthRally />
+        <FallFestival />
         <PraiseAndPie />
         <ScriptureBanner />
         <LatestSermon />
