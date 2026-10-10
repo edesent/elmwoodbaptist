@@ -118,26 +118,13 @@ export default function EventsPage() {
             {/* Featured — Master Clubs Fall Festival */}
             <div className="mt-8 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
               <div className="grid md:grid-cols-2 items-center">
-                <div className="bg-white p-4 flex items-center justify-center self-stretch">
-                  <div className="w-full h-full rounded-lg bg-cream border border-cream-dark px-6 py-12 flex flex-col items-center justify-center text-center">
-                    <p className="text-xs font-bold tracking-[0.3em] uppercase text-gold-dark mb-3">
-                      Master Clubs
-                    </p>
-                    <p className="font-serif text-5xl font-bold text-text-dark leading-none mb-6">
-                      Fall Festival
-                    </p>
-                    <div className="inline-block border-y-2 border-gold-dark/40 py-3 px-6">
-                      <p className="text-sm font-bold tracking-[0.2em] uppercase text-brown-light">
-                        Thursday
-                      </p>
-                      <p className="font-serif text-3xl font-bold text-text-dark leading-tight">
-                        October 29
-                      </p>
-                      <p className="text-sm font-bold tracking-[0.2em] uppercase text-brown-light">
-                        7:00 PM
-                      </p>
-                    </div>
-                  </div>
+                <div className="bg-white p-4 flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/events/church-fall-festival-at-twilight.png"
+                    alt="Master Clubs Fall Festival, Thursday, October 29 at 7:00 PM, Elmwood Baptist Church. Puppet show, pizza, games, and candy prizes."
+                    className="w-full h-auto rounded-lg"
+                  />
                 </div>
                 <div className="p-8 md:p-10">
                   <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
