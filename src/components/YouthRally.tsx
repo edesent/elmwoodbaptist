@@ -15,7 +15,7 @@ export default function YouthRally() {
             <div className="rounded-2xl overflow-hidden shadow-2xl bg-white p-3 max-w-md mx-auto">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/events/youth-rally.jpg"
+                src="/events/patriotic-youth-rally-at-sunset.png"
                 alt="Youth Rally, Friday, October 16, 2026 at Elmwood Baptist Church. Stand strong, live free, follow Christ."
                 className="w-full h-auto rounded-lg"
               />
