@@ -20,8 +20,13 @@ const MAX_BODY_BYTES = 20_000; // room for ~10 children; anything bigger is nois
 // Where sign-ups are emailed, and from which address. These fall back to the
 // Connect Card's settings (already known to work in production, with a sender
 // address verified in Resend), then to the church-wide defaults.
-const SIGNUP_TO =
-  process.env.BUS_SIGNUP_EMAIL_TO || process.env.CONNECT_CARD_EMAIL_TO || CHURCH_INBOX;
+// BUS_SIGNUP_EMAIL_TO may hold several addresses separated by commas.
+const SIGNUP_TO = (
+  process.env.BUS_SIGNUP_EMAIL_TO || process.env.CONNECT_CARD_EMAIL_TO || CHURCH_INBOX
+)
+  .split(",")
+  .map((address) => address.trim())
+  .filter(Boolean);
 const SIGNUP_FROM =
   process.env.BUS_SIGNUP_EMAIL_FROM || process.env.CONNECT_CARD_EMAIL_FROM || SENDER;
 
