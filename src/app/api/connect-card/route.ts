@@ -8,7 +8,7 @@ import { isRateLimited, getClientKey } from "@/lib/connectCard/rateLimit";
 import { getRememberedResult, rememberResult } from "@/lib/connectCard/idempotency";
 import { syncToBreeze, type BreezeSyncResult } from "@/lib/connectCard/breeze";
 import { buildStaffEmail, buildVisitorAutoreply } from "@/lib/connectCard/notify";
-import { sendEmail, SENDER } from "@/lib/email";
+import { sendEmail, SENDER, CHURCH_INBOX } from "@/lib/email";
 import { sendSlackNotification } from "@/lib/connectCard/slack";
 
 // Keep this endpoint on the Node.js runtime (not Edge) — the Breeze/Slack/Resend
@@ -94,6 +94,8 @@ async function processSubmission(data: ValidatedConnectCard): Promise<Submission
     const result = await sendEmail({
       to: data.email,
       from: process.env.CONNECT_CARD_EMAIL_FROM || SENDER,
+      // The email invites visitors to reply, so replies must reach a staffed inbox.
+      replyTo: CHURCH_INBOX,
       subject,
       text,
       html,

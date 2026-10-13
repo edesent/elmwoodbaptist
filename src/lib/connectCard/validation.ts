@@ -12,12 +12,9 @@ export const MARITAL_STATUSES = ["single", "married", "widowed"] as const;
 export type MaritalStatus = (typeof MARITAL_STATUSES)[number];
 
 export const AGE_GROUPS = [
-  "18_24",
-  "25_34",
-  "35_44",
-  "45_54",
-  "55_64",
-  "65_plus",
+  "18_39",
+  "40_59",
+  "60_plus",
   "prefer_not_to_answer",
 ] as const;
 export type AgeGroup = (typeof AGE_GROUPS)[number];

@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test": "node --import tsx --test tests/**/*.test.ts",
-    "card": "node scripts/submit-connect-card.mjs"
+    "card": "node scripts/submit-connect-card.mjs",
+    "preview-email": "tsx scripts/preview-visitor-email.ts"
   },
   "dependencies": {
     "libphonenumber-js": "^1.13.14",

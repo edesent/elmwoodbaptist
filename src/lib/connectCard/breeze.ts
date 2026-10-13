@@ -1,5 +1,5 @@
-import type { ValidatedConnectCard, AttendanceStatus } from "./validation";
-import { loadBreezeConfig, isBreezeReady, BreezeConfigError, type BreezeFieldMap } from "./breezeConfig";
+import type { ValidatedConnectCard, AttendanceStatus, AgeGroup } from "./validation";
+import { loadBreezeConfig, isBreezeReady, BreezeConfigError, AGE_GROUP_TAG_IDS, type BreezeFieldMap } from "./breezeConfig";
 import * as client from "./breezeClient";
 import type { BreezeFieldUpdate, BreezePerson } from "./breezeClient";
 
@@ -285,8 +285,14 @@ async function syncChild(
 
 // ── Tags ─────────────────────────────────────────────────────────────────
 
-function tagIdsFor(status: AttendanceStatus, config: ReturnType<typeof loadBreezeConfig>): string[] {
+function tagIdsFor(
+  status: AttendanceStatus,
+  ageGroup: AgeGroup | null,
+  config: ReturnType<typeof loadBreezeConfig>
+): string[] {
   const ids: string[] = [];
+  const ageTag = ageGroup ? AGE_GROUP_TAG_IDS[ageGroup] : undefined;
+  if (ageTag) ids.push(ageTag);
   if (config.tags.connectCardTagId) ids.push(config.tags.connectCardTagId);
   const byStatus: Record<AttendanceStatus, string | undefined> = {
     first_time: config.tags.firstTimeVisitorTagId,
@@ -397,7 +403,7 @@ export async function syncToBreeze(
   // Tags
   let tags: BreezeTagResult = { status: "skipped", assigned: [], failed: [] };
   if (adult.personId && adult.status !== "failed") {
-    const ids = tagIdsFor(data.attendanceStatus, config);
+    const ids = tagIdsFor(data.attendanceStatus, data.ageGroup, config);
     const assigned: string[] = [];
     const failed: string[] = [];
     for (const tagId of ids) {

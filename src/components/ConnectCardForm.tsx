@@ -50,13 +50,10 @@ const GRADE_OPTIONS: { value: Grade; label: string }[] = [
 ];
 
 const AGE_OPTIONS: { value: AgeGroup; label: string }[] = [
-  { value: "18_24", label: "18–24" },
-  { value: "25_34", label: "25–34" },
-  { value: "35_44", label: "35–44" },
-  { value: "45_54", label: "45–54" },
-  { value: "55_64", label: "55–64" },
-  { value: "65_plus", label: "65+" },
-  { value: "prefer_not_to_answer", label: "Prefer not to answer" },
+  { value: "18_39", label: "18–39" },
+  { value: "40_59", label: "40–59" },
+  { value: "60_plus", label: "60+" },
+  { value: "prefer_not_to_answer", label: "Prefer not to say" },
 ];
 
 const HEARD_OPTIONS: { value: HeardAbout; label: string }[] = [
@@ -510,7 +507,7 @@ export default function ConnectCardForm({ location }: { location?: string }) {
           <div>
             <label htmlFor="cc-age" className={labelClass}>Age Group</label>
             <select id="cc-age" className={inputClass} value={ageGroup} onChange={(e) => setAgeGroup(e.target.value as AgeGroup)}>
-              <option value="">Prefer not to say</option>
+              <option value="">Select one (optional)</option>
               {AGE_OPTIONS.map((o) => (
                 <option key={o.value} value={o.value}>{o.label}</option>
               ))}

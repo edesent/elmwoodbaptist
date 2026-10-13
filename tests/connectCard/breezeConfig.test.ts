@@ -70,3 +70,13 @@ describe("loadBreezeConfig", () => {
     assert.equal(config.fieldMap.maritalStatus?.options?.single, "100");
   });
 });
+
+describe("AGE_GROUP_TAG_IDS", () => {
+  test("maps each age range to its Family Bible Time class tag", async () => {
+    const { AGE_GROUP_TAG_IDS } = await import("../../src/lib/connectCard/breezeConfig");
+    assert.equal(AGE_GROUP_TAG_IDS["18_39"], "5580083"); // Life & Home Builders
+    assert.equal(AGE_GROUP_TAG_IDS["40_59"], "5580082"); // Abundant Life
+    assert.equal(AGE_GROUP_TAG_IDS["60_plus"], "5580081"); // Young At Heart
+    assert.equal(AGE_GROUP_TAG_IDS.prefer_not_to_answer, undefined);
+  });
+});

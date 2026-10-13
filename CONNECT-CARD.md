@@ -255,7 +255,7 @@ setting `BREEZE_PROFILE_FIELD_MAP` at all. Current mappings:
 | attendanceStatus | Status (`195090343`) | first_time→First Time Visitor, visited_before→Returning Visitor, regular→Attender, member→Member |
 | preferredContact | Preferred Contact Method (`1525684764`) | |
 | howHeard | Connected At (`1525684763`) | |
-| ageGroup | Age Group (`1525684765`) | Breeze has no "under 18" option (and that option was removed from the site) |
+| ageGroup | Age Group (`1525684765`) | Options: 18-39 (`134`), 40-59 (`138`), 60+ (`139`), Prefer Not To Say (`133`). The age group is also applied as a class tag — see §9d. |
 | grade | Grade (`183091182`) | children only |
 
 To change this without a code deploy, set `BREEZE_PROFILE_FIELD_MAP` (a
@@ -266,12 +266,21 @@ IDs via step (b). Supported top-level keys: `email`, `phone`, `address`,
 JSON at request time and logs (does not crash) a clear configuration error if
 it's malformed — see `breezeConfig.ts`.
 
-### d) Breeze tags (optional — no longer needed for attendance)
+### d) Breeze tags
+**Age group tags (built in, always on when Breeze sync is enabled):** under
+All Tags → Family Bible Time Classes, the visitor's age group assigns one tag:
+18–39 → *Life & Home Builders* (`5580083`), 40–59 → *Abundant Life*
+(`5580082`), 60+ → *Young At Heart* (`5580081`). "Prefer not to say" and blank
+assign nothing. Tags are only ever added — if someone later picks a different
+age group, the old tag is not removed. The IDs live in `AGE_GROUP_TAG_IDS` in
+`breezeConfig.ts`.
+
+### d2) Attendance tags (optional — no longer needed for attendance)
 Attendance status is written to the `Status` profile field (step c), **not** to
 tags. The tag support still exists if you later want, say, a "Website Connect
 Card" tag (list tags with
 `curl -H "Api-Key: YOUR_KEY" "https://YOUR_SUBDOMAIN.breezechms.com/api/tags/list_tags"`).
-Leave the `BREEZE_*_TAG_ID` variables unset to skip tagging entirely.
+Leave the `BREEZE_*_TAG_ID` variables unset to skip these attendance tags (the age group tags above are separate).
 
 ### e) Connect Card answers that don't reach Breeze
 - **How We Can Help** (`interests`) — Breeze has no multi-select field type, so

@@ -8,6 +8,8 @@
 // BREEZE_PROFILE_FIELD_MAP in the environment still overrides this default,
 // in case the mapping ever needs to change without a code deploy.
 
+import type { AgeGroup } from "./validation";
+
 export interface BreezeFieldMapEntry {
   fieldId: string;
   fieldType: "email" | "phone" | "address" | "radio" | "multiple_choice" | "checkbox" | "date" | "text" | "textarea" | "dropdown" | "grade";
@@ -75,16 +77,21 @@ export const ELMWOOD_DEFAULT_FIELD_MAP: BreezeFieldMap = {
     fieldId: "1525684765",
     fieldType: "multiple_choice",
     options: {
-      "18_24": "134",
-      "25_34": "135",
-      "35_44": "136",
-      "45_54": "137",
-      "55_64": "138",
-      "65_plus": "139",
+      "18_39": "134",
+      "40_59": "138",
+      "60_plus": "139",
       prefer_not_to_answer: "133",
     },
   },
   grade: { fieldId: "183091182", fieldType: "grade" },
+};
+
+/** Breeze tags (under All Tags > Family Bible Time Classes) assigned from the
+ *  Connect Card's age group. Elmwood's own tag IDs, not secrets. */
+export const AGE_GROUP_TAG_IDS: Partial<Record<AgeGroup, string>> = {
+  "18_39": "5580083", // Life & Home Builders
+  "40_59": "5580082", // Abundant Life
+  "60_plus": "5580081", // Young At Heart
 };
 
 export interface BreezeTagConfig {
