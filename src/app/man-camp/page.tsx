@@ -130,6 +130,18 @@ export default function ManCampHome() {
               Ten Years of Forging Faithful Men
             </h2>
             <p className="text-xl leading-relaxed mb-6">
+              From our first year, when 14 men gathered under the preaching of Pastor Park Sutton, to
+              today, with more than 110 men and Evangelist Paul Schwanke, the heart of Man Camp has never
+              changed. Our purpose has always been to encourage and challenge men to serve God faithfully
+              in their local churches. The numbers have grown, but the mission remains the same: to send
+              men home strengthened in their faith, renewed in their commitment, and ready to serve. Man
+              Camp is not simply about what happens in the mountains for a few days. It is about what
+              happens when men return to their homes, their families, and their churches, determined to
+              stand for Christ, serve faithfully, and labor together for the cause of the Gospel. Our
+              greatest desire is to see men who are faithful to the Lord, committed to their local
+              church, and steadfast in the work of God long after Man Camp is over.
+            </p>
+            <p className="text-xl leading-relaxed mb-6">
               For ten years, men from Independent Fundamental Baptist churches from around Colorado have
               headed up the mountain to sit under the preaching of God&rsquo;s Word, sharpen one another,
               and come home stronger. Man Camp X is our celebration of all God has done, and we want
