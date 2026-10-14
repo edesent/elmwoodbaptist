@@ -130,9 +130,10 @@ export default function ManCampHome() {
               Ten Years of Forging Faithful Men
             </h2>
             <p className="text-xl leading-relaxed mb-6">
-              For ten years, men of Elmwood Baptist Church have headed up the mountain to sit under
-              the preaching of God&rsquo;s Word, sharpen one another, and come home stronger. Man Camp 10
-              is our celebration of all God has done, and we want every man there.
+              For ten years, men from Independent Fundamental Baptist churches from around Colorado have
+              headed up the mountain to sit under the preaching of God&rsquo;s Word, sharpen one another,
+              and come home stronger. Man Camp X is our celebration of all God has done, and we want
+              every man there.
             </p>
             <blockquote className="bg-canvas border-l-8 border-ember rounded-sm p-6 shadow-sm">
               <p className="italic text-xl text-bark leading-relaxed">
