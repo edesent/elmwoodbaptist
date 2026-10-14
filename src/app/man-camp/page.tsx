@@ -66,7 +66,7 @@ export default function ManCampHome() {
         <div className="absolute inset-0 bg-cover bg-center opacity-45" style={{ backgroundImage: `url("${HERO_PHOTO}")` }} />
         <div className="absolute inset-0 bg-gradient-to-b from-pine/55 via-pine/65 to-pine" />
         <div className="relative max-w-5xl mx-auto px-6 pt-16 md:pt-24 pb-12 text-center">
-          <p className="font-display text-base md:text-xl tracking-[0.4em] uppercase text-ember-light mb-6">
+          <p className="font-display text-lg md:text-2xl font-bold tracking-[0.4em] uppercase text-ember-light mb-6 drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]">
             &#9670; Celebrating 10 Years &#9670;
           </p>
 
