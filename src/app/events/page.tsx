@@ -165,7 +165,7 @@ export default function EventsPage() {
                     Praise and Pie Testimony Time
                   </h3>
                   <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-2">
-                    Sunday, November 22 · 12:30 PM
+                    Wednesday, November 25 · 6:00 PM
                   </p>
                   <p className="text-text-body leading-relaxed">
                     The church is providing the pie, and you bring the praise! Come
