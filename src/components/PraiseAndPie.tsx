@@ -1,7 +1,7 @@
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const facts = [
-  { label: "When", value: "Sunday, November 22 · 12:30 PM" },
+  { label: "When", value: "Wednesday, November 25 · 6:00 PM" },
   { label: "Pies", value: "Provided by the church" },
   { label: "You Bring", value: "Your testimony of God's goodness this year" },
 ];
