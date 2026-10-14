@@ -186,6 +186,13 @@ export default function ManCampHome() {
               weekend built to strengthen you as a man of God: standing firm, leading your home well,
               and staying faithful to the last amen.
             </p>
+            <p className="text-xl leading-relaxed mt-6">
+              Man Camp is for men who want to grow in their walk with God and serve Him faithfully in
+              their local church. Whether you are a pastor, a church leader, a husband, a father, or a
+              young man seeking to establish a firm foundation of faith, there is a place for you here.
+              Come ready to hear the preaching of God&rsquo;s Word, sharpen one another, and return home
+              more committed to Christ, your family, and the work of your local church.
+            </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {pillars.map((p) => (
