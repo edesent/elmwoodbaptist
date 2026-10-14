@@ -31,7 +31,7 @@ export default function PraiseAndPie() {
                 Praise and Pie Testimony Time
               </h2>
               <p className="text-white/70 mb-7">
-                Join us for an afternoon of thanksgiving! The church is providing
+                Join us for an evening of thanksgiving! The church is providing
                 the pie, and you bring the praise. Come ready to share how God has
                 been good to you throughout this year, and be encouraged as your
                 church family does the same. Everyone is welcome!
