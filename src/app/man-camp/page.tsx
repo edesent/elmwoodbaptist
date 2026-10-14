@@ -130,22 +130,32 @@ export default function ManCampHome() {
               Ten Years of Forging Faithful Men
             </h2>
             <p className="text-xl leading-relaxed mb-6">
-              From our first year, when 14 men gathered under the preaching of Pastor Park Sutton, to
-              today, with more than 110 men and Evangelist Paul Schwanke, the heart of Man Camp has never
-              changed. Our purpose has always been to encourage and challenge men to serve God faithfully
-              in their local churches. The numbers have grown, but the mission remains the same: to send
-              men home strengthened in their faith, renewed in their commitment, and ready to serve. Man
-              Camp is not simply about what happens in the mountains for a few days. It is about what
-              happens when men return to their homes, their families, and their churches, determined to
-              stand for Christ, serve faithfully, and labor together for the cause of the Gospel. Our
-              greatest desire is to see men who are faithful to the Lord, committed to their local
-              church, and steadfast in the work of God long after Man Camp is over.
+              For ten years, men from Independent Fundamental Baptist churches around Colorado have
+              headed up the mountain to sit under the preaching of God&rsquo;s Word, sharpen one another,
+              and return home stronger in their faith and commitment to Christ. From our first year, when
+              14 men gathered under the preaching of Pastor Park Sutton, to today, with more than 110 men
+              and Evangelist Paul Schwanke, the heart of Man Camp has never changed. Our purpose has
+              always been to encourage and challenge men to serve God faithfully in their local churches.
             </p>
             <p className="text-xl leading-relaxed mb-6">
-              For ten years, men from Independent Fundamental Baptist churches from around Colorado have
-              headed up the mountain to sit under the preaching of God&rsquo;s Word, sharpen one another,
-              and come home stronger. Man Camp X is our celebration of all God has done, and we want
-              every man there.
+              Man Camp X is a celebration of all God has done over the past decade, but it is about far
+              more than looking back. It is about sending men home strengthened in their faith, renewed in
+              their commitment, and ready to serve. What happens on the mountain is meant to make a
+              lasting difference when men return to their homes, their families, and their churches,
+              determined to stand for Christ, lead faithfully, and labor together for the cause of the
+              Gospel. Our greatest desire is to see men who are steadfast in their walk with God, devoted
+              to their local church, and faithful in the work of the Lord long after Man Camp is over.
+            </p>
+            <p className="font-display text-2xl md:text-3xl font-bold uppercase tracking-[0.08em] text-ember leading-snug my-8 text-center md:text-left">
+              Ten years of sharpening men.
+              <span className="block text-bark">A lifetime of serving Christ.</span>
+            </p>
+            <p className="text-xl leading-relaxed mb-6">
+              Join us for Man Camp X! Whether you have been with us from the beginning or have never
+              attended before, we invite you to be part of this milestone year. Come ready to hear the
+              preaching of God&rsquo;s Word, fellowship with like minded men, and be challenged to return
+              home more committed than ever to serving Christ and your local church. We want to see you
+              on the mountain!
             </p>
             <blockquote className="bg-canvas border-l-8 border-ember rounded-sm p-6 shadow-sm">
               <p className="italic text-xl text-bark leading-relaxed">
