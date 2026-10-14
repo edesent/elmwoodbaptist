@@ -152,8 +152,8 @@ export default function EventsPage() {
                 <div className="bg-white p-4 flex items-center justify-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/events/praise-and-pie.png"
-                    alt="Praise and Pie Testimony Time, Sunday, November 22 at 12:30 PM, Elmwood Baptist Church"
+                    src="/events/autumn-praise-and-pie-gathering.png"
+                    alt="Praise and Pie Testimony Time, Wednesday, November 25 at 6:00 PM, Elmwood Baptist Church"
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
