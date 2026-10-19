@@ -4,7 +4,6 @@ import Connect from "@/components/Connect";
 import Leaders from "@/components/Leaders";
 import ServiceTimes from "@/components/ServiceTimes";
 import ChurchEvents from "@/components/ChurchEvents";
-import YouthRally from "@/components/YouthRally";
 import FallFestival from "@/components/FallFestival";
 import PraiseAndPie from "@/components/PraiseAndPie";
 import ScriptureBanner from "@/components/ScriptureBanner";
@@ -69,7 +68,6 @@ export default function Home() {
         <Leaders />
         <ServiceTimes />
         <ChurchEvents />
-        <YouthRally />
         <FallFestival />
         <PraiseAndPie />
         <ScriptureBanner />
