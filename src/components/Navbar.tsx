@@ -151,10 +151,10 @@ export default function Navbar() {
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
                   {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className={`flex items-center gap-1.5 text-base px-4 py-3 rounded-md hover:bg-white/10 transition-all ${
+                  className={`flex items-center gap-1.5 text-base px-4 py-3 transition-all ${
                     link.highlight
-                      ? "text-gold font-semibold hover:text-gold-light"
-                      : "text-white/85 font-medium hover:text-white"
+                      ? "text-white font-semibold border-2 border-gold rounded-lg my-1 hover:bg-gold hover:text-brown-deep"
+                      : "text-white/85 font-medium rounded-md hover:text-white hover:bg-white/10"
                   }`}
                 >
                   {link.label}
