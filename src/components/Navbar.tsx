@@ -84,10 +84,10 @@ export default function Navbar() {
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
                 {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className={`inline-flex items-center gap-1 text-sm px-2 xl:px-3 py-2 rounded-md whitespace-nowrap hover:bg-white/10 transition-all ${
+                className={`inline-flex items-center gap-1 text-sm whitespace-nowrap transition-all ${
                   link.highlight
-                    ? "text-gold font-semibold hover:text-gold-light"
-                    : "text-white/85 font-medium hover:text-white"
+                    ? "text-white font-semibold px-3 xl:px-4 py-1.5 mx-1 border-2 border-gold rounded-full hover:bg-gold hover:text-brown-deep"
+                    : "text-white/85 font-medium px-2 xl:px-3 py-2 rounded-md hover:text-white hover:bg-white/10"
                 }`}
               >
                 {link.label}
