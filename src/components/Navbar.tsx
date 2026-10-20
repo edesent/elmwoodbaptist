@@ -3,8 +3,11 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
-const navLinks = [
+type NavLink = { href: string; label: string; highlight?: boolean };
+
+const navLinks: NavLink[] = [
   { href: "#home", label: "Home" },
+  { href: "/plan-of-salvation", label: "Plan of Salvation", highlight: true },
   { href: "#leaders", label: "About" },
   { href: "#services", label: "Services" },
   { href: "#groups", label: "Ministries" },
@@ -71,7 +74,7 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-center gap-1">
+        <ul className="hidden lg:flex items-center gap-0.5 xl:gap-1">
           {navLinks.map((link, i) => (
             <li key={link.href} className="flex items-center">
               {link.href.startsWith("http") && !navLinks[i - 1]?.href.startsWith("http") && (
@@ -81,7 +84,11 @@ export default function Navbar() {
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
                 {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="inline-flex items-center gap-1 text-white/85 text-sm font-medium px-3 py-2 rounded-md hover:text-white hover:bg-white/10 transition-all"
+                className={`inline-flex items-center gap-1 text-sm px-2 xl:px-3 py-2 rounded-md whitespace-nowrap hover:bg-white/10 transition-all ${
+                  link.highlight
+                    ? "text-gold font-semibold hover:text-gold-light"
+                    : "text-white/85 font-medium hover:text-white"
+                }`}
               >
                 {link.label}
                 {link.href.startsWith("http") && (
@@ -96,7 +103,7 @@ export default function Navbar() {
             <a
               href="/visit-us"
               onClick={() => setMenuOpen(false)}
-              className="bg-gold text-brown-deep text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-gold-light hover:-translate-y-0.5 transition-all"
+              className="bg-gold text-brown-deep text-sm font-semibold px-6 py-2.5 rounded-full whitespace-nowrap hover:bg-gold-light hover:-translate-y-0.5 transition-all"
             >
               Plan a Visit
             </a>
@@ -144,7 +151,11 @@ export default function Navbar() {
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
                   {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="flex items-center gap-1.5 text-white/85 text-base font-medium px-4 py-3 rounded-md hover:text-white hover:bg-white/10 transition-all"
+                  className={`flex items-center gap-1.5 text-base px-4 py-3 rounded-md hover:bg-white/10 transition-all ${
+                    link.highlight
+                      ? "text-gold font-semibold hover:text-gold-light"
+                      : "text-white/85 font-medium hover:text-white"
+                  }`}
                 >
                   {link.label}
                   {link.href.startsWith("http") && (
