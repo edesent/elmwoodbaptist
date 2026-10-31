@@ -639,6 +639,10 @@ export default function BusSignupForm() {
           We&rsquo;ll use this to set up your pickup and to contact you about
           your ride.
         </p>
+        <p className="mt-2 text-center text-sm leading-relaxed text-text-light">
+          By signing up, you agree to be contacted by text or email about
+          bus pickups and upcoming events.
+        </p>
       </div>
     </form>
   );
