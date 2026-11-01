@@ -132,6 +132,11 @@ export default function RootLayout({
     >
       <body className="min-h-screen flex flex-col">
         {children}
+        {/* Vercel Web Analytics: counts page views by page and by day. */}
+        <Script id="vercel-analytics-queue" strategy="afterInteractive">
+          {`window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };`}
+        </Script>
+        <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />
         <Script
           src={`${CHAT_API}/widget/wbc-chat.js`}
           data-api={CHAT_API}
