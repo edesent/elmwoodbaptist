@@ -131,6 +131,17 @@ export default function RootLayout({
       className={`${playfair.variable} ${lato.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col">
+        {/* Google tag (gtag.js) for Google Analytics, loaded once on every page. */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-3Z44EKZ43S"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-3Z44EKZ43S');`}
+        </Script>
         {children}
         {/* Vercel Web Analytics: counts page views by page and by day. */}
         <Script id="vercel-analytics-queue" strategy="afterInteractive">
