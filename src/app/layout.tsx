@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
     shortcut: "/favicon.ico",
   },
-  manifest: "/site.webmanifest",
+  manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
     title: SITE_NAME,
@@ -154,6 +154,25 @@ gtag('config', 'G-3Z44EKZ43S');`}
           data-key={CHAT_KEY}
           strategy="afterInteractive"
         />
+        {/* The chat greeting bubble is fixed-position and never auto-dismisses,
+            so on phones it sits on top of whatever content is underneath it
+            (buttons, links) for the rest of the visit. Auto-close it after a
+            few seconds so it doesn't permanently block the page. */}
+        <Script id="wbc-greeting-autodismiss" strategy="afterInteractive">
+          {`(function () {
+            var observer = new MutationObserver(function () {
+              var popup = document.getElementById("wbc-greeting-popup");
+              if (popup && !popup.dataset.autoDismiss) {
+                popup.dataset.autoDismiss = "1";
+                setTimeout(function () {
+                  var p = document.getElementById("wbc-greeting-popup");
+                  if (p) p.remove();
+                }, 6000);
+              }
+            });
+            observer.observe(document.body, { childList: true });
+          })();`}
+        </Script>
       </body>
     </html>
   );
