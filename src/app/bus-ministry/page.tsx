@@ -44,13 +44,6 @@ export const metadata: Metadata = {
   // The page lives at its own address; /bus-ministry on the main domain
   // serves the same page but points search engines here.
   alternates: { canonical: BUS_SITE_URL },
-  // Keep hidden from search engines until online pickup sign-up is live and
-  // the page is linked from the main site. Remove this block to launch.
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: { index: false, follow: false },
-  },
   openGraph: {
     title: "Ride the Church Bus! | Elmwood Baptist Church",
     description:
