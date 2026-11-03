@@ -145,7 +145,23 @@ gtag('config', 'G-3Z44EKZ43S');`}
         {children}
         {/* Vercel Web Analytics: counts page views by page and by day. */}
         <Script id="vercel-analytics-queue" strategy="afterInteractive">
-          {`window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };`}
+          {`window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+// Ministry short addresses (busbuddies., mancamp.) all load at "/", which
+// would blend their visits into the church home page. Count each one under
+// its own page name instead so campaigns like the bus postcards can be measured.
+window.va('beforeSend', function (event) {
+  try {
+    var pages = { busbuddies: '/bus-ministry', mancamp: '/man-camp' };
+    var sub = location.hostname.split('.')[0].toLowerCase();
+    var page = pages[sub];
+    if (page && location.pathname === '/') {
+      var u = new URL(event.url);
+      u.pathname = page;
+      return Object.assign({}, event, { url: u.toString() });
+    }
+  } catch (e) {}
+  return event;
+});`}
         </Script>
         <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />
         <Script
