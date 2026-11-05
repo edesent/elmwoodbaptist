@@ -66,7 +66,10 @@ export default function RegisterPage() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-lg mb-4">Ready to save your spot on the mountain?</p>
+            <p className="text-lg mb-2">Ready to save your spot on the mountain?</p>
+            <p className="font-display text-lg font-semibold uppercase tracking-[0.12em] text-ember mb-4">
+              Registration opens January 4, 2027
+            </p>
             <a
               href={REGISTER_URL}
               target="_blank"
