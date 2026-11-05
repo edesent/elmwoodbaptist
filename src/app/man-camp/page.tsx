@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MountainRidge, PineMark } from "@/components/mancamp/Outdoor";
 import CampMap from "@/components/mancamp/CampMap";
 import Countdown from "@/components/mancamp/Countdown";
-import { LOGO_LIGHT, CAMP_DATES, CAMP_PLACE, REGISTER_URL } from "@/components/mancamp/brand";
+import { LOGO_LIGHT, CAMP_DATES, CAMP_PLACE } from "@/components/mancamp/brand";
 
 export const metadata: Metadata = {
   title: { absolute: "Man Camp 10 | Elmwood Baptist Church" },
