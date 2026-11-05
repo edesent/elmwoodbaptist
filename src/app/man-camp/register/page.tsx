@@ -65,12 +65,14 @@ export default function RegisterPage() {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-lg mb-4">Want to hear as soon as registration opens?</p>
+            <p className="text-lg mb-4">Ready to save your spot on the mountain?</p>
             <a
-              href="tel:+13036593818"
+              href={REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block font-display text-lg font-semibold uppercase tracking-[0.15em] px-9 py-4 rounded-sm border-2 border-ember bg-ember text-parchment hover:bg-pine hover:border-pine transition-colors"
             >
-              Call (303) 659-3818
+              Register for Man Camp X
             </a>
           </div>
         </div>
