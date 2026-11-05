@@ -78,9 +78,6 @@ export default function RegisterPage() {
             >
               Register for Man Camp X
             </a>
-            <p className="font-display text-lg font-semibold uppercase tracking-[0.12em] text-ember mt-4">
-              Registration opens January 4, 2027
-            </p>
           </div>
         </div>
       </section>
