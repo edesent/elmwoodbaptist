@@ -4,6 +4,9 @@
 // Left empty until the logo upload finishes; pages show a text title until then.
 export const LOGO_LIGHT = "/mancamp/mancamp-year-2-logo-x-grey-red-diamond.png";
 
+// Man Camp X registration form on Tithe.ly.
+export const REGISTER_URL = "https://tithe.ly/event-registration/#/11615330";
+
 // Man Camp 10 begins Thursday, September 23, 2027 at 4:00 PM Mountain Time.
 export const CAMP_START = "2027-09-23T16:00:00-06:00";
 export const CAMP_DATES = "September 23\u201325, 2027";
