@@ -1,262 +1,234 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import PdfPopupLink from "@/components/PdfPopupLink";
+import Link from "next/link";
+import { MountainRidge, PineMark } from "@/components/mancamp/Outdoor";
+import CampMap from "@/components/mancamp/CampMap";
+import Countdown from "@/components/mancamp/Countdown";
+import { LOGO_LIGHT, CAMP_DATES, CAMP_PLACE } from "@/components/mancamp/brand";
 
 export const metadata: Metadata = {
-  title: "Man Camp 2026",
+  title: { absolute: "Man Camp 10 | Elmwood Baptist Church" },
   description:
-    "Man Camp 2026 — the 9th annual men's retreat of Elmwood Baptist Church. September 24–26 at Silver State Baptist Camp, Sedalia, CO, with Evangelist Paul Schwanke. Theme: Faithful to the Last Amen.",
+    "Man Camp 10, celebrating ten years of forging faithful men for God's glory. September 23\u201325, 2027 at Silver State Baptist Youth Camp in Sedalia, Colorado. A ministry of Elmwood Baptist Church.",
   alternates: { canonical: "/man-camp" },
   openGraph: {
-    title: "Man Camp 2026 | Elmwood Baptist Church",
-    description: "Three days where men trade comfort for conviction. September 24–26, 2026.",
+    title: "Man Camp 10 | Elmwood Baptist Church",
+    description: "Celebrating ten years of forging faithful men for God's glory. September 23\u201325, 2027.",
     url: "/man-camp",
     type: "website",
     images: ["/mancamp/man-camp-webiste.jpg"],
   },
 };
 
-const REGISTER_URL = "https://tithe.ly/event-registration/#/10622758";
+const HERO_PHOTO =
+  "https://o3hectmev11nr3rl.public.blob.vercel-storage.com/church-uploads/qB8IjNb83f0eVAWg8MbZ9V70mF-w25Yf/Man-Camp-%20Devils%20Head%20Lookout%20Trail-NpQs14uL4mzKp26s2ZTcJNCpko7600.jpg";
 
-const pricing = [
-  {
-    name: "Bunkhouse",
-    price: "$125",
-    note: "before April 15 · $150 before Sept 10",
-    featured: true,
-  },
-  { name: "Semi-Private Double", price: "$175", note: "Evalena house" },
-  { name: "Private Room", price: "$200", note: "Allenhouse" },
+const pillars = [
+  { title: "Bold Preaching", text: "Straight from the King James Bible, aimed right at the heart of a man." },
+  { title: "Real Fellowship", text: "Men from every season of life, shoulder to shoulder around the fire." },
+  { title: "God\u2019s Creation", text: "Mountain air, pine trees, and no noise but what matters." },
 ];
 
-const details = [
-  { label: "Dates", value: "September 24–26, 2026" },
-  { label: "Schedule", value: "Arrive Thursday 4:00 PM · Depart Saturday 2:00 PM" },
-  { label: "Location", value: "Silver State Baptist Camp · Sedalia, Colorado" },
-  { label: "Speaker", value: "Evangelist Paul Schwanke" },
+const quickLinks = [
+  { href: "/man-camp/schedule", title: "Schedule", text: "What a weekend at Man Camp looks like." },
+  { href: "/man-camp/register", title: "Register", text: "Rooms, pricing, and how to save your spot." },
+  { href: "/man-camp/photos", title: "Photos", text: "The men, the mountains, and the fellowship." },
+  { href: "/man-camp/faq", title: "FAQ", text: "Answers to the questions men ask most." },
 ];
 
-function RegisterButton({ className = "" }: { className?: string }) {
+const btn =
+  "inline-block font-display text-lg font-semibold uppercase tracking-[0.15em] px-9 py-4 rounded-sm border-2 transition-colors";
+
+// The red diamond from the Man Camp logo, with a number inside.
+function Diamond({ label, className = "" }: { label: string; className?: string }) {
   return (
-    <a
-      href={REGISTER_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`inline-block bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-gold hover:bg-gold-light hover:border-gold-light hover:-translate-y-0.5 hover:shadow-lg transition-all ${className}`}
-    >
-      Register for Man Camp
-    </a>
+    <svg viewBox="0 0 380 150" className={className} role="img" aria-label={`Man Camp ${label}`}>
+      <polygon points="190,0 380,75 190,150 0,75" fill="var(--color-ember)" />
+      <text
+        x="190"
+        y="104"
+        textAnchor="middle"
+        fontFamily="Georgia, 'Times New Roman', serif"
+        fontWeight="700"
+        fontSize="84"
+        fill="#ffffff"
+      >
+        {label}
+      </text>
+    </svg>
   );
 }
 
-export default function ManCampPage() {
+export default function ManCampHome() {
   return (
     <>
-      <Navbar />
-      <main>
-        {/* Hero with the banner */}
-        <header className="relative pt-32 pb-16 bg-brown-deep overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(43,179,214,0.16),transparent_60%)]" />
-          <div className="relative max-w-5xl mx-auto px-6 text-center">
-            <p className="text-xs font-bold tracking-[0.25em] uppercase text-gold-light mb-6">
-              Men&rsquo;s Ministry · 9th Annual
-            </p>
-            <div className="rounded-2xl overflow-hidden shadow-2xl mb-8 bg-white p-3">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/mancamp/man-camp-webiste.jpg" alt="Man Camp 9 — 2026" className="w-full h-auto rounded-lg" />
-            </div>
-            <p className="font-serif text-2xl md:text-3xl italic text-white">
-              &ldquo;Faithful to the Last Amen&rdquo;
-            </p>
-            <p className="text-gold-light text-sm tracking-[0.15em] uppercase mt-3">
-              1 Corinthians 15:58
-            </p>
-          </div>
-        </header>
+      {/* Hero */}
+      <header className="relative bg-pine overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-45" style={{ backgroundImage: `url("${HERO_PHOTO}")` }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-pine/55 via-pine/65 to-pine" />
+        <div className="relative max-w-5xl mx-auto px-6 pt-16 md:pt-24 pb-12 text-center">
+          <p className="font-display text-lg md:text-2xl font-bold tracking-[0.4em] uppercase text-ember-light mb-6 drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]">
+            &#9670; Celebrating 10 Years &#9670;
+          </p>
 
-        {/* Intro + scripture */}
-        <section className="py-20 bg-warm-white">
-          <div className="max-w-3xl mx-auto px-6 text-center">
-            <h1 className="font-serif text-3xl md:text-4xl font-bold text-text-dark leading-snug mb-6">
-              Three days where men trade comfort for <em className="text-brown-light italic">conviction.</em>
-            </h1>
-            <p className="text-lg text-text-body leading-relaxed mb-6">
-              Man Camp is three days out in God&rsquo;s creation, away from the noise and the
-              day-to-day grind — bold preaching, real fellowship, and iron sharpening iron. It&rsquo;s
-              a weekend built to strengthen you as a man of God: standing firm, leading your home
-              well, and staying faithful to the last amen.
-            </p>
-            <blockquote className="font-serif italic text-xl text-text-body border-l-4 border-gold pl-6 text-left max-w-2xl mx-auto">
-              &ldquo;Therefore, my beloved brethren, be ye stedfast, unmoveable, always abounding in
-              the work of the Lord, forasmuch as ye know that your labour is not in vain in the
-              Lord.&rdquo;
-              <span className="block not-italic text-sm text-gold-dark mt-2">— 1 Corinthians 15:58</span>
-            </blockquote>
-          </div>
-        </section>
-
-        {/* Details + speaker */}
-        <section className="py-20 bg-cream">
-          <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="font-serif text-3xl font-bold text-text-dark mb-6">The Details</h2>
-              <dl className="space-y-4">
-                {details.map((d) => (
-                  <div key={d.label} className="flex flex-col sm:flex-row sm:gap-4 border-b border-cream-dark pb-4">
-                    <dt className="sm:w-28 flex-shrink-0 text-xs font-bold tracking-[0.16em] uppercase text-gold-dark pt-1">
-                      {d.label}
-                    </dt>
-                    <dd className="text-text-dark font-medium">{d.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-
-            <div className="text-center">
-              <div className="w-56 h-56 mx-auto rounded-full overflow-hidden shadow-xl bg-brown-deep mb-5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/mancamp/speaker.png"
-                  alt="Evangelist Paul Schwanke"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="font-serif text-2xl font-bold text-text-dark">Evangelist Paul Schwanke</h3>
-              <p className="text-gold-dark text-xs font-bold tracking-[0.15em] uppercase mt-1 mb-3">
-                Guest Speaker
+          {LOGO_LIGHT ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={LOGO_LIGHT}
+              alt="Man Camp 10: Forging Faithful Men for God's Glory, 1 Peter 1:7"
+              className="w-full max-w-2xl mx-auto h-auto drop-shadow-[0_6px_18px_rgba(0,0,0,0.55)]"
+            />
+          ) : (
+            <>
+              <h1 className="font-display text-7xl md:text-9xl font-bold text-parchment uppercase tracking-[0.04em] leading-none">
+                Man Camp
+              </h1>
+              <Diamond label="10" className="w-56 md:w-72 mx-auto mt-4" />
+              <p className="font-display text-lg md:text-2xl tracking-[0.2em] uppercase text-parchment mt-4">
+                Forging Faithful Men for God&rsquo;s Glory
               </p>
-              <p className="text-text-body leading-relaxed max-w-md mx-auto">
-                A battle-tested soldier of the Gospel, Evangelist Schwanke will bring challenging,
-                Christ-centered truths from God&rsquo;s Word throughout the weekend.
-              </p>
+            </>
+          )}
+
+          <div className="mt-10">
+            <p className="font-display text-3xl md:text-5xl font-bold uppercase tracking-[0.06em] text-parchment">
+              {CAMP_DATES}
+            </p>
+            <p className="font-display text-base md:text-xl uppercase tracking-[0.15em] text-canvas mt-2">{CAMP_PLACE}</p>
+          </div>
+
+          <div className="mt-10">
+            <Countdown />
+          </div>
+
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <Link href="/man-camp/register" className={`${btn} bg-ember border-ember text-parchment hover:bg-ember-light hover:border-ember-light`}>
+              Registration Info
+            </Link>
+            <Link href="/man-camp/schedule" className={`${btn} border-parchment/70 text-parchment hover:border-ember-light hover:text-ember-light`}>
+              The Weekend
+            </Link>
+          </div>
+        </div>
+        <MountainRidge className="relative text-parchment" />
+      </header>
+
+      {/* Ten years */}
+      <section className="py-20 bg-parchment mc-topo">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-5 gap-12 items-center">
+          <div className="md:col-span-2 text-center">
+            <p className="font-display text-[9rem] md:text-[12rem] font-bold leading-none text-ember drop-shadow-sm">10</p>
+            <p className="font-display text-3xl font-bold uppercase tracking-[0.3em] text-bark -mt-2">Years</p>
+            <div className="flex items-center justify-center gap-3 mt-4">
+              <span className="h-0.5 w-12 bg-bark/40" />
+              <PineMark className="w-7 h-7 text-moss" />
+              <span className="h-0.5 w-12 bg-bark/40" />
             </div>
           </div>
-        </section>
-
-        {/* What to bring */}
-        <section className="py-20 bg-cream">
-          <div className="max-w-3xl mx-auto px-6 text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark mb-4">
-              Things to Know Before You Go
+          <div className="md:col-span-3">
+            <p className="font-display text-base tracking-[0.3em] uppercase text-moss mb-3">A Decade on the Mountain</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold uppercase text-bark leading-tight mb-5">
+              Ten Years of Forging Faithful Men
             </h2>
-            <p className="text-text-body leading-relaxed mb-8">
-              A packing list and a few important details about your stay at Silver State Baptist
-              Camp — take a look before you head up the mountain.
+            <p className="text-xl leading-relaxed mb-6">
+              For ten years, men from Independent Fundamental Baptist churches around Colorado have
+              headed up the mountain to sit under the preaching of God&rsquo;s Word, sharpen one another,
+              and return home stronger in their faith and commitment to Christ. From our first year, when
+              14 men gathered under the preaching of Pastor Park Sutton, to today, with more than 110 men
+              and Evangelist Paul Schwanke, the heart of Man Camp has never changed. Our purpose has
+              always been to encourage and challenge men to serve God faithfully in their local churches.
             </p>
-            <PdfPopupLink
-              href="/mancamp/things-to-know-before-you-go.pdf"
-              className="inline-block bg-brown-deep text-white font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-brown-deep hover:bg-brown-light hover:border-brown-light hover:-translate-y-0.5 hover:shadow-lg transition-all"
+            <p className="text-xl leading-relaxed mb-6">
+              Man Camp X is a celebration of all God has done over the past decade, but it is about far
+              more than looking back. It is about sending men home strengthened in their faith, renewed in
+              their commitment, and ready to serve. What happens on the mountain is meant to make a
+              lasting difference when men return to their homes, their families, and their churches,
+              determined to stand for Christ, lead faithfully, and labor together for the cause of the
+              Gospel. Our greatest desire is to see men who are steadfast in their walk with God, devoted
+              to their local church, and faithful in the work of the Lord long after Man Camp is over.
+            </p>
+            <p className="font-display text-2xl md:text-3xl font-bold uppercase tracking-[0.08em] text-ember leading-snug my-8 text-center md:text-left">
+              Ten years of sharpening men.
+              <span className="block text-bark">A lifetime of serving Christ.</span>
+            </p>
+            <p className="text-xl leading-relaxed mb-6">
+              Join us for Man Camp X! Whether you have been with us from the beginning or have never
+              attended before, we invite you to be part of this milestone year. Come ready to hear the
+              preaching of God&rsquo;s Word, fellowship with like minded men, and be challenged to return
+              home more committed than ever to serving Christ and your local church. We want to see you
+              on the mountain!
+            </p>
+            <blockquote className="bg-canvas border-l-8 border-ember rounded-sm p-6 shadow-sm">
+              <p className="italic text-xl text-bark leading-relaxed">
+                &ldquo;That the trial of your faith, being much more precious than of gold that
+                perisheth, though it be tried with fire, might be found unto praise and honour and
+                glory at the appearing of Jesus Christ&rdquo;
+              </p>
+              <span className="block font-display text-base tracking-[0.25em] uppercase text-ember mt-3">1 Peter 1:7</span>
+            </blockquote>
+            <p className="text-lg mt-6">
+              Thank you to every man who came to Man Camp 9 this September, and to Evangelist Paul
+              Schwanke for preaching the Word.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* What is Man Camp */}
+      <MountainRidge className="text-pine bg-parchment" />
+      <section className="bg-pine text-canvas pb-20 pt-10">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <h2 className="font-display text-5xl font-bold uppercase tracking-[0.05em] text-parchment mb-6">
+              What Is Man Camp?
+            </h2>
+            <p className="text-xl leading-relaxed">
+              Three days out in God&rsquo;s creation, away from the noise and the daily grind. It is a
+              weekend built to strengthen you as a man of God: standing firm, leading your home well,
+              and staying faithful to the last amen.
+            </p>
+            <p className="text-xl leading-relaxed mt-6">
+              Man Camp is for men who want to grow in their walk with God and serve Him faithfully in
+              their local church. Whether you are a pastor, a church leader, a husband, a father, or a
+              young man seeking to establish a firm foundation of faith, there is a place for you here.
+              Come ready to hear the preaching of God&rsquo;s Word, sharpen one another, and return home
+              more committed to Christ, your family, and the work of your local church.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {pillars.map((p) => (
+              <div key={p.title} className="border-2 border-parchment/15 rounded-sm p-8 text-center bg-pine-light/60">
+                <PineMark className="w-10 h-10 text-ember-light mx-auto mb-4" />
+                <h3 className="font-display text-2xl font-semibold uppercase tracking-[0.1em] text-parchment mb-3">
+                  {p.title}
+                </h3>
+                <p className="text-lg leading-relaxed">{p.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <MountainRidge className="text-parchment bg-pine" />
+
+      <CampMap />
+
+      {/* Quick links */}
+      <section className="pb-20 pt-4 bg-parchment mc-topo">
+        <div className="max-w-6xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {quickLinks.map((q) => (
+            <Link
+              key={q.href}
+              href={q.href}
+              className="group block bg-canvas rounded-sm p-8 border-2 border-bark/15 hover:border-ember hover:shadow-lg transition-all"
             >
-              View PDF
-            </PdfPopupLink>
-          </div>
-        </section>
-
-        {/* Hike Opportunity */}
-        <section id="hike" className="py-20 bg-warm-white">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
-              <div className="rounded-2xl overflow-hidden shadow-xl">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/mancamp/devils-head-nice.jpg"
-                  alt="Angel's Head Lookout at sunset"
-                  className="w-full h-auto"
-                />
-              </div>
-              <div>
-                <span className="inline-block bg-gold/20 border border-gold rounded-full px-4 py-1 text-xs font-bold tracking-[0.16em] uppercase text-brown-deep mb-4">
-                  New Event
-                </span>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark mb-4">
-                  Hike Opportunity: <span className="line-through decoration-2 text-text-light">Devil&rsquo;s</span>&nbsp;&nbsp; Angel&rsquo;s Head Lookout
-                </h2>
-                <p className="text-text-body leading-relaxed mb-4">
-                  This year, Man Camp is offering a hike to Angels Head Lookout, a historic fire
-                  tower in the Rampart Range southwest of Sedalia with sweeping views of the Front
-                  Range. The hike is completely optional and takes the place of the annual
-                  competition for those who choose to participate — a chance to walk side by side,
-                  encourage one another upward, and reach the summit together. As iron sharpeneth
-                  iron, so men grow stronger — physically, spiritually, and personally — when they
-                  pursue a common goal together.
-                </p>
-                <dl className="grid grid-cols-4 gap-4 mb-6">
-                  <div className="text-center bg-cream rounded-xl py-3 border border-cream-dark">
-                    <dt className="text-xs font-bold tracking-[0.1em] uppercase text-gold-dark">Distance</dt>
-                    <dd className="text-text-dark font-semibold mt-1">2.9 mi RT</dd>
-                  </div>
-                  <div className="text-center bg-cream rounded-xl py-3 border border-cream-dark">
-                    <dt className="text-xs font-bold tracking-[0.1em] uppercase text-gold-dark">Elevation Gain</dt>
-                    <dd className="text-text-dark font-semibold mt-1">~869 ft</dd>
-                  </div>
-                  <div className="text-center bg-cream rounded-xl py-3 border border-cream-dark">
-                    <dt className="text-xs font-bold tracking-[0.1em] uppercase text-gold-dark">Difficulty</dt>
-                    <dd className="text-text-dark font-semibold mt-1">Moderate+</dd>
-                  </div>
-                  <div className="text-center bg-cream rounded-xl py-3 border border-cream-dark">
-                    <dt className="text-xs font-bold tracking-[0.1em] uppercase text-gold-dark">Steps</dt>
-                    <dd className="text-text-dark font-semibold mt-1">143</dd>
-                  </div>
-                </dl>
-                <PdfPopupLink
-                  href="/mancamp/man-camp-devils-head-hike.pdf"
-                  className="inline-block bg-brown-deep text-white font-semibold text-sm tracking-wide uppercase px-9 py-3.5 rounded-full border-2 border-brown-deep hover:bg-brown-light hover:border-brown-light hover:-translate-y-0.5 hover:shadow-lg transition-all"
-                >
-                  View Hike Details (PDF)
-                </PdfPopupLink>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing */}
-        <section className="py-20 bg-warm-white">
-          <div className="max-w-5xl mx-auto px-6">
-            <div className="text-center mb-12">
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-dark">Registration</h2>
-              <p className="text-text-body mt-3 max-w-2xl mx-auto">
-                Register before <strong>April 15</strong> to save 20% on bunkhouse rates. Payments
-                may be split before July. This year both bunkhouse floors are open — with expanded
-                space and additional bathrooms and showers.
-              </p>
-              <p className="inline-block mt-5 text-base sm:text-lg font-bold text-brown-deep bg-gold/20 border border-gold rounded-full px-6 py-2.5">
-                Rooms are filling up fast — soon only bunkhouse spots will remain. Reserve yours today!
-              </p>
-            </div>
-
-            <div className="grid sm:grid-cols-3 gap-6 mb-12">
-              {pricing.map((p) => (
-                <div
-                  key={p.name}
-                  className={`p-8 rounded-2xl border text-center ${
-                    p.featured
-                      ? "bg-brown-deep border-brown-deep text-white shadow-xl"
-                      : "bg-cream border-cream-dark"
-                  }`}
-                >
-                  <h3 className={`font-serif text-xl font-semibold mb-2 ${p.featured ? "text-white" : "text-text-dark"}`}>
-                    {p.name}
-                  </h3>
-                  <p className={`font-serif text-4xl font-bold mb-2 ${p.featured ? "text-gold-light" : "text-brown-light"}`}>
-                    {p.price}
-                  </p>
-                  <p className={`text-sm ${p.featured ? "text-white/70" : "text-text-light"}`}>{p.note}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center">
-              <RegisterButton />
-              <p className="text-sm text-text-light mt-4">
-                Questions? Call the church at{" "}
-                <a href="tel:+13036593818" className="text-brown-light font-semibold">(303) 659-3818</a>.
-              </p>
-            </div>
-          </div>
-        </section>
-      </main>
-      <Footer />
+              <h3 className="font-display text-3xl font-bold uppercase text-bark group-hover:text-ember">{q.title}</h3>
+              <p className="text-lg mt-2 leading-relaxed">{q.text}</p>
+              <span className="inline-block mt-4 font-display text-base uppercase tracking-[0.2em] text-ember">
+                Head out &rarr;
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
     </>
   );
 }
