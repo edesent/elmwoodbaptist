@@ -101,9 +101,14 @@ export default function ManCampHome() {
           </div>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link href="/man-camp/register" className={`${btn} bg-ember border-ember text-parchment hover:bg-ember-light hover:border-ember-light`}>
-              Registration Info
-            </Link>
+            <a
+              href={REGISTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${btn} bg-ember border-ember text-parchment hover:bg-ember-light hover:border-ember-light`}
+            >
+              Register Now
+            </a>
             <Link href="/man-camp/schedule" className={`${btn} border-parchment/70 text-parchment hover:border-ember-light hover:text-ember-light`}>
               The Weekend
             </Link>
