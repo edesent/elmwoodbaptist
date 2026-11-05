@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ManCampPageHero from "@/components/mancamp/ManCampPageHero";
 import { PineMark } from "@/components/mancamp/Outdoor";
+import { REGISTER_URL } from "@/components/mancamp/brand";
 
 export const metadata: Metadata = {
   title: "Register",
