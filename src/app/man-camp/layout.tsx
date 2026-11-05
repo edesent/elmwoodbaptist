@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     default: "Man Camp | Elmwood Baptist Church",
     template: "%s | Man Camp",
   },
+  // Unlisted for now: search engines are asked not to list any Man Camp page.
+  robots: { index: false, follow: false },
 };
 
 export default function ManCampLayout({ children }: { children: React.ReactNode }) {
