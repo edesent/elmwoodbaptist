@@ -19,9 +19,8 @@ type ScheduleItem = { time?: string; text: string; part?: "Morning" | "Afternoon
 const days: { day: string; sections?: boolean; items: ScheduleItem[] }[] = [
   {
     day: "Thursday",
-    sections: false,
     items: [
-      { time: "4:00 PM", text: "Arrive at camp, check in, get settled, and explore the grounds" },
+      { time: "4:00 PM", text: "Arrive at camp, check in, get settled, and explore the grounds", part: "Evening" },
       { time: "5:30 PM", text: "Opening BBQ fellowship begins" },
       { time: "6:00 PM", text: "BBQ dinner served" },
       { time: "7:00 PM", text: "Opening session with Evangelist Paul Schwanke" },
