@@ -76,7 +76,7 @@ function partOfDay(time?: string): PartOfDay {
 }
 
 function groupByPartOfDay(items: ScheduleItem[]) {
-  return PARTS.map((part) => ({ part, items: items.filter((item) => partOfDay(item.time) === part) })).filter(
+  return PARTS.map((part) => ({ part, items: items.filter((item) => (item.part ?? partOfDay(item.time)) === part) })).filter(
     (group) => group.items.length > 0,
   );
 }
