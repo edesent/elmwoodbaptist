@@ -10,6 +10,8 @@ export const metadata: Metadata = {
 };
 
 // Each schedule item can have a time (optional) and a description.
+// Items are sorted into Morning, Afternoon, and Evening automatically by their time:
+//   Morning = before 12:00 PM, Afternoon = 12:00 PM to 4:59 PM, Evening = 5:00 PM and later.
 type ScheduleItem = { time?: string; text: string };
 
 const days: { day: string; items: ScheduleItem[] }[] = [
@@ -57,6 +59,25 @@ const days: { day: string; items: ScheduleItem[] }[] = [
   },
 ];
 
+type PartOfDay = "Morning" | "Afternoon" | "Evening";
+const PARTS: PartOfDay[] = ["Morning", "Afternoon", "Evening"];
+
+function partOfDay(time?: string): PartOfDay {
+  const m = time?.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+  if (!m) return "Morning";
+  let hour = parseInt(m[1], 10) % 12;
+  if (m[3].toUpperCase() === "PM") hour += 12;
+  if (hour < 12) return "Morning";
+  if (hour < 17) return "Afternoon";
+  return "Evening";
+}
+
+function groupByPartOfDay(items: ScheduleItem[]) {
+  return PARTS.map((part) => ({ part, items: items.filter((item) => partOfDay(item.time) === part) })).filter(
+    (group) => group.items.length > 0,
+  );
+}
+
 const btn =
   "inline-block font-display text-lg font-semibold uppercase tracking-[0.15em] px-9 py-4 rounded-sm border-2 border-ember bg-ember text-parchment hover:bg-pine hover:border-pine transition-colors";
 
@@ -72,30 +93,52 @@ export default function SchedulePage() {
       <section className="py-16 bg-parchment mc-topo">
         <div className="max-w-5xl mx-auto px-6">
           <p className="text-center text-lg mb-12 max-w-2xl mx-auto">
-            Here is the full schedule for the Man Camp 10 weekend.
+            Here is the full schedule for the Man Camp 10 weekend. Tap Morning, Afternoon, or Evening
+            to open or close that part of the day.
           </p>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 items-start">
             {days.map((d, i) => (
               <div key={d.day} className="bg-canvas rounded-sm border-2 border-bark/15 shadow-md overflow-hidden">
                 <div className="bg-pine px-8 py-5 flex items-baseline justify-between">
                   <h2 className="font-display text-3xl font-bold uppercase tracking-[0.08em] text-parchment">{d.day}</h2>
                   <span className="font-display text-sm tracking-[0.25em] uppercase text-ember-light">Day {i + 1}</span>
                 </div>
-                <ul className="space-y-4 p-8">
-                  {d.items.map((item) => (
-                    <li key={item.text} className="flex gap-3 text-lg">
-                      <span className="text-ember font-bold">&#9650;</span>
-                      <span>
-                        {item.time && (
-                          <span className="block font-display text-base font-semibold tracking-[0.12em] uppercase text-ember">
-                            {item.time}
-                          </span>
-                        )}
-                        {item.text}
-                      </span>
-                    </li>
+                <div className="p-5 space-y-4">
+                  {groupByPartOfDay(d.items).map((group, gi) => (
+                    <details
+                      key={group.part}
+                      open={gi === 0}
+                      className="group rounded-sm border-2 border-bark/15 bg-parchment/50"
+                    >
+                      <summary className="flex items-center justify-between gap-3 cursor-pointer list-none px-5 py-4 select-none hover:bg-parchment [&::-webkit-details-marker]:hidden">
+                        <span className="font-display text-xl font-bold uppercase tracking-[0.12em] text-bark">
+                          {group.part}
+                        </span>
+                        <span
+                          className="text-ember text-base transition-transform duration-200 group-open:rotate-180"
+                          aria-hidden="true"
+                        >
+                          &#9660;
+                        </span>
+                      </summary>
+                      <ul className="space-y-4 px-5 pb-5 pt-1">
+                        {group.items.map((item) => (
+                          <li key={item.text} className="flex gap-3 text-lg">
+                            <span className="text-ember font-bold">&#9650;</span>
+                            <span>
+                              {item.time && (
+                                <span className="block font-display text-base font-semibold tracking-[0.12em] uppercase text-ember">
+                                  {item.time}
+                                </span>
+                              )}
+                              {item.text}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
                   ))}
-                </ul>
+                </div>
               </div>
             ))}
           </div>
