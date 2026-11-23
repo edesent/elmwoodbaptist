@@ -109,21 +109,31 @@ export default function EventsPage() {
               </div>
             </div>
 
-            {/* Featured — Festival of Lights (graphic to be added) */}
+            {/* Featured — Festival of Lights */}
             <div className="mt-8 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
-              <div className="p-8 md:p-10 text-center">
-                <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
-                  Special Event
-                </span>
-                <h3 className="font-serif text-3xl font-bold text-text-dark leading-tight mb-3">
-                  Festival of Lights
-                </h3>
-                <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-2">
-                  Saturday, December 12 · 6:00 PM
-                </p>
-                <p className="text-text-body leading-relaxed max-w-2xl mx-auto">
-                  Meet at the church. Everyone is welcome!
-                </p>
+              <div className="grid md:grid-cols-2 items-center">
+                <div className="bg-white p-4 flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/events/brighton-festival-of-lights-parade.png"
+                    alt="Brighton Festival of Lights Christmas Parade, Saturday, December 12 at 6:00 PM"
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+                <div className="p-8 md:p-10">
+                  <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
+                    Special Event
+                  </span>
+                  <h3 className="font-serif text-3xl font-bold text-text-dark leading-tight mb-3">
+                    Festival of Lights
+                  </h3>
+                  <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-2">
+                    Saturday, December 12 · 6:00 PM
+                  </p>
+                  <p className="text-text-body leading-relaxed">
+                    Meet at the church. Everyone is welcome!
+                  </p>
+                </div>
               </div>
             </div>
 
