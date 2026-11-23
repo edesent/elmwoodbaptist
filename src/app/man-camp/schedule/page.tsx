@@ -129,11 +129,10 @@ export default function SchedulePage() {
                   </ul>
                 ) : (
                   <div className="p-5 space-y-4">
-                    {groupByPartOfDay(d.items).map((group, gi) => (
+                    {groupByPartOfDay(d.items).map((group) => (
                       <details
                         key={group.part}
                         name={`schedule-${d.day}`}
-                        open={gi === 0}
                         className="group rounded-sm border-2 border-bark/15 bg-parchment/50"
                       >
                         <summary className="flex items-center justify-between gap-3 cursor-pointer list-none px-5 py-4 select-none hover:bg-parchment [&::-webkit-details-marker]:hidden">
