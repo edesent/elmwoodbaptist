@@ -43,7 +43,17 @@ const days: { day: string; items: ScheduleItem[] }[] = [
   },
   {
     day: "Saturday",
-    items: [{ text: "Final preaching session" }, { text: "Depart camp by 2:00 PM" }],
+    items: [
+      { time: "5:00 AM", text: "Angel’s Head Lookout hike departs" },
+      { time: "7:00 AM", text: "Wake up for everyone else" },
+      { time: "7:30 AM", text: "Personal time with God" },
+      { time: "8:00 AM", text: "National Anthem" },
+      { time: "8:15 AM", text: "Breakfast" },
+      { time: "9:00 AM", text: "Free time or Dan Musgrave presentation" },
+      { time: "10:00 AM", text: "Closing session with Evangelist Paul Schwanke" },
+      { time: "11:30 AM", text: "Giveaways and announcements" },
+      { time: "12:30 PM", text: "Sack lunch and head home" },
+    ],
   },
 ];
 
