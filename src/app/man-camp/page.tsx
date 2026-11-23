@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MountainRidge, PineMark } from "@/components/mancamp/Outdoor";
 import CampMap from "@/components/mancamp/CampMap";
 import Countdown from "@/components/mancamp/Countdown";
+import { PreachersSection } from "@/components/mancamp/Preachers";
 import { LOGO_LIGHT, CAMP_DATES, CAMP_PLACE } from "@/components/mancamp/brand";
 
 export const metadata: Metadata = {
