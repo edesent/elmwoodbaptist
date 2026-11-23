@@ -12,7 +12,8 @@ export const metadata: Metadata = {
 // Each schedule item can have a time (optional) and a description.
 // Items are sorted into Morning, Afternoon, and Evening automatically by their time:
 //   Morning = before 12:00 PM, Afternoon = 12:00 PM to 4:59 PM, Evening = 5:00 PM and later.
-type ScheduleItem = { time?: string; text: string };
+// Add part: "Evening" (or "Morning" / "Afternoon") to an item to place it there no matter its time.
+type ScheduleItem = { time?: string; text: string; part?: "Morning" | "Afternoon" | "Evening" };
 
 // Set sections to false for a day that should show as one open list (no Morning/Afternoon/Evening).
 const days: { day: string; sections?: boolean; items: ScheduleItem[] }[] = [
