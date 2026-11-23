@@ -107,6 +107,7 @@ export default function SchedulePage() {
                   {groupByPartOfDay(d.items).map((group, gi) => (
                     <details
                       key={group.part}
+                      name={`schedule-${d.day}`}
                       open={gi === 0}
                       className="group rounded-sm border-2 border-bark/15 bg-parchment/50"
                     >
