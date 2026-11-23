@@ -173,6 +173,9 @@ export default function ManCampHome() {
         </div>
       </section>
 
+      {/* The Preachers */}
+      <PreachersSection />
+
       {/* What is Man Camp */}
       <MountainRidge className="text-pine bg-parchment" />
       <section className="bg-pine text-canvas pb-20 pt-10">
