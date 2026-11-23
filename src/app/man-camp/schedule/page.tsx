@@ -72,8 +72,7 @@ export default function SchedulePage() {
       <section className="py-16 bg-parchment mc-topo">
         <div className="max-w-5xl mx-auto px-6">
           <p className="text-center text-lg mb-12 max-w-2xl mx-auto">
-            The Thursday and Friday schedules are set. Times for Saturday will be posted here once
-            they are set.
+            Here is the full schedule for the Man Camp 10 weekend.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {days.map((d, i) => (
