@@ -113,9 +113,9 @@ export default function SchedulePage() {
             <p className="font-display text-base tracking-[0.3em] uppercase text-ember-light mb-3">Hit the Trail</p>
             <h2 className="font-display text-5xl font-bold uppercase text-parchment mb-5">The Hike</h2>
             <p className="text-lg leading-relaxed mb-6">
-              At Man Camp 9, men had the option to hike to Angel&rsquo;s Head Lookout, a historic fire
-              tower in the Rampart Range with sweeping views of the Front Range, in place of the annual
-              competition.
+              On Saturday morning, men have the option to hike to Angel&rsquo;s Head Lookout, a historic
+              fire tower in the Rampart Range with sweeping views of the Front Range. The hike departs
+              at 5:00 AM.
             </p>
             <dl className="grid grid-cols-2 gap-4 mb-8">
               <div className="border-2 border-parchment/20 rounded-sm py-4 text-center">
