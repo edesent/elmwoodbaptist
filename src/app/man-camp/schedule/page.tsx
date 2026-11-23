@@ -80,6 +80,22 @@ function groupByPartOfDay(items: ScheduleItem[]) {
   );
 }
 
+function ScheduleRow({ item }: { item: ScheduleItem }) {
+  return (
+    <li className="flex gap-3 text-lg">
+      <span className="text-ember font-bold">&#9650;</span>
+      <span>
+        {item.time && (
+          <span className="block font-display text-base font-semibold tracking-[0.12em] uppercase text-ember">
+            {item.time}
+          </span>
+        )}
+        {item.text}
+      </span>
+    </li>
+  );
+}
+
 const btn =
   "inline-block font-display text-lg font-semibold uppercase tracking-[0.15em] px-9 py-4 rounded-sm border-2 border-ember bg-ember text-parchment hover:bg-pine hover:border-pine transition-colors";
 
