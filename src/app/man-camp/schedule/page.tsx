@@ -26,9 +26,19 @@ const days: { day: string; items: ScheduleItem[] }[] = [
   {
     day: "Friday",
     items: [
-      { text: "Preaching from God’s Word" },
-      { text: "The annual competition or the optional hike" },
-      { text: "Fellowship with the men" },
+      { time: "7:00 AM", text: "Wake up" },
+      { time: "7:30 AM", text: "Personal time with God" },
+      { time: "8:00 AM", text: "National Anthem" },
+      { time: "8:15 AM", text: "Breakfast" },
+      { time: "9:00 AM", text: "Morning session with Evangelist Paul Schwanke" },
+      { time: "10:30 AM", text: "Break and transition" },
+      { time: "11:00 AM", text: "Prayer partner session" },
+      { time: "12:30 PM", text: "Lunch" },
+      { time: "1:30 PM", text: "5-Man Competition" },
+      { time: "4:30 PM", text: "Return, rest, clean up, and free time" },
+      { time: "5:30 PM", text: "Dinner" },
+      { time: "7:00 PM", text: "Founder’s Night with Pastor Joshua Lehman" },
+      { time: "8:30 PM", text: "Fire pits, snacks, coffee, and fellowship" },
     ],
   },
   {
