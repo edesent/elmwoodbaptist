@@ -18,10 +18,10 @@ export const PREACHERS: Preacher[] = [
   {
     name: "Paul Schwanke",
     title: "Evangelist",
-    role: "Main Speaker",
+    role: "Main Preacher",
   },
   {
-    name: "Joshua Lehman",
+    name: "Josh Lehman",
     title: "Pastor",
     role: "Founder of Man Camp",
   },
