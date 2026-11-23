@@ -109,6 +109,24 @@ export default function EventsPage() {
               </div>
             </div>
 
+            {/* Featured — Festival of Lights (graphic to be added) */}
+            <div className="mt-8 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
+              <div className="p-8 md:p-10 text-center">
+                <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
+                  Special Event
+                </span>
+                <h3 className="font-serif text-3xl font-bold text-text-dark leading-tight mb-3">
+                  Festival of Lights
+                </h3>
+                <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-2">
+                  Saturday, December 12 · 6:00 PM
+                </p>
+                <p className="text-text-body leading-relaxed max-w-2xl mx-auto">
+                  Meet at the church. Everyone is welcome!
+                </p>
+              </div>
+            </div>
+
             <div className="mt-16 p-8 bg-cream rounded-2xl border border-cream-dark text-center">
               <h3 className="font-serif text-2xl font-bold text-text-dark mb-3">
                 Special Events &amp; Announcements
