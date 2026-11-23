@@ -9,18 +9,31 @@ export const metadata: Metadata = {
   alternates: { canonical: "/man-camp/schedule" },
 };
 
-const days = [
+// Each schedule item can have a time (optional) and a description.
+type ScheduleItem = { time?: string; text: string };
+
+const days: { day: string; items: ScheduleItem[] }[] = [
   {
     day: "Thursday",
-    items: ["Arrive at camp by 4:00 PM", "Settle into your room", "Evening preaching and fellowship"],
+    items: [
+      { time: "4:00 PM", text: "Arrive at camp, check in, get settled, and explore the grounds" },
+      { time: "5:30 PM", text: "Opening BBQ fellowship begins" },
+      { time: "6:00 PM", text: "BBQ dinner served" },
+      { time: "7:00 PM", text: "Opening session with Evangelist Paul Schwanke" },
+      { time: "8:30 PM", text: "After evening fellowship: fire pits, snacks, and coffee" },
+    ],
   },
   {
     day: "Friday",
-    items: ["Preaching from God\u2019s Word", "The annual competition or the optional hike", "Fellowship with the men"],
+    items: [
+      { text: "Preaching from God’s Word" },
+      { text: "The annual competition or the optional hike" },
+      { text: "Fellowship with the men" },
+    ],
   },
   {
     day: "Saturday",
-    items: ["Final preaching session", "Depart camp by 2:00 PM"],
+    items: [{ text: "Final preaching session" }, { text: "Depart camp by 2:00 PM" }],
   },
 ];
 
@@ -39,8 +52,8 @@ export default function SchedulePage() {
       <section className="py-16 bg-parchment mc-topo">
         <div className="max-w-5xl mx-auto px-6">
           <p className="text-center text-lg mb-12 max-w-2xl mx-auto">
-            This is the general shape of the weekend, based on Man Camp 9. The full schedule for
-            Man Camp 10 will be posted here once it is set.
+            The Thursday schedule is set. Times for Friday and Saturday will be posted here once
+            they are set.
           </p>
           <div className="grid md:grid-cols-3 gap-6">
             {days.map((d, i) => (
@@ -49,11 +62,18 @@ export default function SchedulePage() {
                   <h2 className="font-display text-3xl font-bold uppercase tracking-[0.08em] text-parchment">{d.day}</h2>
                   <span className="font-display text-sm tracking-[0.25em] uppercase text-ember-light">Day {i + 1}</span>
                 </div>
-                <ul className="space-y-3 p-8">
+                <ul className="space-y-4 p-8">
                   {d.items.map((item) => (
-                    <li key={item} className="flex gap-3 text-lg">
+                    <li key={item.text} className="flex gap-3 text-lg">
                       <span className="text-ember font-bold">&#9650;</span>
-                      <span>{item}</span>
+                      <span>
+                        {item.time && (
+                          <span className="block font-display text-base font-semibold tracking-[0.12em] uppercase text-ember">
+                            {item.time}
+                          </span>
+                        )}
+                        {item.text}
+                      </span>
                     </li>
                   ))}
                 </ul>
