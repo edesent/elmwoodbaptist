@@ -14,9 +14,11 @@ export const metadata: Metadata = {
 //   Morning = before 12:00 PM, Afternoon = 12:00 PM to 4:59 PM, Evening = 5:00 PM and later.
 type ScheduleItem = { time?: string; text: string };
 
-const days: { day: string; items: ScheduleItem[] }[] = [
+// Set sections to false for a day that should show as one open list (no Morning/Afternoon/Evening).
+const days: { day: string; sections?: boolean; items: ScheduleItem[] }[] = [
   {
     day: "Thursday",
+    sections: false,
     items: [
       { time: "4:00 PM", text: "Arrive at camp, check in, get settled, and explore the grounds" },
       { time: "5:30 PM", text: "Opening BBQ fellowship begins" },
