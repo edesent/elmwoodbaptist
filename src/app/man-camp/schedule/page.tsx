@@ -41,7 +41,7 @@ const days: { day: string; sections?: boolean; items: ScheduleItem[] }[] = [
       { time: "1:30 PM", text: "5-Man Competition" },
       { time: "4:30 PM", text: "Return, rest, clean up, and free time" },
       { time: "5:30 PM", text: "Dinner" },
-      { time: "7:00 PM", text: "Founder’s Night with Pastor Joshua Lehman" },
+      { time: "7:00 PM", text: "Founder’s Night with Pastor Josh Lehman" },
       { time: "8:30 PM", text: "Fire pits, snacks, coffee, and fellowship" },
     ],
   },
