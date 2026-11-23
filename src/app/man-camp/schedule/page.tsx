@@ -105,43 +105,41 @@ export default function SchedulePage() {
                   <h2 className="font-display text-3xl font-bold uppercase tracking-[0.08em] text-parchment">{d.day}</h2>
                   <span className="font-display text-sm tracking-[0.25em] uppercase text-ember-light">Day {i + 1}</span>
                 </div>
-                <div className="p-5 space-y-4">
-                  {groupByPartOfDay(d.items).map((group, gi) => (
-                    <details
-                      key={group.part}
-                      name={`schedule-${d.day}`}
-                      open={gi === 0}
-                      className="group rounded-sm border-2 border-bark/15 bg-parchment/50"
-                    >
-                      <summary className="flex items-center justify-between gap-3 cursor-pointer list-none px-5 py-4 select-none hover:bg-parchment [&::-webkit-details-marker]:hidden">
-                        <span className="font-display text-xl font-bold uppercase tracking-[0.12em] text-bark">
-                          {group.part}
-                        </span>
-                        <span
-                          className="text-ember text-base transition-transform duration-200 group-open:rotate-180"
-                          aria-hidden="true"
-                        >
-                          &#9660;
-                        </span>
-                      </summary>
-                      <ul className="space-y-4 px-5 pb-5 pt-1">
-                        {group.items.map((item) => (
-                          <li key={item.text} className="flex gap-3 text-lg">
-                            <span className="text-ember font-bold">&#9650;</span>
-                            <span>
-                              {item.time && (
-                                <span className="block font-display text-base font-semibold tracking-[0.12em] uppercase text-ember">
-                                  {item.time}
-                                </span>
-                              )}
-                              {item.text}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </details>
-                  ))}
-                </div>
+                {d.sections === false ? (
+                  <ul className="space-y-4 p-8">
+                    {d.items.map((item) => (
+                      <ScheduleRow key={item.text} item={item} />
+                    ))}
+                  </ul>
+                ) : (
+                  <div className="p-5 space-y-4">
+                    {groupByPartOfDay(d.items).map((group, gi) => (
+                      <details
+                        key={group.part}
+                        name={`schedule-${d.day}`}
+                        open={gi === 0}
+                        className="group rounded-sm border-2 border-bark/15 bg-parchment/50"
+                      >
+                        <summary className="flex items-center justify-between gap-3 cursor-pointer list-none px-5 py-4 select-none hover:bg-parchment [&::-webkit-details-marker]:hidden">
+                          <span className="font-display text-xl font-bold uppercase tracking-[0.12em] text-bark">
+                            {group.part}
+                          </span>
+                          <span
+                            className="text-ember text-base transition-transform duration-200 group-open:rotate-180"
+                            aria-hidden="true"
+                          >
+                            &#9660;
+                          </span>
+                        </summary>
+                        <ul className="space-y-4 px-5 pb-5 pt-1">
+                          {group.items.map((item) => (
+                            <ScheduleRow key={item.text} item={item} />
+                          ))}
+                        </ul>
+                      </details>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
