@@ -78,39 +78,8 @@ export default function EventsPage() {
             </h2>
             <EventList items={ministryEvents} />
 
-            {/* Featured — Master Clubs Fall Festival */}
-            <div className="mt-16 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
-              <div className="grid md:grid-cols-2 items-center">
-                <div className="bg-white p-4 flex items-center justify-center">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src="/events/church-fall-festival-at-twilight.png"
-                    alt="Master Clubs Fall Festival, Thursday, October 29 at 7:00 PM, Elmwood Baptist Church. Puppet show, pizza, games, and candy prizes."
-                    className="w-full h-auto rounded-lg"
-                  />
-                </div>
-                <div className="p-8 md:p-10">
-                  <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
-                    Special Event
-                  </span>
-                  <h3 className="font-serif text-3xl font-bold text-text-dark leading-tight mb-3">
-                    Master Clubs Fall Festival
-                  </h3>
-                  <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-2">
-                    Thursday, October 29 · 7:00 PM
-                  </p>
-                  <p className="text-text-body leading-relaxed">
-                    Calling all Master Clubbers! Join us for a fun night of fall
-                    fellowship with a puppet show, pizza, games, and candy prizes.
-                    Costumes are welcome, but please make sure they are church
-                    appropriate. This event is just for our Master Clubbers.
-                  </p>
-                </div>
-              </div>
-            </div>
-
             {/* Featured — Praise and Pie Testimony Time */}
-            <div className="mt-8 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
+            <div className="mt-16 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
               <div className="grid md:grid-cols-2 items-center">
                 <div className="bg-white p-4 flex items-center justify-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
