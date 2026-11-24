@@ -5,11 +5,14 @@ import Link from "next/link";
 //   photo:    web address of the preacher's photo (leave out to show his initials)
 //   shortBio: two to four sentences shown on the home page
 //   bio:      the full bio on the Preachers page, one entry per paragraph
+//   homeFit:  "whole" shows the entire photo on the home page instead of cropping it
+//             (good for photos with a plain white background)
 export type Preacher = {
   name: string;
   title: string;
   role: string;
   photo?: string;
+  homeFit?: "crop" | "whole";
   shortBio?: string;
   bio?: string[];
 };
@@ -20,6 +23,7 @@ export const PREACHERS: Preacher[] = [
     title: "Evangelist",
     role: "Main Preacher",
     photo: "/mancamp/preachers/evangleist-paul-schwanke.jpg",
+    homeFit: "whole",
   },
   {
     name: "Josh Lehman",
