@@ -43,6 +43,11 @@ export const PREACHERS: Preacher[] = [
 
 const COMING_SOON = "A full introduction is coming soon.";
 
+// The anchor for each preacher on the Preachers page, e.g. "paul-schwanke".
+export function preacherAnchor(name: string) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 function initials(name: string) {
   return name
     .split(" ")
