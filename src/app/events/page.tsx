@@ -131,7 +131,8 @@ export default function EventsPage() {
                     Saturday, December 12 · 5:00 PM
                   </p>
                   <p className="text-text-body leading-relaxed">
-                    Meet at the church. Everyone is welcome!
+                    Meet at the church, and come out and see our church&rsquo;s
+                    new float! Everyone is welcome!
                   </p>
                 </div>
               </div>
