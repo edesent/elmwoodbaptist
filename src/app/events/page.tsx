@@ -138,6 +138,34 @@ export default function EventsPage() {
               </div>
             </div>
 
+            {/* Featured — Christmas Day Candlelight Service */}
+            <div className="mt-8 rounded-2xl border border-cream-dark overflow-hidden bg-cream">
+              <div className="grid md:grid-cols-2 items-center">
+                <div className="bg-white p-4 flex items-center justify-center">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/events/christmas-candlelight-service.jpg"
+                    alt="Christmas Day Candlelight Service, Friday, December 25 at 6:00 PM, Elmwood Baptist Church"
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+                <div className="p-8 md:p-10">
+                  <span className="inline-block text-xs font-bold tracking-[0.2em] uppercase text-gold-dark mb-3">
+                    Special Event
+                  </span>
+                  <h3 className="font-serif text-3xl font-bold text-text-dark leading-tight mb-3">
+                    Christmas Day Candlelight Service
+                  </h3>
+                  <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-2">
+                    Friday, December 25 · 6:00 PM
+                  </p>
+                  <p className="text-text-body leading-relaxed">
+                    Come and celebrate the birth of our Saviour! Everyone is welcome!
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="mt-16 p-8 bg-cream rounded-2xl border border-cream-dark text-center">
               <h3 className="font-serif text-2xl font-bold text-text-dark mb-3">
                 Special Events &amp; Announcements
