@@ -25,6 +25,7 @@ export const PREACHERS: Preacher[] = [
     name: "Josh Lehman",
     title: "Pastor",
     role: "Founder of Man Camp",
+    photo: "/mancamp/preachers/pastor-j-lehman.jpeg",
   },
 ];
 
