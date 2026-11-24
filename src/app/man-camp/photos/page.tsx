@@ -7,13 +7,44 @@ export const metadata: Metadata = {
   alternates: { canonical: "/man-camp/photos" },
 };
 
-// To add a photo: upload it to public/mancamp and add a line here.
-const photos = [
-  { src: "/mancamp/men.jpg", alt: "The men of Man Camp" },
-  { src: "/mancamp/devils-head-nice.jpg", alt: "Angel's Head Lookout at sunset" },
-  { src: "/mancamp/banner.jpg", alt: "Man Camp banner" },
-  { src: "/mancamp/man-camp-webiste.jpg", alt: "Man Camp 9 theme art, Faithful to the Last Amen" },
+// To add a photo: upload it to public/mancamp/gallery and add its file name here.
+// Photos show on the page in this order.
+const photoFiles = [
+  "img-0073.jpg",
+  "img-0077.jpg",
+  "img-0078.jpg",
+  "img-0080.jpg",
+  "img-0081.jpg",
+  "img-0087.jpg",
+  "img-0088.jpg",
+  "img-0091.jpg",
+  "img-0092.jpg",
+  "img-0093.jpg",
+  "img-0098.jpg",
+  "img-0103.jpg",
+  "img-2033.jpg",
+  "img-0106.jpg",
+  "img-0111.jpg",
+  "img-0112.jpg",
+  "img-0116.jpg",
+  "img-0121.jpg",
+  "img-0125.jpg",
+  "img-0130.jpg",
+  "pxl-20260926-032323256.jpg",
+  "img-2013.jpg",
+  "img-2010.jpg",
+  "pxl-20260926-010722288-mp.jpg",
+  "pxl-20260925-200647287-mp.jpg",
+  "pxl-20260925-200640837.jpg",
+  "img-0056.jpg",
+  "img-0048.jpg",
+  "img-0045.jpg",
 ];
+
+const photos = photoFiles.map((file, i) => ({
+  src: `/mancamp/gallery/${file}`,
+  alt: `Man Camp 9, photo ${i + 1}`,
+}));
 
 export default function PhotosPage() {
   return (
