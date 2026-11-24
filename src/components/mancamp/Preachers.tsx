@@ -122,7 +122,11 @@ export function PreachersFull() {
   return (
     <div className="space-y-16">
       {PREACHERS.map((p, i) => (
-        <article key={p.name} className="grid md:grid-cols-5 gap-10 items-start">
+        <article
+          key={p.name}
+          id={preacherAnchor(p.name)}
+          className="grid md:grid-cols-5 gap-10 items-start scroll-mt-28"
+        >
           <div className={`md:col-span-2 ${i % 2 === 1 ? "md:order-2" : ""}`}>
             <PreacherPhoto
               preacher={p}
