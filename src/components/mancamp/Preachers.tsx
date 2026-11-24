@@ -46,7 +46,7 @@ export function PreacherPhoto({ preacher, className = "" }: { preacher: Preacher
       <img
         src={preacher.photo}
         alt={`${preacher.title} ${preacher.name}`}
-        className={`object-cover ${className}`}
+        className={`object-cover object-top ${className}`}
       />
     );
   }
