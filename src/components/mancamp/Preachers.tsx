@@ -23,6 +23,15 @@ export const PREACHERS: Preacher[] = [
     title: "Evangelist",
     role: "Main Preacher",
     photo: "/mancamp/preachers/evangleist-paul-schwanke.jpg",
+    shortBio:
+      "Evangelist Paul Schwanke has preached in churches across America and around the world since 1983. He has memorized large portions of Scripture and preaches straight from the Bible. After preaching Man Camp 9, he returns as our main preacher for Man Camp X.",
+    bio: [
+      "Evangelist Paul Schwanke grew up in a Christian home where he sat under a steady stream of Bible preaching. He trusted Christ as his Savior as a young boy, and not long after, he surrendered to preach the Word of God.",
+      "By his teenage years he was already preaching in missions, youth meetings, and churches. The Lord used those early opportunities to lead him into the ministry of local church evangelism, and since 1983 he has preached in churches across America and around the world.",
+      "Brother Schwanke has invested his life in the Bible. He has memorized large portions of Scripture and uses it throughout his preaching. He gives God all the glory for the many who have been saved, the churches that have been encouraged, and the hearts that have been stirred for revival. He still believes that the preaching of the cross, foolish as it may seem to the world, is the power of God.",
+      "He is also the author of several books, including Know That You Know: What 1 John Tells Us about Assurance of Salvation. He and his wife, Cathy, have three children and many grandchildren.",
+      "The men of Man Camp were blessed by his preaching at Man Camp 9, and we are thankful to have him back as our main preacher for Man Camp X.",
+    ],
   },
   {
     name: "Josh Lehman",
