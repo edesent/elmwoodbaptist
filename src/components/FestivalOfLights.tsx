@@ -33,7 +33,8 @@ export default function FestivalOfLights() {
               <p className="text-white/70 mb-7">
                 Join your church family for the Brighton Festival of Lights
                 Christmas Parade! We will meet at the church and enjoy the
-                lights of the season together.
+                lights of the season together. Come out and see our church&rsquo;s
+                new float!
               </p>
 
               <dl className="space-y-3 border-t border-white/10 pt-6">
