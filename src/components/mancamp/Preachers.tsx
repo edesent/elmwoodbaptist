@@ -79,7 +79,10 @@ export function PreachersSection() {
               key={p.name}
               className="bg-canvas rounded-sm border-2 border-bark/15 shadow-md overflow-hidden flex flex-col"
             >
-              <PreacherPhoto preacher={p} className="w-full aspect-[4/3]" />
+              <PreacherPhoto
+                preacher={p}
+                className={`w-full aspect-[4/3] ${p.homeFit === "whole" ? "!object-contain !object-center bg-white" : ""}`}
+              />
               <div className="p-8 flex flex-col flex-1">
                 <p className="font-display text-sm tracking-[0.25em] uppercase text-ember mb-1">{p.role}</p>
                 <h3 className="font-display text-3xl font-bold uppercase tracking-[0.04em] text-bark">
