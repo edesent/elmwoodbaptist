@@ -19,6 +19,7 @@ export const PREACHERS: Preacher[] = [
     name: "Paul Schwanke",
     title: "Evangelist",
     role: "Main Preacher",
+    photo: "/mancamp/preachers/evangleist-paul-schwanke.jpg",
   },
   {
     name: "Josh Lehman",
