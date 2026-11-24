@@ -5,6 +5,7 @@ import Leaders from "@/components/Leaders";
 import ServiceTimes from "@/components/ServiceTimes";
 import ChurchEvents from "@/components/ChurchEvents";
 import PraiseAndPie from "@/components/PraiseAndPie";
+import FestivalOfLights from "@/components/FestivalOfLights";
 import ScriptureBanner from "@/components/ScriptureBanner";
 import LatestSermon from "@/components/LatestSermon";
 import Give from "@/components/Give";
