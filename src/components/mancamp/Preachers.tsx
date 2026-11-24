@@ -29,6 +29,15 @@ export const PREACHERS: Preacher[] = [
     title: "Pastor",
     role: "Founder of Man Camp",
     photo: "/mancamp/preachers/pastor-j-lehman.jpeg",
+    shortBio:
+      "Pastor Joshua Lehman started Man Camp while serving at Elmwood Baptist Church, and he returns for the tenth year to preach on Founder's Night. Today he is the senior pastor of Mount Vernon Baptist Temple in Howard, Ohio. He and his wife, Missy, have six children.",
+    bio: [
+      "Pastor Joshua Lehman was born and raised in the Denver area. Because of the faithful testimony of his mother, Brenda, he has been part of a local New Testament church his whole life. He trusted Christ as his Savior as a boy through the influence of his school principal, Tom Geer.",
+      "After resisting God's call for a few years, Josh surrendered and publicly answered the call to pastor. He completed a bachelor's degree in business management at Metropolitan State College of Denver, went on to seminary at Crown College of the Bible, and studied the Word of God more deeply through Faith Bible Institute at Elmwood Baptist Church in Brighton.",
+      "In July 2007, Josh joined the staff of Elmwood Baptist Church as an assistant pastor under Dr. Gary Randall. Over the years he ran the Christian school, led the children's ministries, handled the church's finances, and served faithfully wherever he was needed. It was during his years at Elmwood that he started Man Camp, a weekend for men that is now celebrating its tenth year.",
+      "After about ten years as an assistant pastor, God began stirring his heart toward the senior pastorate. Following much prayer and fasting, he candidated at Mount Vernon Baptist Temple in Howard, Ohio. On October 11, 2020, in the middle of the COVID-19 pandemic, the church called him as its senior pastor.",
+      "Josh and his wife, Missy, were married in 2002, just 14 months after they met. They have six children: Skyler, Makynza, Ayden, Ella, Benjamin, and Patience. Pastor Lehman is also the author of Building on the Rock: How to Build a Life that Stands Firm in Jesus Christ.",
+    ],
   },
 ];
 
