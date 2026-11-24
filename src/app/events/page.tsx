@@ -128,7 +128,7 @@ export default function EventsPage() {
                     Festival of Lights
                   </h3>
                   <p className="text-xs font-bold tracking-[0.16em] uppercase text-brown-light mb-2">
-                    Saturday, December 12 · 6:00 PM
+                    Saturday, December 12 · 5:00 PM
                   </p>
                   <p className="text-text-body leading-relaxed">
                     Meet at the church. Everyone is welcome!
