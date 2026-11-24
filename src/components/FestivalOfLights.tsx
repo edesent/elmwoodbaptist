@@ -1,7 +1,7 @@
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const facts = [
-  { label: "When", value: "Saturday, December 12 · 6:00 PM" },
+  { label: "When", value: "Saturday, December 12 · 5:00 PM" },
   { label: "Where", value: "Meet at the church" },
   { label: "Who", value: "Everyone is welcome!" },
 ];
@@ -16,7 +16,7 @@ export default function FestivalOfLights() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/events/brighton-festival-of-lights-parade.png"
-                alt="Brighton Festival of Lights Christmas Parade, Saturday, December 12 at 6:00 PM"
+                alt="Brighton Festival of Lights Christmas Parade, Saturday, December 12 at 5:00 PM"
                 className="w-full h-auto rounded-lg"
               />
             </div>
