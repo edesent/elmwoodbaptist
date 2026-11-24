@@ -8,7 +8,7 @@ const facts = [
 
 export default function FestivalOfLights() {
   return (
-    <section id="festival-of-lights" className="py-28 bg-brown-deep overflow-hidden">
+    <section id="festival-of-lights" className="py-28 bg-brown-deep overflow-hidden border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <AnimateOnScroll>
