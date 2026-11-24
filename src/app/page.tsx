@@ -71,6 +71,7 @@ export default function Home() {
         <ChurchEvents />
         <PraiseAndPie />
         <FestivalOfLights />
+        <CandlelightService />
         <ScriptureBanner />
         <LatestSermon />
         <Give />
