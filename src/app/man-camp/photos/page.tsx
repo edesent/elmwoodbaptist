@@ -53,22 +53,25 @@ export default function PhotosPage() {
 
       <section className="py-16 bg-parchment mc-topo">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid sm:grid-cols-2 gap-8">
+          <div className="text-center mb-10">
+            <p className="font-display text-base tracking-[0.3em] uppercase text-moss mb-2">September 2026</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold uppercase text-bark">Man Camp 9</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {photos.map((p) => (
               <a
                 key={p.src}
                 href={p.src}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block bg-canvas p-3 pb-4 rounded-sm shadow-lg border-2 border-bark/15 hover:border-ember hover:shadow-2xl transition-all"
+                className="block bg-canvas p-3 rounded-sm shadow-lg border-2 border-bark/15 hover:border-ember hover:shadow-2xl transition-all"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.src} alt={p.alt} className="w-full h-80 object-cover rounded-sm" loading="lazy" />
-                <p className="font-display text-sm tracking-[0.2em] uppercase text-moss mt-3 text-center">{p.alt}</p>
+                <img src={p.src} alt={p.alt} className="w-full h-72 object-cover rounded-sm" loading="lazy" />
               </a>
             ))}
           </div>
-          <p className="text-center text-lg mt-12">More photos from Man Camp 9 are coming soon.</p>
+          <p className="text-center text-lg mt-12">Tap any photo to see it full size.</p>
         </div>
       </section>
     </>
