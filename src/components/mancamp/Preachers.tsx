@@ -103,7 +103,7 @@ export function PreachersSection() {
                 </h3>
                 <p className="text-lg leading-relaxed mt-4 flex-1">{p.shortBio ?? COMING_SOON}</p>
                 <Link
-                  href="/man-camp/preachers"
+                  href={`/man-camp/preachers#${preacherAnchor(p.name)}`}
                   className="inline-block mt-6 font-display text-base uppercase tracking-[0.2em] text-ember hover:text-pine"
                 >
                   Meet the Preachers &rarr;
