@@ -116,7 +116,7 @@ export default function EventsPage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/events/brighton-festival-of-lights-parade.png"
-                    alt="Brighton Festival of Lights Christmas Parade, Saturday, December 12 at 6:00 PM"
+                    alt="Brighton Festival of Lights Christmas Parade, Saturday, December 12 at 5:00 PM"
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
